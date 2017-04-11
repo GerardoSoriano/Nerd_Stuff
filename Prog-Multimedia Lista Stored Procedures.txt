@@ -12,8 +12,8 @@ Siempre visible:
 Dashboard (inicio)
 	- Puntos que tienes en este mes				*puntosMes*
 	- Dias restantes para completar los puntos		*diasRestantes*
-	- Favoritos						*favoritos*
-	- Ofertas						*ofertas*
+	- Favoritos						X*mostrarFavoritos*
+	- Ofertas						X*ofertas*
 	- Reclutar
 
 Mi cuenta 
@@ -30,7 +30,7 @@ Reclutar
 
 Comprar 
 	- Cuadritos con las categorias de productos
-	- Carrusel con oferta					*ofertas*
+	- Carrusel con oferta					X*ofertas*
 	- Aside con:
 		* Icono con el carrito
 		* Cantidad del producto

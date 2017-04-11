@@ -19,7 +19,7 @@ create procedure datosPersonales(in nombreU nvarchar(50))
 		select idUsuario, nombreUsuario, primerNombre, segundoNombre, apellidoPaterno, apellidoMaterno, email, contrasena, fechaNacimiento,
         genero, formaPago, fechaRegistro, idPatrocinador
         from usuario
-        where nombU = nombreUsuario;
+        where nombreU = nombreUsuario;
 	end
 $$
 
@@ -75,7 +75,7 @@ create procedure cambiarFormaPago(in nombreU nvarchar(50), in metodoPago enum('D
 $$
 
 
-/*TABLA DOMICILIO*/
+/*TABLA DOMICILIO_ENTREGA*/
 
 /*SP para agregar un domicilio*/
 delimiter $$
@@ -145,3 +145,38 @@ create procedure mostrarProducto(in idP smallint unsigned)
         where idProducto = idP;
     end
 $$
+
+
+/*TABLA DESCUENTO*/
+
+/*SP para traer los productos que tienen descuento y su porcentaje de descuento*/
+delimiter $$
+create procedure ofertas()
+	begin
+		select P.nombreProducto, P.costo, P.puntaje, P.direccionFoto, D.descuento
+        from producto P
+        inner join descuento D on P.idProducto = D.idProducto
+        where fechaInicio < curdate() and fechaFinal > curdate();
+    end
+$$
+
+
+/*TABLA FAVORITOS*/
+
+/*SP para traer los productos favoritos de un usuario*/
+delimiter $$
+create procedure mostrarFavoritos(in idU smallint unsigned)
+	begin
+		select P.nombreProducto, P.costo, P.puntaje, P.descripcion, P.direccionFoto
+        from favoritos F
+        inner join producto P on F.idProducto = P.idProducto
+        where F.idUsuario = idU;
+    end
+$$
+
+
+
+
+
+
+
