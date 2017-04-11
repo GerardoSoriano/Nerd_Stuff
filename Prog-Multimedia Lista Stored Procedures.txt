@@ -1,0 +1,62 @@
+Siempre visible:
+	- Barra de navegacion
+		* Inicio
+		* Mis invitados
+		* Comprar
+		* Historial
+		* Ayuda
+		* Mi cuenta
+		* Salir
+	- Chat de ayuda siempre visible
+
+Dashboard (inicio)
+	- Puntos que tienes en este mes				*puntosMes*
+	- Dias restantes para completar los puntos		*diasRestantes*
+	- Favoritos						*favoritos*
+	- Ofertas						*ofertas*
+	- Reclutar
+
+Mi cuenta 
+	- Datos basicos (nombre, correo, etc)			*datosPersonales*
+	- Metodo de pago
+	- Tema personalizable (alomejor)
+
+Mis invitados (arbol de jerarquia)
+	- Red de personas					*misInvitados*
+	- Boton (o acceso) de agregar nueva persona
+
+Reclutar
+	- Formulario con los datos de la persona		*agregarUsuario*
+
+Comprar 
+	- Cuadritos con las categorias de productos
+	- Carrusel con oferta					*ofertas*
+	- Aside con:
+		* Icono con el carrito
+		* Cantidad del producto
+		* Total a pagar
+		* Terminar compra	
+	- Lo más comprado					*masComprados(20 más comprados)*
+	- Ultimos comprados					*ultimasCompras(últimos 10 productos)
+	- Cada producto						
+		* Foto
+		* Puntos
+		* Precio
+	- Productos por categoría(al hacer clic a categoría)	*productosCategoria*
+
+Carrito
+	- Mostrar todos los productos que tiene			*productosCarrito*
+		* Nombre
+		* Precio
+		* Cantidad
+	- Total de carrito
+	- Finalizar compra
+
+Historial (reportes)
+	- Compras del mes					*comprasPorMes*
+	- Filtros para los reportes				*comprasRangoFechas*
+
+Ayuda
+	- Dudas frecuentes
+
+
