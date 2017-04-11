@@ -17,16 +17,16 @@ Dashboard (inicio)
 	- Reclutar
 
 Mi cuenta 
-	- Datos basicos (nombre, correo, etc)			*datosPersonales*
-	- Metodo de pago
-	- Tema personalizable (alomejor)
+	- Datos basicos (nombre, correo, etc)			X*datosPersonales*
+	- Metodo de pago					X*modificarDatosPersonales*
+	- Tema personalizable (alomejor)			X*modificarContrasena*
 
 Mis invitados (arbol de jerarquia)
-	- Red de personas					*misInvitados*
+	- Red de personas					X*misInvitados*
 	- Boton (o acceso) de agregar nueva persona
 
 Reclutar
-	- Formulario con los datos de la persona		*agregarUsuario*
+	- Formulario con los datos de la persona		X*agregarUsuario*
 
 Comprar 
 	- Cuadritos con las categorias de productos
