@@ -1,0 +1,54 @@
+body {
+    overflow-x: hidden;
+
+    font-family: "Helvetica Neue", Roboto, Arial, "Droid Sans", sans-serif;
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 1.471
+}
+
+.iwt{
+    display:block;
+}
+
+/* COLORES */
+
+.white {
+    color: #fff
+}
+.dark {
+    color: #2A3F54
+}
+.blue {
+    color: #5A738E
+}
+
+.bg-blue {
+    background: #5A738E !important;
+    color: #fff;
+}
+.bg-dark {
+    background: #2A3F54 !important;
+    color: #fff    
+}
+
+.border-white {    
+    border-bottom: 1px solid #D9DEE4;
+}
+
+/* COLORES */
+
+/*TOP NAV*/
+.top_nav {
+    background-color: rgb(237, 237, 237);
+}
+
+#menu-btn {
+    padding: 12px 16px 12px 16px
+}
+
+#menu-toggle {
+    font-size: 26px;
+}
+
+/*TOP NAV*/
