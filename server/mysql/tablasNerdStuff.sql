@@ -41,6 +41,8 @@ nombreProducto nvarchar(50) not null,
 costo smallint unsigned not null,
 puntaje smallint unsigned not null,
 descripcion nvarchar(255) not null,
+categoria nvarchar(50) not null,
+direccionFoto nvarchar(255) not null,
 primary key(idProducto)
 );
 
