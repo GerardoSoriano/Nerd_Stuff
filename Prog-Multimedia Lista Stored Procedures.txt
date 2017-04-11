@@ -37,20 +37,24 @@ Comprar
 		* Total a pagar
 		* Terminar compra	
 	- Lo más comprado					*masComprados(20 más comprados)*
-	- Ultimos comprados					*ultimasCompras(últimos 10 productos)
+	- Ultimos comprados					*ultimasCompras(últimos 10 productos)*
 	- Cada producto						
 		* Foto
 		* Puntos
 		* Precio
-	- Productos por categoría(al hacer clic a categoría)	*productosCategoria*
+	- Productos por categoría(al hacer clic a categoría)	*masCompradosCategoria*
+								X*productosCategoria*
 
 Carrito
-	- Mostrar todos los productos que tiene			*productosCarrito*
+	- Mostrar todos los productos que tiene			X*mostrarProducto*
 		* Nombre
 		* Precio
 		* Cantidad
-	- Total de carrito
-	- Finalizar compra
+	- Total de carrito					X*cambiarFormaPago*
+	- Finalizar compra					X*mostrarDomicilios*
+								X*obtenerDomicilio*
+								X*modificarDomicilio*
+								X*agregarDomicilio*
 
 Historial (reportes)
 	- Compras del mes					*comprasPorMes*
