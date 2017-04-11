@@ -9,6 +9,8 @@ class Producto
   private $costo;
   private $puntaje;
   private $descripcion;
+  private $categoria;
+  private $direccionFoto;
 
   function __construct()
   {
@@ -17,6 +19,8 @@ class Producto
     $costo = 0;
     $puntaje = 0;
     $descripcion = '';
+    $categoria = '';
+    $direccionFoto = '';
   }
 
   function getIdProducto(){ return $this->idProducto; }
@@ -33,6 +37,12 @@ class Producto
 
   function getDescripcion(){ return $this->descripcion; }
   function setDescripcion($descripcion){ $this->descripcion = $descripcion;}
+
+  function getCategoria(){ return $this->categoria; }
+  function setCategoria($categoria){ $this->categoria = $categoria;}
+
+  function getDireccionFoto(){ return $this->direccionFoto; }
+  function setDireccionFoto($direccionFoto){ $this->direccionFoto = $direccionFoto;}
 }
 
  ?>
