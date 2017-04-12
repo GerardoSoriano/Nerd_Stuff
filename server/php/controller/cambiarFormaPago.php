@@ -6,9 +6,11 @@ $json = $_POST['json'];
 $obj = json_decode($json);
 
 $usuario = new Usuario();
-$usuario->setIdUsuario($obj->idUsuario);
+$usuario->setNombreUsuario($obj->nombreUsuario);
+$usuario->setFormaPago($obj->formaPago);
 
 $um = new UsuarioMetodos();
-$json = $um->ObtenerDatosPersonales($usuario);
-print_r($json);
+$result = $um->CambiarFormaDePago($usuario);
+if ($result == 1)
+  echo "success";
  ?>

@@ -2,7 +2,7 @@
 /**
  *
  */
-class User
+class Usuario
 {
   private $idUsuario;
   private $nombreUsuario;
@@ -41,7 +41,7 @@ class User
   function setNombreUsuario($nombreUsuario){ $this->nombreUsuario = $nombreUsuario; }
 
   function getPrimerNombre(){ return $this->primerNombre; }
-  function setPrimerNombre($primerNombre){ $this->$primerNombre = $primerNombre; }
+  function setPrimerNombre($primerNombre){ $this->primerNombre = $primerNombre; }
 
   function getSegundoNombre(){ return $this->segundoNombre; }
   function setSegundoNombre($segundoNombre){ $this->segundoNombre = $segundoNombre; }
@@ -68,7 +68,7 @@ class User
   function setFormaPago($formaPago){ $this->formaPago = $formaPago; }
 
   function getFechaRegistro(){ return $this->fechaRegistro; }
-  function setFechaRegistro(){ $this->fechaRegistro = $fechaRegistro; }
+  function setFechaRegistro($fechaRegistro){ $this->fechaRegistro = $fechaRegistro; }
 
   function getIdPatrocinador(){ return $this->idPatrocinador; }
   function setIdPatrocinador($idPatrocinador){ $this->idPatrocinador = $idPatrocinador; }

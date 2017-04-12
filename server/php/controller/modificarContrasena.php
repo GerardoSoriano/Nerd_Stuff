@@ -7,8 +7,11 @@ $obj = json_decode($json);
 
 $usuario = new Usuario();
 $usuario->setNombreUsuario($obj->nombreUsuario);
+$usuario->setContrasena(md5($obj->contrasena));
+$contrasenaNueva = md5($obj->contrasenaNueva);
 
 $um = new UsuarioMetodos();
-$json = $um->ObtenerDatosPersonales($usuario);
-print_r($json);
+$result = $um->ModificarContrasena($usuario,$contrasenaNueva);
+if ($result == 1)
+  echo "success";
  ?>
