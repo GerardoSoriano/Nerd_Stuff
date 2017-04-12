@@ -19,10 +19,11 @@ formaPago enum('DepositoBancario', 'Tarjeta') not null,
 fechaRegistro date not null,
 idPatrocinador smallint unsigned not null,
 primary key(idUsuario),
-foreign key(idPatrocinador) references usuario(idUsuario)
+foreign key(idPatrocinador) references usuario(idUsuario),
+unique (nombreUsuario)
 );
 
-create table domicilioEntrega(
+create table domicilioentrega(
 idDomicilio smallint unsigned not null auto_increment,
 tituloDomicilio nvarchar(50) not null,
 calle nvarchar(255) not null,
@@ -64,7 +65,7 @@ primary key(idCompra),
 foreign key(idUsuario) references usuario(idUsuario)
 );
 
-create table productoCompra(
+create table productocompra(
 idCompra smallint unsigned not null,
 idProducto smallint unsigned not null,
 foreign key(idCompra) references compra(idCompra),

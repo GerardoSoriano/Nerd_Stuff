@@ -27,7 +27,7 @@ $$
 delimiter $$
 create procedure modificarDatosPersonales(in nombreU nvarchar(50), in primerNom nvarchar (50), in segundoNom nvarchar(50),
 	in apellidoPat nvarchar (50), in apellidoMat nvarchar (50), in correo nvarchar(50), in contra nvarchar(20), in fechaNac date,
-    in sexo enum('Masculino', 'Femenino'), in metodoPago enum('DepositoBancario', 'Tarjeta'), in fechaReg date, idPat smallint unsigned)
+    in sexo enum('Masculino', 'Femenino'), in metodoPago enum('DepositoBancario', 'Tarjeta'), idPat smallint unsigned)
     begin
 		update usuario
         set primerNombre = primerNom,
@@ -38,7 +38,6 @@ create procedure modificarDatosPersonales(in nombreU nvarchar(50), in primerNom 
             fechaNacimiento = fechaNac,
             genero = sexo,
             formaPago = metodoPago,
-            fechaRegistro = fechaReg,
             idPatrocinador = idPat
 		where nombreUsuario = nombreU and contrasena = contra;
     end
@@ -46,7 +45,7 @@ $$
 
 /*SP para modificar contraseña*/
 delimiter $$
-create procedure modificarContrasena(in nombreU nvarchar(50), in contraOriginal nvarchar(20), in contraNueva(20))
+create procedure modificarContrasena(in nombreU nvarchar(50), in contraOriginal nvarchar(20), in contraNueva nvarchar(20))
 	begin
 		update usuario
         set contrasena = contraNueva
@@ -175,8 +174,32 @@ create procedure mostrarFavoritos(in idU smallint unsigned)
 $$
 
 
+/*TABLA PRODUCTO_COMPRA*/
 
+/*SP para traer los 20 productos más comprados*/
+delimiter $$
+create procedure masComprados()
+	begin
+		select P.nombreProducto, P.costo, P.puntaje, P.descripcion, P.direccionFoto, count(P.idProducto) as ventas
+        from productoCompra C
+        inner join producto P on P.idProducto = C.idProducto
+        order by ventas
+        limit 20;
+    end
+$$
 
-
+/*SP para traer los últimos 10 productos comprados por el usuario*/
+delimiter $$
+create procedure ultimasCompras(in idU smallint unsigned)
+	begin
+		select P.nombreProducto, P.costo, P.puntaje, P.descripcion, P.direccionFoto
+        from productoCompra PC
+        inner join producto P on P.idProducto = PC.idProducto
+        inner join compra C on C.idCompra = PC.idCompra
+        where C.idUsuario = idU
+        order by C.fechaCompra
+        limit 10;
+	end
+$$
 
 
