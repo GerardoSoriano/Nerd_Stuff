@@ -2,7 +2,7 @@
 /**
  *
  */
-class ProductoCompra
+class Favoritos
 {
   private $idUsuario;
   private $idProducto;
