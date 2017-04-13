@@ -74,7 +74,14 @@ create procedure cambiarFormaPago(in nombreU nvarchar(50), in metodoPago enum('D
 $$
 
 /*SP para calcular los puntos restantes en el mes*/
-
+delimiter $$
+create procedure diasRestantes(in idU smallint unsigned)
+	begin
+		select 30 - mod(datediff(curdate(), fechaRegistro), 30) as diasRestantes
+        from usuario
+        where idUsuario = idU;
+    end
+$$
 
 /*TABLA DOMICILIO_ENTREGA*/
 
@@ -194,6 +201,18 @@ create procedure agregarCompra(in idU smallint unsigned)
 	begin
 		insert into compra(idUsuario, fechaCompra)
         values (idU, now());
+    end
+$$
+
+/*SP para sacar los puntos que lleva el usuario en el mes*/
+delimiter $$
+create procedure puntosMes(in idU smallint unsigned)
+	begin
+		select P.idProducto, P.puntaje, C.fechaCompra
+        from compra C
+        inner join productoCompra PC on C.idCompra = PC.idCompra
+        inner join producto P on PC.idProducto = P.idProducto
+        where C.idUsuario = idU and datediff(curdate(), C.fechaCompra) < (mod(datediff(curdate(), fechaRegistro), 30));
     end
 $$
 

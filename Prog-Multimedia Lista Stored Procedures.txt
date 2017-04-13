@@ -10,8 +10,8 @@ Siempre visible:
 	- Chat de ayuda siempre visible
 
 Dashboard (inicio)
-	- Puntos que tienes en este mes				*puntosMes*
-	- Dias restantes para completar los puntos		*diasRestantes*
+	- Puntos que tienes en este mes				X*puntosMes*
+	- Dias restantes para completar los puntos		X*diasRestantes*
 	- Favoritos						X*mostrarFavoritos*
 	- Ofertas						X*ofertas*
 	- Reclutar
