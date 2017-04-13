@@ -73,6 +73,8 @@ create procedure cambiarFormaPago(in nombreU nvarchar(50), in metodoPago enum('D
 	end
 $$
 
+/*SP para calcular los puntos restantes en el mes*/
+
 
 /*TABLA DOMICILIO_ENTREGA*/
 
@@ -131,7 +133,7 @@ create procedure productosCategoria(in cat nvarchar(50))
 	begin
 		select idProducto, nombreProducto, costo, puntaje, descripcion, direccionFoto
         from producto
-        where categoria = cat;
+        where idCategoria = cat;
 	end
 $$
 
@@ -275,7 +277,6 @@ create procedure ultimasCompras(in idU smallint unsigned)
         limit 10;
 	end
 $$
-
 
 
 

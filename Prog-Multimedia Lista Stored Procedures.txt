@@ -36,13 +36,13 @@ Comprar
 		* Cantidad del producto
 		* Total a pagar
 		* Terminar compra	
-	- Lo más comprado					X*masComprados(20 más comprados)*
-	- Ultimos comprados					**ultimasCompras(últimos 10 productos)**
+	- Lo más comprado					X*masComprados*(10 más comprados)
+	- Ultimos comprados					X*ultimasCompras*(últimos 10 productos)
 	- Cada producto						
 		* Foto
 		* Puntos
 		* Precio
-	- Productos por categoría(al hacer clic a categoría)	*masCompradosCategoria*
+	- Productos por categoría(al hacer clic a categoría)	X*masCompradosCategoria*(10 más comprados)
 								X*productosCategoria*
 
 Carrito
@@ -55,11 +55,13 @@ Carrito
 								X*obtenerDomicilio*
 								X*modificarDomicilio*
 								X*agregarDomicilio*
-								*agregarCompra*
+								X*agregarCompra*
+								X*productoComprado*
 
 Historial (reportes)
-	- Compras del mes					*comprasPorMes*
-	- Filtros para los reportes				*comprasRangoFechas*
+	- Compras del mes					X*comprasPorMes*
+	- Filtros para los reportes				X*comprasRangoFechas*
+								X*descontarProducto*(para aplicar descuento a cada producto si es que aplica)
 
 Ayuda
 	- Dudas frecuentes
