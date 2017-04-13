@@ -6,7 +6,7 @@ $json = $_POST['json'];
 $obj = json_decode($json);
 
 $producto = new Producto();
-$producto->setCategoria($obj->categoria);
+$producto->setIdCategoria($obj->idCategoria);
 
 $pm = new ProductoMetodos;
 $json = $pm->ProductosPorCategoria($producto);

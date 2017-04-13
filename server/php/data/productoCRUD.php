@@ -12,7 +12,7 @@ class ProductoMetodos
     $conn = $pdo->getConnection();
     try {
       $stm = $conn->prepare("call productosCategoria(?)");
-      $stm->bindParam(1,$producto->getCategoria());
+      $stm->bindParam(1,$producto->getIdCategoria());
       $stm->execute();
       $result = $stm->fetchAll();
       return json_encode($result);
