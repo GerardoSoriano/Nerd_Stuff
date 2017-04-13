@@ -152,10 +152,20 @@ $$
 delimiter $$
 create procedure ofertas()
 	begin
-		select P.nombreProducto, P.costo, P.puntaje, P.direccionFoto, D.descuento
+		select P.nombreProducto, P.costo, P.puntaje, P.direccionFoto, D.porcentajeDescuento
         from producto P
         inner join descuento D on P.idProducto = D.idProducto
         where fechaInicio < curdate() and fechaFinal > curdate();
+    end
+$$
+
+/*SP para traer los descuentos de los productos comprados en un rango de fechas*/
+delimiter $$
+create procedure descontarProducto(in fechaCom date, in idP smallint unsigned)
+	begin
+		select idDescuento, porcentajeDescuento
+        from descuento
+        where idProducto = idP and fechaCom between fechaInicio and fechaFinal;
     end
 $$
 
@@ -174,17 +184,81 @@ create procedure mostrarFavoritos(in idU smallint unsigned)
 $$
 
 
+/*TABLA COMPRA*/
+
+/*SP para generar una compra*/
+delimiter $$
+create procedure agregarCompra(in idU smallint unsigned)
+	begin
+		insert into compra(idUsuario, fechaCompra)
+        values (idU, now());
+    end
+$$
+
+
 /*TABLA PRODUCTO_COMPRA*/
 
-/*SP para traer los 20 productos más comprados*/
+/*SP para generar un registro de cada producto en cada compra*/
+delimiter $$
+create procedure productoComprado(in idC smallint unsigned, in idP smallint unsigned)
+	begin
+		insert into productoCompra(idCompra, idProducto)
+        values(idC, idP);
+    end
+$$
+
+/*SP para traer las compras por mes*/ /*Hay que traer los descuentos aparte, ver tabla DESCUENTO*/
+delimiter $$
+create procedure comprasPorMes(in idU smallint unsigned, in fechaReporte date)
+	begin
+		select C.idCompra, C.fechaCompra, P.idProducto, P.nombreProducto, P.costo, P.puntaje, P.descripcion, P.direccionFoto, count(idProducto) as cantidad
+        from compra C
+        inner join productoCompra PC on C.idCompra = PC.idCompra
+        inner join producto P on P.idProducto = PC.idProducto
+        where C.idUsuario = idU and fechaCompra.year = fechaReporte.year and fechaCompra.month = fechaReporte.month
+        group by P.idProducto, C.idCompra
+        order by C.idCompra, C.fechaCompra;
+    end
+$$
+
+/*SP para traer las compras entre un rango de fechas*/ /*Hay que traer los descuentos aparte, ver tabla DESCUENTO*/
+delimiter $$
+create procedure comprasRangoFechas(in idU smallint unsigned, in fechaInicio date, in fechaFinal date)
+	begin
+		select C.idCompra, C.fechaCompra, P.idProducto, P.nombreProducto, P.costo, P.puntaje, P.descripcion, P.direccionFoto, count(idProducto) as cantidad
+        from compra C
+        inner join productoCompra PC on C.idCompra = PC.idCompra
+        inner join producto P on P.idProducto = PC.idProducto
+        where C.idUsuario = idU and fechaCompra between fechaInicio and fechaFinal
+        group by P.idProducto, C.idCompra
+        order by C.idCompra, C.fechaCompra;
+    end
+$$
+
+/*SP para traer los 10 productos más comprados*/
 delimiter $$
 create procedure masComprados()
 	begin
-		select P.nombreProducto, P.costo, P.puntaje, P.descripcion, P.direccionFoto, count(P.idProducto) as ventas
+		select P.nombreProducto, P.costo, P.puntaje, P.descripcion, P.direccionFoto, CA.nombreCategoria, count(P.idProducto) as ventas
         from productoCompra C
         inner join producto P on P.idProducto = C.idProducto
+        inner join categoria CA on P.idCategoria = CA.idCategoria
         order by ventas
-        limit 20;
+        limit 10;
+    end
+$$
+
+/*SP para traer los 10 productos más comprados por categoría*/
+delimiter $$
+create procedure masCompradosCategoria(in idC smallint unsigned)
+	begin
+		select P.nombreProducto, P.costo, P.puntaje, P.descripcion, P.direccionFoto, CA.nombreCategoria, count(P.idProducto) as ventas
+        from productoCompra C
+        inner join producto P on P.idProducto = C.idProducto
+        inner join categoria CA on P.idCategoria = CA.idCategoria
+        where P.idCategoria = idC
+        order by ventas
+        limit 10;
     end
 $$
 
@@ -201,5 +275,9 @@ create procedure ultimasCompras(in idU smallint unsigned)
         limit 10;
 	end
 $$
+
+
+
+
 
 

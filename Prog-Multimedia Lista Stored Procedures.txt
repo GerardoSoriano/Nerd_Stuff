@@ -36,8 +36,8 @@ Comprar
 		* Cantidad del producto
 		* Total a pagar
 		* Terminar compra	
-	- Lo más comprado					*masComprados(20 más comprados)*
-	- Ultimos comprados					*ultimasCompras(últimos 10 productos)*
+	- Lo más comprado					X*masComprados(20 más comprados)*
+	- Ultimos comprados					**ultimasCompras(últimos 10 productos)**
 	- Cada producto						
 		* Foto
 		* Puntos
@@ -55,6 +55,7 @@ Carrito
 								X*obtenerDomicilio*
 								X*modificarDomicilio*
 								X*agregarDomicilio*
+								*agregarCompra*
 
 Historial (reportes)
 	- Compras del mes					*comprasPorMes*

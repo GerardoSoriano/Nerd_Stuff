@@ -36,15 +36,22 @@ primary key(idDomicilio),
 foreign key(idUsuario) references usuario(idUsuario)
 );
 
+create table categoria(
+idCategoria smallint unsigned not null auto_increment,
+nombreCategoria nvarchar(50) not null,
+primary key(idCategoria)
+);
+
 create table producto(
 idProducto smallint unsigned not null auto_increment,
 nombreProducto nvarchar(50) not null,
 costo smallint unsigned not null,
 puntaje smallint unsigned not null,
 descripcion nvarchar(255) not null,
-categoria nvarchar(50) not null,
+idCategoria smallint unsigned not null,
 direccionFoto nvarchar(255) not null,
-primary key(idProducto)
+primary key(idProducto),
+foreign key(idCategoria) references categoria(idCategoria)
 );
 
 create table descuento(
