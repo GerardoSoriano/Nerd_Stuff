@@ -1,4 +1,4 @@
-drop database nerdstuff;
+drop database if exists nerdstuff;
 
 create database nerdstuff;
 
