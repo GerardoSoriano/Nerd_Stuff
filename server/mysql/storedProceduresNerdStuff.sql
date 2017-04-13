@@ -4,7 +4,7 @@
 delimiter $$
 create procedure agregarUsuario(in nombreU nvarchar(50), in primerNom nvarchar (50), in segundoNom nvarchar(50), in apellidoPat nvarchar (50),
 	in apellidoMat nvarchar (50), in correo nvarchar(50), in contra nvarchar(20), in fechaNac date, in sexo enum('Masculino', 'Femenino'),
-    in metodoPago enum('DepositoBancario', 'Tarjeta'), idPat smallint unsigned)
+    in metodoPago enum('DepositoBancario', 'Tarjeta'), in idPat smallint unsigned)
     begin 
 		insert into usuario(nombreUsuario, primerNombre, segundoNombre, apellidoPaterno, apellidoMaterno, email, contrasena, fechaNacimiento,
 		genero, formaPago, fechaRegistro, idPatrocinador) 
@@ -27,7 +27,7 @@ $$
 delimiter $$
 create procedure modificarDatosPersonales(in nombreU nvarchar(50), in primerNom nvarchar (50), in segundoNom nvarchar(50),
 	in apellidoPat nvarchar (50), in apellidoMat nvarchar (50), in correo nvarchar(50), in contra nvarchar(20), in fechaNac date,
-    in sexo enum('Masculino', 'Femenino'), in metodoPago enum('DepositoBancario', 'Tarjeta'), idPat smallint unsigned)
+    in sexo enum('Masculino', 'Femenino'), in metodoPago enum('DepositoBancario', 'Tarjeta'), in idPat smallint unsigned)
     begin
 		update usuario
         set primerNombre = primerNom,
