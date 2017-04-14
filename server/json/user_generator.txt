@@ -11,6 +11,13 @@
     contrasena: '{{firstName()}}',
     fechaNacimiento: '{{date(new Date(1960, 0, 1), new Date(1999, 0, 0), "YYYY-MM-ddThh:mm:ss Z")}}',
     genero: '{{integer(1, 2)}}',
+    idPatrocinador: function (tags) {
+      if(this.index > 3){
+        return tags.integer(4,20);
+      } else {
+        return "";
+      }
+    },
     formaPago: '{{integer(1, 2)}}',
     fechaRegistro: '{{date(new Date(2016, 0, 1), new Date(), "YYYY-MM-ddThh:mm:ss Z")}}'
   }
