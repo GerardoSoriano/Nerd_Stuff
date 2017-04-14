@@ -10,7 +10,7 @@
     "contrasena": "Travis",
     "fechaNacimiento": "1966-11-19T06:44:59 +06:00",
     "genero": 2,
-    "idPatrocinador": "1",
+    "idPatrocinador": 1,
     "formaPago": 2,
     "fechaRegistro": "2016-09-24T04:01:20 +05:00"
   },
@@ -25,7 +25,7 @@
     "contrasena": "Thornton",
     "fechaNacimiento": "1992-10-02T05:36:34 +05:00",
     "genero": 2,
-    "idPatrocinador": "2",
+    "idPatrocinador": 2,
     "formaPago": 2,
     "fechaRegistro": "2017-01-13T07:35:45 +06:00"
   },
@@ -40,7 +40,7 @@
     "contrasena": "Chandra",
     "fechaNacimiento": "1973-12-01T04:34:07 +06:00",
     "genero": 2,
-    "idPatrocinador": "",
+    "idPatrocinador": 3,
     "formaPago": 2,
     "fechaRegistro": "2016-01-03T11:29:46 +06:00"
   },
@@ -55,7 +55,7 @@
     "contrasena": "Elvia",
     "fechaNacimiento": "1971-09-11T03:49:43 +05:00",
     "genero": 1,
-    "idPatrocinador": "",
+    "idPatrocinador": 4,
     "formaPago": 1,
     "fechaRegistro": "2016-12-13T02:01:38 +06:00"
   },
@@ -70,7 +70,7 @@
     "contrasena": "Petra",
     "fechaNacimiento": "1973-12-29T03:50:39 +06:00",
     "genero": 1,
-    "idPatrocinador": 11,
+    "idPatrocinador": 5,
     "formaPago": 2,
     "fechaRegistro": "2016-02-26T10:22:58 +06:00"
   },
@@ -85,7 +85,7 @@
     "contrasena": "Joseph",
     "fechaNacimiento": "1981-05-20T04:59:57 +05:00",
     "genero": 2,
-    "idPatrocinador": 18,
+    "idPatrocinador": 6,
     "formaPago": 2,
     "fechaRegistro": "2016-06-16T04:05:18 +05:00"
   },
@@ -100,7 +100,7 @@
     "contrasena": "Kathy",
     "fechaNacimiento": "1964-08-12T05:16:09 +05:00",
     "genero": 2,
-    "idPatrocinador": 6,
+    "idPatrocinador": 7,
     "formaPago": 2,
     "fechaRegistro": "2017-01-09T05:45:40 +06:00"
   },
@@ -115,7 +115,7 @@
     "contrasena": "Edwards",
     "fechaNacimiento": "1969-07-07T08:58:36 +05:00",
     "genero": 1,
-    "idPatrocinador": 13,
+    "idPatrocinador": 8,
     "formaPago": 2,
     "fechaRegistro": "2016-05-04T07:37:23 +05:00"
   },
@@ -130,7 +130,7 @@
     "contrasena": "Freida",
     "fechaNacimiento": "1968-02-07T09:28:27 +06:00",
     "genero": 2,
-    "idPatrocinador": 20,
+    "idPatrocinador": 9,
     "formaPago": 1,
     "fechaRegistro": "2016-11-21T10:34:03 +06:00"
   },
@@ -145,7 +145,7 @@
     "contrasena": "Donaldson",
     "fechaNacimiento": "1964-10-24T09:53:49 +05:00",
     "genero": 1,
-    "idPatrocinador": 13,
+    "idPatrocinador": 10,
     "formaPago": 1,
     "fechaRegistro": "2016-12-03T05:19:04 +06:00"
   },
@@ -160,7 +160,7 @@
     "contrasena": "Kathleen",
     "fechaNacimiento": "1979-02-15T09:52:14 +06:00",
     "genero": 2,
-    "idPatrocinador": 10,
+    "idPatrocinador": 11,
     "formaPago": 1,
     "fechaRegistro": "2017-01-18T01:47:04 +06:00"
   },
@@ -175,7 +175,7 @@
     "contrasena": "Bobbi",
     "fechaNacimiento": "1973-09-26T06:36:40 +05:00",
     "genero": 2,
-    "idPatrocinador": 4,
+    "idPatrocinador": 12,
     "formaPago": 1,
     "fechaRegistro": "2016-10-20T07:46:15 +05:00"
   },
@@ -190,7 +190,7 @@
     "contrasena": "Julie",
     "fechaNacimiento": "1984-04-19T02:35:35 +05:00",
     "genero": 1,
-    "idPatrocinador": 16,
+    "idPatrocinador": 13,
     "formaPago": 1,
     "fechaRegistro": "2016-12-25T08:31:05 +06:00"
   },
@@ -205,7 +205,7 @@
     "contrasena": "Mendez",
     "fechaNacimiento": "1971-12-30T05:07:37 +06:00",
     "genero": 1,
-    "idPatrocinador": 18,
+    "idPatrocinador": 14,
     "formaPago": 2,
     "fechaRegistro": "2016-07-26T09:50:06 +05:00"
   },
@@ -220,7 +220,7 @@
     "contrasena": "Aurora",
     "fechaNacimiento": "1984-05-16T09:03:25 +05:00",
     "genero": 1,
-    "idPatrocinador": 16,
+    "idPatrocinador": 15,
     "formaPago": 2,
     "fechaRegistro": "2017-04-03T02:55:14 +05:00"
   },
@@ -235,7 +235,7 @@
     "contrasena": "Roberson",
     "fechaNacimiento": "1971-01-14T08:30:31 +06:00",
     "genero": 1,
-    "idPatrocinador": 17,
+    "idPatrocinador": 16,
     "formaPago": 1,
     "fechaRegistro": "2016-12-05T08:21:44 +06:00"
   },
@@ -250,7 +250,7 @@
     "contrasena": "Morse",
     "fechaNacimiento": "1988-01-19T01:23:37 +06:00",
     "genero": 1,
-    "idPatrocinador": 10,
+    "idPatrocinador": 17,
     "formaPago": 2,
     "fechaRegistro": "2016-11-28T07:09:51 +06:00"
   },
@@ -265,7 +265,7 @@
     "contrasena": "Evans",
     "fechaNacimiento": "1984-05-12T03:10:52 +05:00",
     "genero": 1,
-    "idPatrocinador": 4,
+    "idPatrocinador": 18,
     "formaPago": 1,
     "fechaRegistro": "2017-01-07T04:01:44 +06:00"
   },
@@ -280,7 +280,7 @@
     "contrasena": "Jennie",
     "fechaNacimiento": "1978-07-05T06:46:46 +05:00",
     "genero": 1,
-    "idPatrocinador": 13,
+    "idPatrocinador": 19,
     "formaPago": 2,
     "fechaRegistro": "2017-01-26T12:39:18 +06:00"
   },
@@ -295,7 +295,7 @@
     "contrasena": "Charity",
     "fechaNacimiento": "1994-06-25T03:21:39 +05:00",
     "genero": 2,
-    "idPatrocinador": 12,
+    "idPatrocinador": 20,
     "formaPago": 1,
     "fechaRegistro": "2016-04-20T11:19:21 +05:00"
   }
