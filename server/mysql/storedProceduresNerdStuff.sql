@@ -4,11 +4,11 @@
 delimiter $$
 create procedure agregarUsuario(in nombreU nvarchar(50), in primerNom nvarchar (50), in segundoNom nvarchar(50), in apellidoPat nvarchar (50),
 	in apellidoMat nvarchar (50), in correo nvarchar(50), in contra nvarchar(20), in fechaNac date, in sexo enum('Masculino', 'Femenino'),
-    in metodoPago enum('DepositoBancario', 'Tarjeta'), idPat smallint unsigned)
+    in metodoPago enum('DepositoBancario', 'Tarjeta'), in idPat smallint unsigned)
     begin 
 		insert into usuario(nombreUsuario, primerNombre, segundoNombre, apellidoPaterno, apellidoMaterno, email, contrasena, fechaNacimiento,
 		genero, formaPago, fechaRegistro, idPatrocinador) 
-		values (nombreU, primerNom, segundoNom, apellidoPat, apellidoMat, correo, contra, fechaNac, sexo, metodoPago, now(), idPat);
+		values (nombreU, primerNom, segundoNom, apellidoPat, apellidoMat, correo, contra, fechaNac, sexo, metodoPago, curdate(), idPat);
 	end
 $$
 
@@ -27,7 +27,7 @@ $$
 delimiter $$
 create procedure modificarDatosPersonales(in nombreU nvarchar(50), in primerNom nvarchar (50), in segundoNom nvarchar(50),
 	in apellidoPat nvarchar (50), in apellidoMat nvarchar (50), in correo nvarchar(50), in contra nvarchar(20), in fechaNac date,
-    in sexo enum('Masculino', 'Femenino'), in metodoPago enum('DepositoBancario', 'Tarjeta'), idPat smallint unsigned)
+    in sexo enum('Masculino', 'Femenino'), in metodoPago enum('DepositoBancario', 'Tarjeta'), in idPat smallint unsigned)
     begin
 		update usuario
         set primerNombre = primerNom,
@@ -212,7 +212,8 @@ create procedure puntosMes(in idU smallint unsigned)
         from compra C
         inner join productoCompra PC on C.idCompra = PC.idCompra
         inner join producto P on PC.idProducto = P.idProducto
-        where C.idUsuario = idU and datediff(curdate(), C.fechaCompra) < (mod(datediff(curdate(), fechaRegistro), 30));
+        inner join usuario U on C.idUsuario = U.idUsuario
+        where C.idUsuario = idU and datediff(curdate(), C.fechaCompra) < (mod(datediff(curdate(), U.fechaRegistro), 30));
     end
 $$
 
@@ -228,6 +229,20 @@ create procedure productoComprado(in idC smallint unsigned, in idP smallint unsi
     end
 $$
 
+/*SP para traer todas las compras que ha hecho un usuario*/
+delimiter $$
+create procedure comprasPorUsuario(in idU smallint unsigned)
+	begin
+		select C.idCompra, C.fechaCompra, P.idProducto, P.nombreProducto, P.costo, P.puntaje, P.descripcion, P.direccionFoto, count(idProducto) as cantidad
+        from compra C
+        inner join productoCompra PC on C.idCompra = PC.idCompra
+        inner join producto P on P.idProducto = PC.idProducto
+        where C.idUsuario = idU
+        group by P.idProducto, C.idCompra
+        order by C.idCompra, C.fechaCompra desc;
+    end
+$$
+
 /*SP para traer las compras por mes*/ /*Hay que traer los descuentos aparte, ver tabla DESCUENTO*/
 delimiter $$
 create procedure comprasPorMes(in idU smallint unsigned, in fechaReporte date)
@@ -238,7 +253,7 @@ create procedure comprasPorMes(in idU smallint unsigned, in fechaReporte date)
         inner join producto P on P.idProducto = PC.idProducto
         where C.idUsuario = idU and fechaCompra.year = fechaReporte.year and fechaCompra.month = fechaReporte.month
         group by P.idProducto, C.idCompra
-        order by C.idCompra, C.fechaCompra;
+        order by C.idCompra, C.fechaCompra desc;
     end
 $$
 
@@ -252,7 +267,7 @@ create procedure comprasRangoFechas(in idU smallint unsigned, in fechaInicio dat
         inner join producto P on P.idProducto = PC.idProducto
         where C.idUsuario = idU and fechaCompra between fechaInicio and fechaFinal
         group by P.idProducto, C.idCompra
-        order by C.idCompra, C.fechaCompra;
+        order by C.idCompra, C.fechaCompra desc;
     end
 $$
 
