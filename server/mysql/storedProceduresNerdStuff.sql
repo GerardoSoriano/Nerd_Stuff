@@ -83,15 +83,16 @@ create procedure diasRestantes(in idU smallint unsigned)
     end
 $$
 
+
 /*TABLA DOMICILIO_ENTREGA*/
 
 /*SP para agregar un domicilio*/
 delimiter $$
 create procedure agregarDomicilio(in tituloDom nvarchar(50), in nombreCalle nvarchar(255), in numeroDom nvarchar(10),
-	in nombreColonia nvarchar(255), in nombreCiudad nvarchar(255), in nombreEstado nvarchar(50), in nombrePais nvarchar(50), in idU smallint unsigned)
+	in nombreColonia nvarchar(255), in nombreCiudad nvarchar(255), in nombreEstado nvarchar(50), in codigoP smallint unsigned, in nombrePais nvarchar(50), in idU smallint unsigned)
 	begin
-		insert into domicilioEntrega(tituloDomicilio, calle, numeroDomicilio, colonia, ciudad, estado, pais, idUsuario)
-        values (tituloDom , nombreCalle, numeroDom, nombreColonia, nombreCiudad, nombreEstado, nombrePais, idU);
+		insert into domicilioEntrega(tituloDomicilio, calle, numeroDomicilio, colonia, ciudad, estado, codigoPostal, pais, idUsuario)
+        values (tituloDom , nombreCalle, numeroDom, nombreColonia, nombreCiudad, nombreEstado, codigoP, nombrePais, idU);
     end
 $$
 
@@ -109,7 +110,7 @@ $$
 delimiter $$
 create procedure obtenerDomicilio(in idD smallint unsigned, in idU smallint unsigned)
 	begin
-		select tituloDomicilio, concat(calle, ' ', numeroDomicilio, ', ', colonia, ', ', ciudad, ', ', estado, ', ', pais) as domicilio
+		select tituloDomicilio, concat(calle, ' ', numeroDomicilio, ', ', colonia, ', ', ciudad, ', ', estado, ', ', codigoPosta, ', ', pais) as domicilio
         from domicilioEntrega
         where idDomicilio = idD and idUsuario = idU;
 	end
@@ -118,7 +119,7 @@ $$
 /*SP para modificar un domicilio*/
 delimiter $$
 create procedure modificarDomicilio(in idD smallint unsigned, in tituloDom nvarchar(50), in nombreCalle nvarchar(255), in numeroDom nvarchar(10),
-	in nombreColonia nvarchar(255), in nombreCiudad nvarchar(255), in nombreEstado nvarchar(50), in nombrePais nvarchar(50), in idU smallint unsigned)
+	in nombreColonia nvarchar(255), in nombreCiudad nvarchar(255), in nombreEstado nvarchar(50), in codigoP smallint unsigned, in nombrePais nvarchar(50), in idU smallint unsigned)
     begin
 		update domicilioEntrega
 		set tituloDomicilio = tituloDom,
@@ -127,6 +128,7 @@ create procedure modificarDomicilio(in idD smallint unsigned, in tituloDom nvarc
 			colonia = nombreColonia,
 			ciudad = nombreCiudad,
             estado = nombreEstado,
+            codigoPostal = codigoP,
 			pais = nombrePais
 		where idDomicilio = idD and idUsuario = idU;
     end
