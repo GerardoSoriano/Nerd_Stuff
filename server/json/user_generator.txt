@@ -15,7 +15,7 @@
       if(this.index > 3){
         return tags.integer(4,20);
       } else {
-        return "";
+        return this.index + 1;
       }
     },
     formaPago: '{{integer(1, 2)}}',

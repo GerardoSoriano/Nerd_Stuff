@@ -10,7 +10,7 @@
     "contrasena": "Travis",
     "fechaNacimiento": "1966-11-19T06:44:59 +06:00",
     "genero": 2,
-    "idPatrocinador": "",
+    "idPatrocinador": "1",
     "formaPago": 2,
     "fechaRegistro": "2016-09-24T04:01:20 +05:00"
   },
@@ -25,7 +25,7 @@
     "contrasena": "Thornton",
     "fechaNacimiento": "1992-10-02T05:36:34 +05:00",
     "genero": 2,
-    "idPatrocinador": "",
+    "idPatrocinador": "2",
     "formaPago": 2,
     "fechaRegistro": "2017-01-13T07:35:45 +06:00"
   },
