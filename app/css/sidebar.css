@@ -117,23 +117,41 @@
 }
 
 @media(min-width:768px) {
+    
     .sidebar-nav li{
-        font-size: 16px;
+        font-size: 24px;
         margin: 6px;
+        margin-left: 0px;
     }
 
     .sidebar-nav li {
-        text-indent: 20px;
+        text-indent: 12px;
         line-height: 40px;
     }
 
     .sidebar-nav li span {
+        display: none;
+    }
+
+/* Toggled */
+    .toggled .sidebar-nav li span {
         display: inline;
     }
 
+    .toggled .sidebar-nav li{
+        font-size: 16px;
+        margin: 6px;
+    }
+    
+    .toggled .sidebar-nav li {
+        text-indent: 20px;
+        line-height: 40px;
+    }
+
+/* Toggled */
 
     #wrapper {
-        padding-left: 0;
+        padding-left: var(--sidebar-sm);;
     }
 
     #wrapper.toggled {
@@ -141,7 +159,7 @@
     }
 
     #sidebar-wrapper {
-        width: 0;
+        width: var(--sidebar-sm);;
     }
 
     #wrapper.toggled #sidebar-wrapper {
