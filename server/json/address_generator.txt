@@ -1,0 +1,17 @@
+[
+  '{{repeat(30)}}',
+  {
+    index: '{{index()}}',
+    tituloDomicilio: function (tags) {
+      var title = ['Casa', 'Oficina', 'Amigo', 'Familiar', 'Bodega'];
+      return title[tags.integer(0, title.length - 1)];
+    },
+    calle: '{{street()}}',
+    numeroDomicilio: '{{integer(100, 999)}}',
+    colonia: '{{street()}}',
+    ciudad: '{{city()}}',
+    estado: '{{state()}}',
+    pais: '{{country()}}',
+    idUsuario: '{{integer(1,20)}}'
+  }
+]
