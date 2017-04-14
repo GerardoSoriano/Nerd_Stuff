@@ -1,0 +1,18 @@
+[
+  '{{repeat(20)}}',
+  {
+    index: '{{index()}}',
+    nombreUsuario: '{{firstName() + integer(20, 40)}}',
+    primerNombre: '{{firstName()}}',
+    segundoNombre: '{{firstName()}}',
+    apellidoPaterno: '{{surname()}}',
+    apellidoMaterno: '{{surname()}}',
+    email: '{{email()}}',
+    contrasena: '{{firstName()}}',
+    fechaNacimiento: '{{date(new Date(1960, 0, 1), new Date(1999, 0, 0), "YYYY-MM-ddThh:mm:ss Z")}}',
+    genero: '{{integer(1, 2)}}',
+    formaPago: '{{integer(1, 2)}}',
+    fechaRegistro: '{{date(new Date(2016, 0, 1), new Date(), "YYYY-MM-ddThh:mm:ss Z")}}'
+  }
+]
+
