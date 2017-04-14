@@ -31,6 +31,7 @@ numeroDomicilio nvarchar(10) not null,
 colonia nvarchar(255) not null,
 ciudad nvarchar(255) not null,
 estado nvarchar(50) not null,
+codigoPostal smallint unsigned not null,
 pais nvarchar(50) not null,
 idUsuario smallint unsigned not null,
 primary key(idDomicilio),
@@ -87,4 +88,13 @@ foreign key(idUsuario) references usuario(idUsuario),
 foreign key(idProducto) references producto(idProducto)
 );
 
-
+create table tarjetacredito(
+idTarjeta smallint unsigned not null auto_increment,
+tipoTarjeta enum('Visa', 'Master Card', 'American Express') not null,
+numeroTarjeta smallint unsigned not null,
+fechaVencimiento date not null,
+numeroSeguridad smallint unsigned not null,
+idUsuario smallint unsigned not null,
+primary key(idTarjeta),
+foreign key(idUsuario) references usuario(idUsuario)
+)
