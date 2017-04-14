@@ -12,6 +12,10 @@ body {
     padding: 1rem;
 }
 
+.brand {
+    font-size: 36px;
+}
+
 .iwt{
     display:block;
 }
@@ -39,6 +43,10 @@ body {
 
 .border-white {    
     border-bottom: 1px solid #D9DEE4;
+}
+
+.border-dark {    
+    border-bottom: 1px solid #1a1b1c;
 }
 
 /* COLORES */
