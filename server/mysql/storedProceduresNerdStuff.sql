@@ -316,6 +316,45 @@ create procedure ultimasCompras(in idU smallint unsigned)
 $$
 
 
+/*TABLA TARJETA*/
 
+/*SP para agregar una tarjera*/
+delimiter $$
+create procedure agregarTarjeta(in tipoT enum('Visa', 'Master Card', 'American Express'), in numeroT smallint unsigned, in fechaV date, in numeroSeg smallint unsigned, in idU smallint unsigned)
+	begin
+		insert into tarjetacredito(tipoTarjeta, numeroTarjeta, fechaVencimiento, numeroSeguridad, idUsuario)
+        values(tipoT, numeroT, fechaV, numeroSeg, idU);
+	end
+$$
 
+/*SP para modificar una tarjeta*/
+delimiter $$
+create procedure modificarTarjeta(in tipoT enum('Visa', 'Master Card', 'American Express'), in numeroT smallint unsigned, in fechaV date, in numeroSeg smallint unsigned, in idU smallint unsigned)
+	begin
+		update tarjetacredito
+        set tipoTarjeta = tipoT,
+			numeroTarjeta = numeroT,
+            fechaVencimiento = fechaV,
+            numeroSeguridad = numeroSeg
+		where idUsuario = idU;
+	end
+$$
 
+/*SP para eliminar una tarjeta*/
+delimiter $$
+create procedure eliminarTarjeta(in idT smallint unsigned, in idU smallint unsigned)
+	begin
+		delete from tarjetacredito
+        where idTarjeta = idT and idUsuario = idU;
+    end
+$$
+
+/*SP para mostrar la información de las tarjetas de un usuario*/
+delimiter $$
+create procedure mostrarTarjetas(in idU smallint unsigned)
+	begin
+		select idTarjeta, numeroTarjeta, concat(year(fechaVencimiento), '-', month(fechaVencimiento)) as vigencia, numeroSeguridad
+        from tarjetacredito
+        where idUsuario = idU;
+	end
+$$
