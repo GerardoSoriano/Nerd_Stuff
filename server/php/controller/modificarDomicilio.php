@@ -12,6 +12,8 @@ $domicilioEntrega->setCalle($obj->calle);
 $domicilioEntrega->setNumeroDomicilio($obj->numeroDomicilio);
 $domicilioEntrega->setColonia($obj->colonia);
 $domicilioEntrega->setCiudad($obj->ciudad);
+$domicilioEntrega->setEstado($obj->estado);
+$domicilioEntrega->setCodigoPostal($obj->codigoPostal);
 $domicilioEntrega->setPais($obj->pais);
 $domicilioEntrega->setIdUsuario($obj->idUsuario);
 

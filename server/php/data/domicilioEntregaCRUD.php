@@ -11,14 +11,16 @@ class DomicilioEntregaMetodos
     $pdo = new Connection();
     $conn = $pdo->getConnection();
     try {
-      $stm = $conn->prepare('call agregarDomicilio(?,?,?,?,?,?,?)');
+      $stm = $conn->prepare('call agregarDomicilio(?,?,?,?,?,?,?,?,?)');
       $stm->bindParam(1,$domicilioEntrega->getTituloDomicilio());
       $stm->bindParam(2,$domicilioEntrega->getCalle());
       $stm->bindParam(3,$domicilioEntrega->getNumeroDomicilio());
       $stm->bindParam(4,$domicilioEntrega->getColonia());
       $stm->bindParam(5,$domicilioEntrega->getCiudad());
-      $stm->bindParam(6,$domicilioEntrega->getPais());
-      $stm->bindParam(7,$domicilioEntrega->getIdUsuario());
+      $stm->bindParam(6,$domicilioEntrega->getEstado());
+      $stm->bindParam(7,$domicilioEntrega->getCodigoPostal());
+      $stm->bindParam(8,$domicilioEntrega->getPais());
+      $stm->bindParam(9,$domicilioEntrega->getIdUsuario());
       $result = $stm->execute();
       return $result;
     } catch (PDOException $e) {
@@ -65,15 +67,17 @@ class DomicilioEntregaMetodos
     $pdo = new Connection();
     $conn = $pdo->getConnection();
     try {
-      $stm = $conn->prepare('call modificarDomicilio(?,?,?,?,?,?,?,?)');
+      $stm = $conn->prepare('call modificarDomicilio(?,?,?,?,?,?,?,?,?,?)');
       $stm->bindParam(1,$domicilioEntrega->getIdDomicilio());
       $stm->bindParam(2,$domicilioEntrega->getTituloDomicilio());
       $stm->bindParam(3,$domicilioEntrega->getCalle());
       $stm->bindParam(4,$domicilioEntrega->getNumeroDomicilio());
       $stm->bindParam(5,$domicilioEntrega->getColonia());
       $stm->bindParam(6,$domicilioEntrega->getCiudad());
-      $stm->bindParam(7,$domicilioEntrega->getPais());
-      $stm->bindParam(8,$domicilioEntrega->getIdUsuario());
+      $stm->bindParam(7,$domicilioEntrega->getEstado());
+      $stm->bindParam(8,$domicilioEntrega->getCodigoPostal());
+      $stm->bindParam(9,$domicilioEntrega->getPais());
+      $stm->bindParam(10,$domicilioEntrega->getIdUsuario());
       $result = $stm->execute();
       return $result;
     } catch (PDOException $e) {

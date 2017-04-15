@@ -8,7 +8,7 @@ $obj = json_decode($json);
 $producto = new Producto();
 $producto->setIdCategoria($obj->idCategoria);
 
-$pm = new ProductoMetodos;
+$pm = new ProductoMetodos();
 $json = $pm->ProductosPorCategoria($producto);
 print_r($json);
  ?>

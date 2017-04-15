@@ -10,6 +10,8 @@ class DomicilioEntrega
   private $numeroDomicilio;
   private $colonia;
   private $ciudad;
+  private $estado;
+  private $codigoPostal;
   private $pais;
   private $idUsuario;
 
@@ -21,6 +23,8 @@ class DomicilioEntrega
     $numeroDomicilio = 0;
     $colonia = '';
     $ciudad = '';
+    $estado = '';
+    $codigoPostal = 0;
     $pais = '';
     $idUsuario = 0;
   }
@@ -42,6 +46,12 @@ class DomicilioEntrega
 
   function getCiudad(){ return $this->ciudad; }
   function setCiudad($ciudad){ $this->ciudad = $ciudad;}
+
+  function getEstado(){ return $this->estado; }
+  function setEstado($estado){ $this->estado = $estado;}
+
+  function getCodigoPostal(){ return $this->codigoPostal; }
+  function setCodigoPostal($codigoPostal){ $this->codigoPostal = $codigoPostal; }
 
   function getPais(){ return $this->pais; }
   function setPais($pais){ $this->pais = $pais;}
