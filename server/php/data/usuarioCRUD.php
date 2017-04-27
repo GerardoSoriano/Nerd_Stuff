@@ -7,6 +7,23 @@ class UsuarioMetodos
 
   function __construct(){}
 
+  function LoginUsuario($usuario){
+    $pdo = new Connection();
+    $conn = $pdo->getConnection();
+    try {
+      $stm = $conn->prepare("call login(?,?)");
+      $stm->bindParam(1,$usuario->getEmail());
+      $stm->bindParam(2,$usuario->getContrasena());
+      $stm->execute();
+      $result = $stm->fetchAll();
+      return json_encode($result);
+    } catch (PDOException $e) {
+      die($e->getMessage());
+    } finally {
+      $conn = null;
+      $pdo->closeConnection();
+    }
+  }
   function AgregarUsuario($usuario){
     $pdo = new Connection();
     $conn = $pdo->getConnection();
@@ -23,6 +40,25 @@ class UsuarioMetodos
       $stm->bindParam(9,$usuario->getGenero());
       $stm->bindParam(10,$usuario->getFormaPago());
       $stm->bindParam(11,$usuario->getIdPatrocinador());
+      $result = $stm->execute();
+      return $result;
+    } catch (PDOException $e) {
+      die($e->getMessage());
+    } finally {
+      $conn = null;
+      $pdo->closeConnection();
+    }
+  }
+  function RegistrarUsuario($usuario){
+    $pdo = new Connection();
+    $conn = $pdo->getConnection();
+    try {
+      $stm = $conn->prepare("call agregarUsuario(?,?,'',?,'',?,?,'','','',null)");
+      $stm->bindParam(1,$usuario->getNombreUsuario());
+      $stm->bindParam(2,$usuario->getPrimerNombre());
+      $stm->bindParam(3,$usuario->getApellidoPaterno());
+      $stm->bindParam(4,$usuario->getEmail());
+      $stm->bindParam(5,$usuario->getContrasena());
       $result = $stm->execute();
       return $result;
     } catch (PDOException $e) {

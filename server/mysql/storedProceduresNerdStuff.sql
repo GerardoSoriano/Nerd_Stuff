@@ -83,6 +83,16 @@ create procedure diasRestantes(in idU smallint unsigned)
     end
 $$
 
+/*SP para hacer login con el email o el nombre de usuario y la contraseña*/
+delimiter $$
+create procedure login(in _usuario nvarchar(50), in _contrasena nvarchar(20))
+	begin
+		select idUsuario
+        from usuario
+        where nombreUsuario = _usuario or email = _usuario and contrasena = _contrasena;
+	end
+$$
+
 
 /*TABLA DOMICILIO_ENTREGA*/
 

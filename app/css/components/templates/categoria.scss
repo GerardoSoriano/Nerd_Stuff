@@ -1,0 +1,193 @@
+div.categoria{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 18px 0;
+  >*{
+    margin-bottom: 18px;
+  }
+  >div.name{
+    width: 75%;
+    height: 40px;
+    background-color: $secondColor;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    >h1{
+      font: bold 25px "Century Gothic";
+      margin: 0;
+      text-transform: uppercase;
+    }
+  }
+  >div.offers{
+    width: 100%;
+    height: 300px;
+    background-color: $secondColor;
+    box-sizing: border-box;
+    padding: 20px 10px;
+    >button{
+      visibility: hidden;
+      width: 60px;
+      height: 60px;
+      padding: 0;
+      margin: 0;
+      border: 0;
+      position: absolute;
+      top: 35%;
+      z-index: 1;
+      &:hover:after{
+        opacity: 0.8;
+      }
+      &::after{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        visibility: visible;
+        box-sizing: border-box;
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        border: 0;
+        background-color: $secondColor;
+        opacity: 0.5;
+        font: 40px FontAwesome;
+      }
+      &.slick-prev{
+        left: 30px;
+        &::after{
+          content: '\f0d9';
+          padding-right: 5px;
+        }
+      }
+      &.slick-next{
+        right: 30px;
+        &::after{
+          content: '\f0da';
+          padding-left: 5px;
+        }
+      }
+    }
+    >div.slick-list{
+      height: 100%;
+      >div.slick-track{
+        height: 100%;
+        >div.offer{
+          height: 100%;
+          background: $mainGradient;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          color: white;
+          font: bold 25px "Century Gothic";
+        }
+      }
+    }
+  }
+  >div.section{
+    width: $small;
+    min-width: $small;
+    height: 300px;
+    border-top: 2px solid $firstColor;
+    margin: 10px 0 18px;
+    box-sizing: border-box;
+    display: inline-flex;
+    flex-wrap: wrap;
+    @include fiveColumn{
+      max-width: $xLarge;
+      min-width: $xLarge;
+    };
+    @include fourColumn{
+      max-width: $large;
+      min-width: $large;
+    };
+    @include threeColumn{
+      max-width: $medium;
+      min-width: $medium;
+    };
+    @include twoColumn{
+      max-width: $small;
+      min-width: $small;
+    };
+    @include oneColumn{
+      max-width: $small;
+      min-width: $small;
+    };
+    >label{
+      background-color: white;
+      font: bold 25px "Century Gothic";
+      margin: 0;
+      transform: translateY(-60%);
+      padding-right: 10px;
+      position: absolute;
+    }
+    >div.products{
+      width: 100%;
+      height: 95%;
+      align-self: flex-end;
+      overflow: overlay;
+      padding: 0 50px;
+      >button{
+        visibility: hidden;
+        width: 50px;
+        height: 100%;
+        padding: 0;
+        margin: 0;
+        border: 0;
+        position: absolute;
+        top: 0;
+        z-index: 1;
+        &:hover:after{
+          opacity: 0.8;
+        }
+        &::after{
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          visibility: visible;
+          box-sizing: border-box;
+          width: 100%;
+          height: 100%;
+          border: 0;
+          background-color: grey;
+          opacity: 0.5;
+          font: 40px FontAwesome;
+        }
+        &.slick-prev{
+          left: 0;
+          top: -15px;
+          &::after{
+            content: '\f0d9';
+            padding-right: 5px;
+          }
+        }
+        &.slick-next{
+          right: 0;
+          top: -15px;
+          &::after{
+            content: '\f0da';
+            padding-left: 5px;
+          }
+        }
+      }
+      >div.slick-list{
+        height: 100%;
+        >div.slick-track{
+          height: 100%;
+          >div.product{
+            height: 100%;
+            padding: 10px;
+            box-sizing: border-box;
+            >div.infoCard{
+              background-color: $secondColor;
+              box-sizing: border-box;
+              width: 100%;
+              height: 100%;
+            }
+          }
+        }
+      }
+    }
+  }
+}

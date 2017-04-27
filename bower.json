@@ -1,0 +1,26 @@
+{
+  "name": "app",
+  "description": "",
+  "main": "index.js",
+  "authors": [
+    "gerardosoriano97@gmail.com"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/GerardoSoriano/NS_Design_Backup",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "font-awesome": "^4.7.0",
+    "jquery": "^3.2.1",
+    "bootstrap": "^3.3.7",
+    "slick-carousel": "^1.6.0"
+  },
+  "devDependencies": {
+    "jquery-validation": "^1.16.0"
+  }
+}
