@@ -9,16 +9,16 @@ gulp.task('serve', ['sass'], function() {
         server: "./app"
     });
 
-    gulp.watch("app/scss/**/*.scss", ['sass']);
-    gulp.watch("app/scss/main.scss", ['sass']);
+    gulp.watch("app/office/scss/**/*.scss", ['sass']);
+    gulp.watch("app/office/scss/main.scss", ['sass']);
     gulp.watch("app/*.html").on('change', browserSync.reload);
 });
 
 // Compile sass into CSS & auto-inject into browsers
 gulp.task('sass', function() {
-    return gulp.src("app/scss/main.scss")
+    return gulp.src("app/office/scss/main.scss")
         .pipe(sass())
-        .pipe(gulp.dest("app/css"))
+        .pipe(gulp.dest("app/office/css"))
         .pipe(browserSync.stream());
 });
 
