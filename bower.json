@@ -18,7 +18,10 @@
     "font-awesome": "^4.7.0",
     "jquery": "^3.2.1",
     "bootstrap": "^3.3.7",
-    "slick-carousel": "^1.6.0"
+    "slick-carousel": "^1.6.0",
+    "chart.js": "^2.5.0",
+    "angular-route": "^1.6.4",
+    "angular": "^1.6.4"
   },
   "devDependencies": {
     "jquery-validation": "^1.16.0"
