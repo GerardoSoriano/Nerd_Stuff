@@ -1,0 +1,145 @@
+div.filtro{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 18px 0;
+  >*{
+    margin-bottom: 18px;
+  }
+  >div.name{
+    width: 75%;
+    height: 40px;
+    background-color: $secondColor;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    >h1{
+      font: bold 25px "Century Gothic";
+      margin: 0;
+      text-transform: uppercase;
+    }
+  }
+  >div.receiptContainer{
+    width: $small;
+    min-width: $small;
+    margin: 10px 0 18px;
+    box-sizing: border-box;
+    display: inline-flex;
+    flex-wrap: wrap;
+    padding-top: 18px;
+    border-top: 1px solid $firstColor;
+    @include fiveColumn{
+      max-width: $xLarge;
+      min-width: $xLarge;
+    };
+    @include fourColumn{
+      max-width: $large;
+      min-width: $large;
+    };
+    @include threeColumn{
+      max-width: $medium;
+      min-width: $medium;
+    };
+    @include twoColumn{
+      max-width: $small;
+      min-width: $small;
+    };
+    @include oneColumn{
+      max-width: $small;
+      min-width: $small;
+    };
+    >*{
+      margin-bottom: 18px;
+    }
+    >div.receipt{
+      width: 100%;
+      height: 300px;
+      padding: 10px;
+      box-sizing: border-box;
+      border-radius: 15px;
+      background-color: $secondColor;
+      display: flex;
+      flex-wrap: wrap;
+      align-content: flex-start;
+      align-items: center;
+      position: relative;
+      >h1.date{
+        font: 20px "Century Gothic";
+        margin: 0 0 18px;
+        width: 100%;
+        >span{
+          font-weight: bold;
+        }
+      }
+      >table.listOfProducts{
+        width: 75%;
+        box-sizing: border-box;
+        border-collapse: collapse;
+        >thead{
+          >tr{
+            th{
+              padding: 7px 5px;
+              border-bottom: 1px solid $firstColor;
+              &:first-child{
+                width: 75%;
+                text-align: left;
+              }
+              &:last-child{
+                width: 25%;
+                border-left: 1px solid $firstColor;
+                text-align: right;
+              }
+            }
+          }
+        }
+        >tbody{
+          >tr{
+            >td{
+              padding: 7px 5px;
+              &:first-child{
+                width: 75%;
+                text-align: left;
+              }
+              &:last-child{
+                width: 25%;
+                border-left: 1px solid $firstColor;
+                text-align: right;
+              }
+            }
+          }
+        }
+      }
+      >h1.points{
+        width: 25%;
+        font: 20px "Century Gothic";
+        margin: 0;
+        text-align: center;
+        >span{
+          font-weight: bold;
+          color: $firstColor;
+        }
+      }
+      >h1.total{
+        width: 100%;
+        font: 20px "Century Gothic";
+        margin: 18px 0 0;
+        text-align: right;
+        >span{
+          font-weight: bold;
+        }
+      }
+      >i.fa{
+        font-size: 60px;
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        opacity: 0.5;
+        &:hover{
+          opacity: 0.8;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,182 @@
+div.carrito{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 18px 0;
+  >div.section{
+    width: $small;
+    min-width: $small;
+    border-top: 2px solid $firstColor;
+    margin: 10px 0 18px;
+    box-sizing: border-box;
+    display: inline-flex;
+    flex-wrap: wrap;
+    @include fiveColumn{
+      max-width: $xLarge;
+      min-width: $xLarge;
+    };
+    @include fourColumn{
+      max-width: $large;
+      min-width: $large;
+    };
+    @include threeColumn{
+      max-width: $medium;
+      min-width: $medium;
+    };
+    @include twoColumn{
+      max-width: $small;
+      min-width: $small;
+    };
+    @include oneColumn{
+      max-width: $small;
+      min-width: $small;
+    };
+    >label{
+      background-color: white;
+      font: bold 25px "Century Gothic";
+      margin: 0;
+      transform: translateY(-60%);
+      padding-right: 10px;
+      position: absolute;
+    }
+    >div.category{
+      width: 100%;
+      display: flex;
+      margin: 18px 0 0;
+      padding: 0 0 18px;
+      border-bottom: 2px solid $firstColor;
+      >div.card{
+        width: 100%;
+        border-radius: 15px;
+        background-color: $thirdColor;
+        overflow: hidden;
+        padding: 10px;
+        box-sizing: border-box;
+        display: flex;
+        flex-wrap: wrap;
+        >label{
+          font: bold 20px "Century Gothic";
+          margin: 0;
+        }
+        >div.products{
+          width: 100%;
+          height: 300px;
+          align-self: flex-end;
+          overflow: overlay;
+          padding: 0 50px;
+          >button{
+            visibility: hidden;
+            width: 50px;
+            height: 100%;
+            padding: 0;
+            margin: 0;
+            border: 0;
+            position: absolute;
+            top: 0;
+            z-index: 1;
+            &:hover:after{
+              opacity: 0.8;
+            }
+            &::after{
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              visibility: visible;
+              box-sizing: border-box;
+              width: 100%;
+              height: 100%;
+              border: 0;
+              background-color: grey;
+              opacity: 0.5;
+              font: 40px FontAwesome;
+            }
+            &.slick-prev{
+              left: 0;
+              top: -15px;
+              &::after{
+                content: '\f0d9';
+                padding-right: 5px;
+              }
+            }
+            &.slick-next{
+              right: 0;
+              top: -15px;
+              &::after{
+                content: '\f0da';
+                padding-left: 5px;
+              }
+            }
+          }
+          >div.slick-list{
+            height: 100%;
+            >div.slick-track{
+              height: 100%;
+              >div.product{
+                height: 100%;
+                padding: 10px;
+                box-sizing: border-box;
+                position: relative;
+                >div.sphere{
+                  width: 20px;
+                  height: 20px;
+                  position: absolute;
+                  top: 0;
+                  right: 35px;
+                  background-color: $secondColor;
+                  border: 1px solid $firstColor;
+                  border-radius: 50%;
+                }
+                >div.infoCard{
+                  background-color: $secondColor;
+                  box-sizing: border-box;
+                  width: 100%;
+                  height: 100%;
+                  border: 1px solid $firstColor;
+                  border-radius: 15px;
+                  display: flex;
+                  flex-wrap: wrap;
+                  overflow: hidden;
+                  align-content: flex-start;
+                  >div.productImage{
+                    width: 100%;
+                    height: 50%;
+                    text-align: center;
+                    overflow: hidden;
+                    >img{
+                      width: auto;
+                      height: auto;
+                      max-width: 100%;
+                    }
+                  }
+                  >h1{
+                    font: bold 15px "Century Gothic";
+                    margin: 0;
+                    -webkit-margin-before: 0;
+                    -webkit-margin-after: 0;
+                    -webkit-margin-start: 0;
+                    -webkit-margin-end: 0;
+                    width: 100%;
+                    margin-bottom: 5px;
+                  }
+                  >p{
+                    width: 100%;
+                    font: 13px "Century Gothic";
+                    margin: 0;
+                  }
+                  >h5{
+                    position: absolute;
+                    right: 0;
+                    bottom: 0;
+                    margin: 0 20px 20px 0;
+                    font: 13px "Century Gothic";
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

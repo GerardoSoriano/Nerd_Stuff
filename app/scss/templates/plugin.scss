@@ -1,0 +1,72 @@
+div.plugin{
+  width: 100%;
+  padding: 18px 0;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  >div.section{
+    width: $small;
+    min-width: $small;
+    border-top: 2px solid $firstColor;
+    margin: 10px 0 18px;
+    box-sizing: border-box;
+    display: inline-flex;
+    flex-wrap: wrap;
+    @include fiveColumn{
+      max-width: $xLarge;
+      min-width: $xLarge;
+    };
+    @include fourColumn{
+      max-width: $large;
+      min-width: $large;
+    };
+    @include threeColumn{
+      max-width: $medium;
+      min-width: $medium;
+    };
+    @include twoColumn{
+      max-width: $small;
+      min-width: $small;
+    };
+    @include oneColumn{
+      max-width: $small;
+      min-width: $small;
+    };
+    >label{
+      background-color: white;
+      font: bold 25px "Century Gothic";
+      margin: 0;
+      transform: translateY(-60%);
+      padding-right: 10px;
+      position: absolute;
+    }
+    >div.card{
+      margin-top: 18px;
+      width: 100%;
+      align-self: flex-end;
+      display: flex;
+      flex-wrap: wrap;
+      position: relative;
+      >button[name="add"]{
+        margin-top: 10px;
+        border: 0;
+        border-radius: 5px;
+        background-color: $firstColor;
+        font: bold 20px "Century Gothic";
+        color: white;
+        padding: 5px 15px;
+        margin-bottom: 18px;
+      }
+      >div.tree{
+        background: $mainGradient;
+        width: 100%;
+        height: 500px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font: bold 30px "Century Gothic";
+        color: white;
+      }
+    }
+  }
+}
