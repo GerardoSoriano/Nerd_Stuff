@@ -339,10 +339,18 @@ div.dashboard {
     div.dashboard > div.blocks > div[class^="block"] {
       width: 300px;
       height: 150px;
+      overflow: hidden;
       margin-bottom: 18px;
-      background: radial-gradient(circle, #171e6e, #0c0f38); }
+      background-color: #f2f2f2; }
+      div.dashboard > div.blocks > div[class^="block"] > canvas.graphics {
+        width: 600px;
+        height: 600px; }
     div.dashboard > div.blocks > div[class$="_2"] {
-      width: 618px; }
+      width: 618px;
+      height: 150px; }
+    div.dashboard > div.blocks > div[class$="_4"] {
+      width: 1254px;
+      height: 600px; }
 
 div.cuenta {
   width: 100%;
