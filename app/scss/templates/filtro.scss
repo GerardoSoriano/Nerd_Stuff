@@ -1,4 +1,4 @@
-div.filtro{
+_Century_Gothic_div.filtro{
   width: 100%;
   display: flex;
   justify-content: center;
@@ -16,7 +16,7 @@ div.filtro{
     justify-content: center;
     align-items: center;
     >h1{
-      font: bold 25px "Century Gothic";
+      font: bold 25px _Century_Gothic_;
       margin: 0;
       text-transform: uppercase;
     }
@@ -66,7 +66,7 @@ div.filtro{
       align-items: center;
       position: relative;
       >h1.date{
-        font: 20px "Century Gothic";
+        font: 20px _Century_Gothic_;
         margin: 0 0 18px;
         width: 100%;
         >span{
@@ -113,7 +113,7 @@ div.filtro{
       }
       >h1.points{
         width: 25%;
-        font: 20px "Century Gothic";
+        font: 20px _Century_Gothic_;
         margin: 0;
         text-align: center;
         >span{
@@ -123,7 +123,7 @@ div.filtro{
       }
       >h1.total{
         width: 100%;
-        font: 20px "Century Gothic";
+        font: 20px _Century_Gothic_;
         margin: 18px 0 0;
         text-align: right;
         >span{

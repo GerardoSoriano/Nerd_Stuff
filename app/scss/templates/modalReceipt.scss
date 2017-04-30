@@ -12,7 +12,7 @@ div.modalReceipt{
   align-content: flex-start;
   overflow: hidden;
   >h1.date{
-    font: 20px "Century Gothic";
+    font: 20px _Century_Gothic_;
     margin: 0 0 18px;
     width: 100%;
     >span{
@@ -93,7 +93,7 @@ div.modalReceipt{
         display: flex;
         flex-wrap: wrap;
         >h1,>h2,>h3{
-          font-family: "Century Gothic";
+          font-family: _Century_Gothic_;
           margin: 0;
           width: 100%;
         }
@@ -101,7 +101,7 @@ div.modalReceipt{
       >div.numbers{
         text-align: center;
         >h1{
-          font: 18px "Century Gothic";
+          font: 18px _Century_Gothic_;
           margin: 0;
           >span.price, >span.points{
             font-weight: bold;
@@ -122,7 +122,7 @@ div.modalReceipt{
     bottom: 10px;
     right: 0;
     >h1.points{
-      font: 10px "Century Gothic";
+      font: 10px _Century_Gothic_;
       margin: 0;
       >span{
         font-size: 25px;
@@ -130,7 +130,7 @@ div.modalReceipt{
       }
     }
     >h1.finalPrice{
-      font: 20px "Century Gothic";
+      font: 20px _Century_Gothic_;
       margin: 0;
       >span{
         font-size: 25px;
@@ -142,7 +142,7 @@ div.modalReceipt{
       border: 0;
       border-radius: 5px;
       background-color: $firstColor;
-      font: bold 20px "Century Gothic";
+      font: bold 20px _Century_Gothic_;
       color: white;
       padding: 5px 15px;
     }

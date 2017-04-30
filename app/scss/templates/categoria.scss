@@ -16,7 +16,7 @@ div.categoria{
     justify-content: center;
     align-items: center;
     >h1{
-      font: bold 25px "Century Gothic";
+      font: bold 25px _Century_Gothic_;
       margin: 0;
       text-transform: uppercase;
     }
@@ -80,7 +80,7 @@ div.categoria{
           justify-content: center;
           align-items: center;
           color: white;
-          font: bold 25px "Century Gothic";
+          font: bold 25px _Century_Gothic_;
         }
       }
     }
@@ -116,7 +116,7 @@ div.categoria{
     };
     >label{
       background-color: white;
-      font: bold 25px "Century Gothic";
+      font: bold 25px _Century_Gothic_;
       margin: 0;
       transform: translateY(-60%);
       padding-right: 10px;

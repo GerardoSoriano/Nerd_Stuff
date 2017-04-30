@@ -27,7 +27,7 @@ div[class^="menu"]{
     }
     >h1{
       color: $secondColor;
-      font: bold 39px "Impact";
+      font: bold 39px _Impact_;
       text-transform: uppercase;
       display: inline-block;
       margin: 0;
@@ -61,7 +61,7 @@ div[class^="menu"]{
     }
     >h1{
       color: $secondColor;
-      font: bold 15px "Century Gothic";
+      font: bold 15px _Century_Gothic_;
       display: inline-block;
     }
   }
@@ -69,7 +69,7 @@ div[class^="menu"]{
     list-style: none;
     >li{
       color: $secondColor;
-      font: 15px "Century Gothic";
+      font: 15px _Century_Gothic_;
       margin-bottom: 10px;
       &:nth-child(2)::before{
         content: "*";
@@ -109,7 +109,7 @@ div[class^="menu"]{
       }
     }
     >h1{
-      font: bold 22px "Century Gothic";
+      font: bold 22px _Century_Gothic_;
       margin: 0;
       display: inline-block;
       color: $secondColor;

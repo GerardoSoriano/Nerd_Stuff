@@ -39,7 +39,7 @@ div.formContainer{
       >a{
         flex-grow: 1;
         text-align: center;
-        font: bold 20px "Century Gothic";
+        font: bold 20px _Century_Gothic_;
         color: $fGrey;
         text-decoration: none;
         &:visited,&:hover,&:focus{
@@ -58,7 +58,7 @@ div.formContainer{
       border-radius: 3px;
       outline: 0;
       color: $fGrey;
-      font-family: "Century Gothic";
+      font-family: _Century_Gothic_;
       font-weight: bold;
       box-shadow: inset 0 0 0 $golden;
       &:first-child{
@@ -82,7 +82,7 @@ div.formContainer{
       }
     }
     >span{
-      font-family: "Century Gothic";
+      font-family: _Century_Gothic_;
       font-weight: bold;
       margin: 10px 0 0;
       color: $firstColor;
@@ -91,7 +91,7 @@ div.formContainer{
       }
     }
     >label.error{
-      font: 15px "Century Gothic";
+      font: 15px _Century_Gothic_;
       color: $fGrey;
     }
   }

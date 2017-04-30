@@ -19,7 +19,7 @@ div[class^="header"]{
       margin-right: 10px;
     }
     >h1{
-      font: bold 18px "Century Gothic";
+      font: bold 18px _Century_Gothic_;
       margin: 0;
     }
   }
@@ -43,7 +43,7 @@ div[class^="header"]{
         justify-content: center;
         transform: translate(35px,-10px);
         >h1{
-          font: 13px "Century Gothic";
+          font: 13px _Century_Gothic_;
           color: $firstColor;
         }
       }
@@ -67,7 +67,7 @@ div[class^="header"]{
       }
     }
     >h1{
-      font: 18px "Century Gothic";
+      font: 18px _Century_Gothic_;
       margin: 0;
     }
   }
