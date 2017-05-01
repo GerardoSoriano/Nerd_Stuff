@@ -1,10 +1,10 @@
 @font-face {
   font-family: _Century_Gothic_;
-  src: url("../resources/fonts/CenturyGothic.ttf"); }
+  src: url("../../resources/fonts/CenturyGothic.ttf"); }
 
 @font-face {
   font-family: _Impact_;
-  src: url("../resources/fonts/Impact.ttf"); }
+  src: url("../../resources/fonts/Impact.ttf"); }
 
 body {
   display: flex;
@@ -633,13 +633,13 @@ div.carrito {
         div.carrito > div.section > div.category > div.card > label {
           font: bold 20px _Century_Gothic_;
           margin: 0; }
-        div.carrito > div.section > div.category > div.card > div.products {
+        div.carrito > div.section > div.category > div.card > div.productContainer {
           width: 100%;
           height: 300px;
           align-self: flex-end;
           overflow: overlay;
           padding: 0 50px; }
-          div.carrito > div.section > div.category > div.card > div.products > button {
+          div.carrito > div.section > div.category > div.card > div.productContainer > button {
             visibility: hidden;
             width: 50px;
             height: 100%;
@@ -649,9 +649,9 @@ div.carrito {
             position: absolute;
             top: 0;
             z-index: 1; }
-            div.carrito > div.section > div.category > div.card > div.products > button:hover:after {
+            div.carrito > div.section > div.category > div.card > div.productContainer > button:hover:after {
               opacity: 0.8; }
-            div.carrito > div.section > div.category > div.card > div.products > button::after {
+            div.carrito > div.section > div.category > div.card > div.productContainer > button::after {
               display: flex;
               justify-content: center;
               align-items: center;
@@ -663,28 +663,28 @@ div.carrito {
               background-color: grey;
               opacity: 0.5;
               font: 40px FontAwesome; }
-            div.carrito > div.section > div.category > div.card > div.products > button.slick-prev {
+            div.carrito > div.section > div.category > div.card > div.productContainer > button.slick-prev {
               left: 0;
               top: -15px; }
-              div.carrito > div.section > div.category > div.card > div.products > button.slick-prev::after {
+              div.carrito > div.section > div.category > div.card > div.productContainer > button.slick-prev::after {
                 content: '\f0d9';
                 padding-right: 5px; }
-            div.carrito > div.section > div.category > div.card > div.products > button.slick-next {
+            div.carrito > div.section > div.category > div.card > div.productContainer > button.slick-next {
               right: 0;
               top: -15px; }
-              div.carrito > div.section > div.category > div.card > div.products > button.slick-next::after {
+              div.carrito > div.section > div.category > div.card > div.productContainer > button.slick-next::after {
                 content: '\f0da';
                 padding-left: 5px; }
-          div.carrito > div.section > div.category > div.card > div.products > div.slick-list {
+          div.carrito > div.section > div.category > div.card > div.productContainer > div.slick-list {
             height: 100%; }
-            div.carrito > div.section > div.category > div.card > div.products > div.slick-list > div.slick-track {
+            div.carrito > div.section > div.category > div.card > div.productContainer > div.slick-list > div.slick-track {
               height: 100%; }
-              div.carrito > div.section > div.category > div.card > div.products > div.slick-list > div.slick-track > div.product {
+              div.carrito > div.section > div.category > div.card > div.productContainer > div.slick-list > div.slick-track > div.product {
                 height: 100%;
                 padding: 10px;
                 box-sizing: border-box;
                 position: relative; }
-                div.carrito > div.section > div.category > div.card > div.products > div.slick-list > div.slick-track > div.product > div.sphere {
+                div.carrito > div.section > div.category > div.card > div.productContainer > div.slick-list > div.slick-track > div.product > div.sphere {
                   width: 20px;
                   height: 20px;
                   position: absolute;
@@ -693,7 +693,7 @@ div.carrito {
                   background-color: #c2c8e2;
                   border: 1px solid #0c0f38;
                   border-radius: 50%; }
-                div.carrito > div.section > div.category > div.card > div.products > div.slick-list > div.slick-track > div.product > div.infoCard {
+                div.carrito > div.section > div.category > div.card > div.productContainer > div.slick-list > div.slick-track > div.product > div.infoCard {
                   background-color: #c2c8e2;
                   box-sizing: border-box;
                   width: 100%;
@@ -704,16 +704,16 @@ div.carrito {
                   flex-wrap: wrap;
                   overflow: hidden;
                   align-content: flex-start; }
-                  div.carrito > div.section > div.category > div.card > div.products > div.slick-list > div.slick-track > div.product > div.infoCard > div.productImage {
+                  div.carrito > div.section > div.category > div.card > div.productContainer > div.slick-list > div.slick-track > div.product > div.infoCard > div.productImage {
                     width: 100%;
                     height: 50%;
                     text-align: center;
                     overflow: hidden; }
-                    div.carrito > div.section > div.category > div.card > div.products > div.slick-list > div.slick-track > div.product > div.infoCard > div.productImage > img {
+                    div.carrito > div.section > div.category > div.card > div.productContainer > div.slick-list > div.slick-track > div.product > div.infoCard > div.productImage > img {
                       width: auto;
                       height: auto;
                       max-width: 100%; }
-                  div.carrito > div.section > div.category > div.card > div.products > div.slick-list > div.slick-track > div.product > div.infoCard > h1 {
+                  div.carrito > div.section > div.category > div.card > div.productContainer > div.slick-list > div.slick-track > div.product > div.infoCard > h1 {
                     font: bold 15px _Century_Gothic_;
                     margin: 0;
                     -webkit-margin-before: 0;
@@ -722,11 +722,11 @@ div.carrito {
                     -webkit-margin-end: 0;
                     width: 100%;
                     margin-bottom: 5px; }
-                  div.carrito > div.section > div.category > div.card > div.products > div.slick-list > div.slick-track > div.product > div.infoCard > p {
+                  div.carrito > div.section > div.category > div.card > div.productContainer > div.slick-list > div.slick-track > div.product > div.infoCard > p {
                     width: 100%;
                     font: 13px _Century_Gothic_;
                     margin: 0; }
-                  div.carrito > div.section > div.category > div.card > div.products > div.slick-list > div.slick-track > div.product > div.infoCard > h5 {
+                  div.carrito > div.section > div.category > div.card > div.productContainer > div.slick-list > div.slick-track > div.product > div.infoCard > h5 {
                     position: absolute;
                     right: 0;
                     bottom: 0;

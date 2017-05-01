@@ -13,7 +13,7 @@ $(document).ready(function(){
     slidesToShow: 1,
     adaptiveHeight: true
   });
-  $('div.products').slick({
+  $('div.productContainer').slick({
     slidesToShow: 4,
     slidesToScroll: 1,
     autoplaySpeed: 2000,
