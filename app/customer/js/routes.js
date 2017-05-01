@@ -3,17 +3,17 @@ customerApp.config(['$routeProvider','$locationProvider', function($routeProvide
     $locationProvider.hashPrefix('');
     $routeProvider.
     when('/',{
-        templateUrl: 'templates/main.html',
+        templateUrl: 'customer/templates/main.html',
         controller: "mainCtrl"
     }).
     when('/about',{
-        templateUrl: 'templates/about.html'
+        templateUrl: 'customer/templates/about.html'
     }).
     when('/blog',{
-        templateUrl: 'templates/blog.html'
+        templateUrl: 'customer/templates/blog.html'
     }).
     when('/contact',{
-        templateUrl: 'templates/contact.html'
+        templateUrl: 'customer/templates/contact.html'
     }).
     otherwise({
         redirectTo: '/'             
