@@ -21,7 +21,8 @@ body {
   body > div[class$="-max"] {
     padding-left: 110px; }
   body a {
-    font-family: inherit; }
+    font-family: inherit;
+    color: inherit; }
 
 div.formContainer {
   width: 500px;
@@ -144,7 +145,7 @@ div[class^="menu"] {
     border: 0 solid #c2c8e2;
     border-bottom-width: 3px;
     overflow: hidden;
-    margin: 10px 0;
+    margin: 10px 0 0;
     display: flex;
     align-items: center;
     justify-content: flex-start; }
@@ -167,17 +168,27 @@ div[class^="menu"] {
       font: bold 15px _Century_Gothic_;
       display: inline-block; }
   div[class^="menu"] > ul.sections {
-    list-style: none; }
-    div[class^="menu"] > ul.sections > li {
-      color: #c2c8e2;
-      font: 15px _Century_Gothic_;
-      margin-bottom: 10px; }
-      div[class^="menu"] > ul.sections > li:nth-child(2)::before {
-        content: "*";
-        font-size: 25px;
-        color: yellow;
-        position: absolute;
-        transform: translateX(-15px); }
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 100%; }
+    div[class^="menu"] > ul.sections > a {
+      text-decoration: none; }
+      div[class^="menu"] > ul.sections > a > li {
+        color: #c2c8e2;
+        font: 17px _Century_Gothic_;
+        padding: 10px 10px;
+        width: 100%;
+        box-sizing: border-box;
+        border-bottom: 1px solid #c2c8e2;
+        cursor: pointer; }
+        div[class^="menu"] > ul.sections > a > li.current {
+          border-right: 7px solid #c2c8e2; }
+        div[class^="menu"] > ul.sections > a > li:hover {
+          color: black;
+          background-color: #c2c8e2; }
+        div[class^="menu"] > ul.sections > a > li > i.fa {
+          margin-right: 10px; }
   div[class^="menu"] > div.help {
     position: absolute;
     bottom: 5px;
@@ -191,7 +202,8 @@ div[class^="menu"] {
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    border-radius: 15px; }
+    border-radius: 15px;
+    cursor: pointer; }
     div[class^="menu"] > div.help > div.sphere {
       width: 50px;
       height: 50px;

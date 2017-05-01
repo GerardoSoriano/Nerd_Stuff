@@ -39,7 +39,7 @@ div[class^="menu"]{
     border: 0 solid $secondColor;
     border-bottom-width: 3px;
     overflow: hidden;
-    margin: 10px 0;
+    margin: 10px 0 0;
     display: flex;
     align-items: center;
     justify-content: flex-start;
@@ -67,17 +67,30 @@ div[class^="menu"]{
   }
   >ul.sections{
     list-style: none;
-    >li{
-      color: $secondColor;
-      font: 15px _Century_Gothic_;
-      margin-bottom: 10px;
-      &:nth-child(2)::before{
-        content: "*";
-        font-size: 25px;
-        color: yellow;
-        position: absolute;
-        transform: translateX(-15px);
-      };
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    >a{
+      text-decoration: none;
+      >li{
+        color: $secondColor;
+        font: 17px _Century_Gothic_;
+        padding: 10px 10px;
+        width: 100%;
+        box-sizing: border-box;
+        border-bottom: 1px solid $secondColor;
+        cursor: pointer;
+        &.current{
+          border-right: 7px solid $secondColor;
+        }
+        &:hover{
+          color: black;
+          background-color: $secondColor;
+        }
+        >i.fa{
+          margin-right: 10px;
+        }
+      }
     }
   }
   >div.help{
@@ -94,6 +107,7 @@ div[class^="menu"]{
     justify-content: flex-start;
     align-items: center;
     border-radius: 15px;
+    cursor: pointer;
     >div.sphere{
       width: 50px;
       height: 50px;
