@@ -39,8 +39,15 @@ $(document).ready(function () {
         method: "POST",
         url: "./../../server/php/controller/login.php",
         data: { "json": json }
-      }).done(function (msg) {
-        window.location = 'index.html';
+      }).done(function (response) {
+        var info = JSON.parse(response);
+        if(info.msg = "success"){
+          localStorage.usuario = info.usuario;
+          localStorage.token = info.token;
+          window.location = 'office.html';
+        } else {
+          console.log("Credenciales incorrectas");
+        }          
       });
     }
   });
@@ -96,12 +103,14 @@ $(document).ready(function () {
         method: "POST",
         url: "../../server/php/controller/registrarUsuario.php",
         data: { "json": json }
-      }).done(function (msg) {
-        if (msg == "success") {
-          window.location.href = "login.html";
+      }).done(function (response) {
+        var info = JSON.parse(response);
+
+        if (info.msg == "success") {          
+          Console.log("Success");
         }
         else {
-
+          Console.log("No success");
         }
       });
     }

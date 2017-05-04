@@ -28,12 +28,25 @@ angular.module('app', ['ngRoute'])
             });
     }])
 
-    .controller('menuController', ['$scope', function($scope) {
-      $scope.menuOnClick = function($event){
-        var element = $event.target;
-        $("ul.sections li").each(function(){
-          $(this).removeClass("current");
-        })
-        $(element).addClass("current");
-      }
+    .controller('mainController', ['$scope', function ($scope) {
+        
+        if (localStorage.getItem("usuario") != null) {
+            $scope.usuario = localStorage.usuario;
+        } else {            
+            // window.location.href = "login.html";
+            console.log("No tiene un usuario");
+        }
+
+        $scope.test = "Testing";
+    }])
+
+    .controller('menuController', ['$scope', function ($scope) {
+        $scope.menuOnClick = function ($event) {
+            var element = $event.target;
+            $("ul.sections li").each(function () {
+                $(this).removeClass("current");
+            })
+            $(element).addClass("current");
+        }
     }]);
+
