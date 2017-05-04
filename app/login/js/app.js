@@ -100,4 +100,12 @@ $(document).ready(function(){
       });
     }
   })
-});
+  $('div.links>a.login').click(function(){
+    $('form.loginForm').show();
+    $('form.registerForm').hide();
+  });
+  $('div.links>a.register').click(function(){
+    $('form.loginForm').hide();
+    $('form.registerForm').show();
+  });
+});'"'
