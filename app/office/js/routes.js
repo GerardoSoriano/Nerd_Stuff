@@ -8,14 +8,20 @@ angular.module('app', ['ngRoute'])
                 templateUrl: rootPath + 'main.html'
                 // ,controller: 'mainCtrl'
             }).
-            when('/comprar', {
-                templateUrl: rootPath + 'main.html'
+            when('/carrito', {
+                templateUrl: rootPath + 'carrito.html'
             }).
-            when('/historial', {
-                templateUrl: rootPath + 'main.html'
+            when('/comprar', {
+                templateUrl: rootPath + 'comprar.html'
             }).
             when('/cuenta', {
-                templateUrl: rootPath + 'main.html'
+                templateUrl: rootPath + 'cuenta.html'
+            }).
+            when('/historial', {
+                templateUrl: rootPath + 'historial.html'
+            }).
+            when('/invitados', {
+                templateUrl: rootPath + 'invitados.html'
             }).
             otherwise({
                 redirectTo: '/'
