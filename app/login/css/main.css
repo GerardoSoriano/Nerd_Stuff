@@ -66,8 +66,8 @@ div.formContainer {
         color: #626262;
         text-decoration: none; }
         div.formContainer > div.square > div.links > a:visited, div.formContainer > div.square > div.links > a:hover, div.formContainer > div.square > div.links > a:focus {
-          color: #626262;
-          text-decoration: underline; }
+          color: #323232;
+          cursor: pointer; }
     div.formContainer > div.square > form[class$="Form"] {
       width: 100%;
       margin-top: 10px;

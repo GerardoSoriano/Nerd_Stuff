@@ -42,8 +42,8 @@ div.formContainer{
         color: $fGrey;
         text-decoration: none;
         &:visited,&:hover,&:focus{
-          color: $fGrey;
-          text-decoration: underline;
+          color: $fBlack;
+          cursor: pointer;
         }
       }
     }
@@ -116,9 +116,6 @@ div.formContainer{
         font: 15px _Century_Gothic_;
         color: $fGrey;
       }
-    }
-    >form.loginForm{
-
     }
     >form.registerForm{
       display: none;
