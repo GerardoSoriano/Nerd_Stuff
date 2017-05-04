@@ -1,5 +1,5 @@
 $(document).ready(function () {
-  
+
   $.validator.addMethod("regx", function (value, element, regexpr) {
     return regexpr.test(value);
   });
@@ -37,7 +37,7 @@ $(document).ready(function () {
       let json = JSON.stringify(jsonObj);
       $.ajax({
         method: "POST",
-        url: "./../../server/php/controller/login.php",
+        url: "../server/php/controller/login.php",
         data: { "json": json }
       }).done(function (response) {
         var info = JSON.parse(response);
@@ -47,11 +47,11 @@ $(document).ready(function () {
           window.location = 'office.html';
         } else {
           console.log("Credenciales incorrectas");
-        }          
+        }
       });
     }
   });
-  
+
   $("form.registerForm").validate({
     debug: true,
     rules: {
@@ -101,12 +101,12 @@ $(document).ready(function () {
       let json = JSON.stringify(jsonObj);
       $.ajax({
         method: "POST",
-        url: "../../server/php/controller/registrarUsuario.php",
+        url: "../server/php/controller/registrarUsuario.php",
         data: { "json": json }
       }).done(function (response) {
         var info = JSON.parse(response);
 
-        if (info.msg == "success") {          
+        if (info.msg == "success") {
           Console.log("Success");
         }
         else {
