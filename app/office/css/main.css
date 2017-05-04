@@ -100,10 +100,10 @@ div[class^="menu"] {
         border-bottom: 1px solid #c2c8e2;
         cursor: pointer; }
         div[class^="menu"] > ul.sections > a > li.current {
-          border-right: 7px solid #c2c8e2; }
+          border-left: 7px solid #c2c8e2; }
         div[class^="menu"] > ul.sections > a > li:hover {
           color: black;
-          background-color: #c2c8e2; }
+          background-color: #a0a4ad; }
         div[class^="menu"] > ul.sections > a > li > i.fa {
           margin-right: 10px; }
   div[class^="menu"] > div.help {

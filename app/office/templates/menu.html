@@ -1,4 +1,4 @@
-<div class="menu">
+<div class="menu" ng-controller="menuController">
     <div class="logo">
         <img src="./../resources/img/isotipo.png" alt="Logo de la empresa">
         <h1>Nerd Stuff</h1>
@@ -8,18 +8,18 @@
             <img src="../resources/img/profile.jpg" alt="Imagen de perfil">
         </div>
         <h1>
-            Bienvenido, <br>
+            Bienvenido,<br>
             <span class="username">gerardosoriano97</span>
         </h1>
     </div>
     <ul class="sections">
-        <a href="#main"><li>Inicio</li></a>
-        <a href="#carrito"><li>Carrito</li></a>
-        <a href="#comprar"><li class="current">Comprar</li></a>
-        <a href="#cuenta"><li>Mi cuenta</li></a>
-        <a href="#historial"><li>Historial</li></a>
-        <a href="#invitados"><li>Invitados</li></a>
-        <a href=""><li>Salir</li></a>
+        <a href="#main" ng-click="menuOnClick($event)"><li class="current">Inicio</li></a>
+        <a href="#carrito" ng-click="menuOnClick($event)"><li>Carrito</li></a>
+        <a href="#comprar" ng-click="menuOnClick($event)"><li>Comprar</li></a>
+        <a href="#cuenta" ng-click="menuOnClick($event)"><li>Mi cuenta</li></a>
+        <a href="#historial" ng-click="menuOnClick($event)"><li>Historial</li></a>
+        <a href="#invitados" ng-click="menuOnClick($event)"><li>Invitados</li></a>
+        <a href="" ng-click="menuOnClick($event)"><li>Salir</li></a>
     </ul>
     <div class="help">
         <div class="sphere">

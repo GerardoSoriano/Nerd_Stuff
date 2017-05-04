@@ -81,11 +81,11 @@ div[class^="menu"]{
         border-bottom: 1px solid $secondColor;
         cursor: pointer;
         &.current{
-          border-right: 7px solid $secondColor;
+          border-left: 7px solid $secondColor;
         }
         &:hover{
           color: black;
-          background-color: $secondColor;
+          background-color: $fourColor;
         }
         >i.fa{
           margin-right: 10px;
