@@ -447,13 +447,13 @@ div.categoria {
       transform: translateY(-60%);
       padding-right: 10px;
       position: absolute; }
-    div.categoria > div.section > div.products {
+    div.categoria > div.section > div.productContainer {
       width: 100%;
       height: 95%;
       align-self: flex-end;
       overflow: overlay;
       padding: 0 50px; }
-      div.categoria > div.section > div.products > button {
+      div.categoria > div.section > div.productContainer > button {
         visibility: hidden;
         width: 50px;
         height: 100%;
@@ -463,9 +463,9 @@ div.categoria {
         position: absolute;
         top: 0;
         z-index: 1; }
-        div.categoria > div.section > div.products > button:hover:after {
+        div.categoria > div.section > div.productContainer > button:hover:after {
           opacity: 0.8; }
-        div.categoria > div.section > div.products > button::after {
+        div.categoria > div.section > div.productContainer > button::after {
           display: flex;
           justify-content: center;
           align-items: center;
@@ -477,27 +477,27 @@ div.categoria {
           background-color: grey;
           opacity: 0.5;
           font: 40px FontAwesome; }
-        div.categoria > div.section > div.products > button.slick-prev {
+        div.categoria > div.section > div.productContainer > button.slick-prev {
           left: 0;
           top: -15px; }
-          div.categoria > div.section > div.products > button.slick-prev::after {
+          div.categoria > div.section > div.productContainer > button.slick-prev::after {
             content: '\f0d9';
             padding-right: 5px; }
-        div.categoria > div.section > div.products > button.slick-next {
+        div.categoria > div.section > div.productContainer > button.slick-next {
           right: 0;
           top: -15px; }
-          div.categoria > div.section > div.products > button.slick-next::after {
+          div.categoria > div.section > div.productContainer > button.slick-next::after {
             content: '\f0da';
             padding-left: 5px; }
-      div.categoria > div.section > div.products > div.slick-list {
+      div.categoria > div.section > div.productContainer > div.slick-list {
         height: 100%; }
-        div.categoria > div.section > div.products > div.slick-list > div.slick-track {
+        div.categoria > div.section > div.productContainer > div.slick-list > div.slick-track {
           height: 100%; }
-          div.categoria > div.section > div.products > div.slick-list > div.slick-track > div.product {
+          div.categoria > div.section > div.productContainer > div.slick-list > div.slick-track > div.product {
             height: 100%;
             padding: 10px;
             box-sizing: border-box; }
-            div.categoria > div.section > div.products > div.slick-list > div.slick-track > div.product > div.infoCard {
+            div.categoria > div.section > div.productContainer > div.slick-list > div.slick-track > div.product > div.infoCard {
               background-color: #c2c8e2;
               box-sizing: border-box;
               width: 100%;
