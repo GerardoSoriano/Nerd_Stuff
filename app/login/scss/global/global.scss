@@ -1,0 +1,22 @@
+body{
+  display: flex;
+  flex-wrap: wrap;
+  box-sizing: border-box;
+  margin: 0;
+  &#loginRegister{
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    background-color: $grey;
+  }
+  *{
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif
+  }
+  >div[class$="-max"]{
+    padding-left: 110px;
+  }
+  a{
+    font-family: inherit;
+    color: inherit;
+  }
+}
