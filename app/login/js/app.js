@@ -1,47 +1,50 @@
-$(document).ready(function(){
-  $.validator.addMethod("regx", function(value, element, regexpr) {
+$(document).ready(function () {
+  
+  $.validator.addMethod("regx", function (value, element, regexpr) {
     return regexpr.test(value);
   });
+
   $('form.loginForm').validate({
     debug: true,
-    rules:{
-      email:{
+    rules: {
+      email: {
         required: true,
         regx: /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/
       },
-      contrasena:{
+      contrasena: {
         required: true,
         regx: /(?=.*\d)(?=.*[a-z])(?=.*[A-Z])/
       }
     },
-    messages:{
+    messages: {
       email: "Por favor ingresa un correo valido",
       contrasena: "Tu contraseña debe de tener una mayucula, una minuscula y por lo menos un número"
     },
-    invalidHandler: function(event, validator) {
+    invalidHandler: function (event, validator) {
       var errors = validator.numberOfInvalids();
       if (errors) {
         var message = errors == 1
-        ? 'Tienes un campo que no cumple con lo requerido'
-        : 'Tienes ' + errors + ' campos que no cumplen con lo requerido';
+          ? 'Tienes un campo que no cumple con lo requerido'
+          : 'Tienes ' + errors + ' campos que no cumplen con lo requerido';
         alert(message);
       }
     },
-    submitHandler: function(form) {
+    submitHandler: function (form) {
       let jsonObj = {};
-      $(form).find(".toJson").each(function(key, value){
+      $(form).find(".toJson").each(function (key, value) {
         jsonObj[$(value).attr("name")] = $(value).val();
       });
       let json = JSON.stringify(jsonObj);
       $.ajax({
-        method:   "POST",
-        url:      "./../../server/php/controller/login.php",
-        data:     {"json": json}
-      }).done(function(msg){
+        method: "POST",
+        url: "./../../server/php/controller/login.php",
+        data: { "json": json }
+      }).done(function (msg) {
         window.location = 'index.html';
       });
     }
   });
+  
   $("form.registerForm").validate({
     debug: true,
     rules: {
@@ -74,38 +77,43 @@ $(document).ready(function(){
       contrasena: "Tu contraseña debe de tener una mayucula, una minuscula y por lo menos un número",
       rePassword: "Las contraseñas no coinciden"
     },
-    invalidHandler: function(event, validator){
+    invalidHandler: function (event, validator) {
       var errors = validator.numberOfInvalids();
       if (errors) {
         var message = errors == 1
-        ? 'Tienes un campo que no cumple con lo requerido'
-        : 'Tienes ' + errors + ' campos que no cumplen con lo requerido';
+          ? 'Tienes un campo que no cumple con lo requerido'
+          : 'Tienes ' + errors + ' campos que no cumplen con lo requerido';
         alert(message);
       }
     },
-    submitHandler: function(form){
+    submitHandler: function (form) {
       let jsonObj = {};
-      $(form).find(".toJson").each(function(key, value){
+      $(form).find(".toJson").each(function (key, value) {
         jsonObj[$(value).attr("name")] = $(value).val();
       });
       let json = JSON.stringify(jsonObj);
       $.ajax({
-        method:   "POST",
-        url:      "../../server/php/controller/registrarUsuario.php",
-        data:     {"json": json}
-      }).done(function(msg){
+        method: "POST",
+        url: "../../server/php/controller/registrarUsuario.php",
+        data: { "json": json }
+      }).done(function (msg) {
         if (msg == "success") {
           window.location.href = "login.html";
+        }
+        else {
+
         }
       });
     }
   })
-  $('div.links>a.login').click(function(){
+
+  $('div.links>a.login').click(function () {
     $('form.loginForm').show();
     $('form.registerForm').hide();
   });
-  $('div.links>a.register').click(function(){
+
+  $('div.links>a.register').click(function () {
     $('form.loginForm').hide();
     $('form.registerForm').show();
   });
-});'"'
+});
