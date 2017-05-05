@@ -17,6 +17,7 @@ class Usuario
   private $formaPago;
   private $fechaRegistro;
   private $idPatrocinador;
+  private $fotoUrl;
 
   function __construct(){
     $idUsuario = 0;
@@ -32,6 +33,7 @@ class Usuario
     $formaPago = '';
     $fechaRegistro = '';
     $idPatrocinador = 0;
+    $fotoUrl = '';
   }
 
   function getIdUsuario(){ return $this->idUsuario; }
@@ -72,6 +74,9 @@ class Usuario
 
   function getIdPatrocinador(){ return $this->idPatrocinador; }
   function setIdPatrocinador($idPatrocinador){ $this->idPatrocinador = $idPatrocinador; }
+
+  function getFotoUrl(){ return $this->fotoUrl; }
+  function setFotoUrl($fotoUrl){ $this->fotoUrl = $fotoUrl; }
 }
 
  ?>

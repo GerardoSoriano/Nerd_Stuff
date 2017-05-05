@@ -33,7 +33,7 @@ class ProductoCompraMetodos
       $stm->bindParam(1,$usuario->getIdUsuario());
       $stm->execute();
       $result = $stm->fetchAll();
-      return json_encode($result);
+      return $result;
     } catch (PDOException $e) {
       die($e->getMessage());
     } finally {
@@ -50,7 +50,7 @@ class ProductoCompraMetodos
       $stm->bindParam(2,$fecha);
       $stm->execute();
       $result = $stm->fetchAll();
-      return json_encode($result);
+      return $result;
     } catch (PDOException $e) {
       die($e->getMessage());
     } finally {
@@ -68,7 +68,7 @@ class ProductoCompraMetodos
       $stm->bindParam(3,$fechaFinal);
       $stm->execute();
       $result = $stm->fetchAll();
-      return json_encode($result);
+      return $result;
     } catch (PDOException $e) {
       die($e->getMessage());
     } finally {
@@ -83,7 +83,7 @@ class ProductoCompraMetodos
       $stm = $conn->prepare("call masComprados()");
       $stm->execute();
       $result = $stm->fetchAll();
-      return json_encode($result);
+      return $result;
     } catch (PDOException $e) {
       die($e->getMessage());
     } finally {
@@ -99,7 +99,7 @@ class ProductoCompraMetodos
       $stm->bindParam($categoria->getIdCategoria());
       $stm->execute();
       $result = $stm->fetchAll();
-      return json_encode($result);
+      return $result;
     } catch (PDOException $e) {
       die($e->getMessage());
     } finally {
@@ -115,7 +115,7 @@ class ProductoCompraMetodos
       $stm->bindParam(1,$usuario->getIdUsuario());
       $stm->execute();
       $result = $stm->fetchAll();
-      return json_encode($result);
+      return $result;
     } catch (PDOException $e) {
       die($e->getMessage());
     } finally {

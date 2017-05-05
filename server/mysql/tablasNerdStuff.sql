@@ -98,3 +98,6 @@ idUsuario smallint unsigned not null,
 primary key(idTarjeta),
 foreign key(idUsuario) references usuario(idUsuario)
 )
+
+usuarioalter table usuario
+add fotoUrl varchar(255) default 'profile.jpg';

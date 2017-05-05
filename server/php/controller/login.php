@@ -21,11 +21,11 @@ $token['nombreUsuario'] = $json[0]->nombreUsuario;
 $token = JWT::encode($token, '9286');
 
 unset($json[0]->idUsuario);
-unset($json[0]->nombreUsuario);
+unset($json[0]->contrasena);
 
 $return = array();
 $return['msg'] = "success";
 $return['usuario'] = $json[0];
 $return['token'] = $token;
-print_r(json_encode($return));
+print_r($return);
  ?>

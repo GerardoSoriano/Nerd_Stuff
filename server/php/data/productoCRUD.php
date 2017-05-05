@@ -15,7 +15,7 @@ class ProductoMetodos
       $stm->bindParam(1,$producto->getIdCategoria());
       $stm->execute();
       $result = $stm->fetchAll();
-      return json_encode($result);
+      return $result;
     } catch (PDOException $e) {
       die($e->getMessage());
     } finally {
@@ -31,7 +31,7 @@ class ProductoMetodos
       $stm->bindParam(1,$producto->getIdProducto());
       $stm->execute();
       $result = $stm->fetchAll();
-      return json_encode($result);
+      return $result;
     } catch (PDOException $e) {
       die($e->getMessage());
     } finally {
