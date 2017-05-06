@@ -15,6 +15,7 @@ email nvarchar(50) not null,
 contrasena nvarchar(20) not null,
 fechaNacimiento date,
 genero enum('Masculino', 'Femenino'),
+fotoUrl varchar(255) default 'profile.jpg',
 formaPago enum('DepositoBancario', 'Tarjeta'),
 fechaRegistro date,
 idPatrocinador smallint unsigned,
@@ -97,7 +98,4 @@ numeroSeguridad smallint unsigned not null,
 idUsuario smallint unsigned not null,
 primary key(idTarjeta),
 foreign key(idUsuario) references usuario(idUsuario)
-)
-
-usuarioalter table usuario
-add fotoUrl varchar(255) default 'profile.jpg';
+);
