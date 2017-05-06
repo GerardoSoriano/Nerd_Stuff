@@ -85,7 +85,7 @@ $$
 
 /*SP para hacer login con el email o el nombre de usuario y la contraseña*/
 delimiter $$
-create or replace procedure login(in _usuario nvarchar(50), in _contrasena nvarchar(20))
+create procedure login(in _usuario nvarchar(50), in _contrasena nvarchar(20))
 	begin
 		select idUsuario, nombreUsuario, primerNombre, segundoNombre, apellidoPaterno, apellidoMaterno, email, contrasena, fechaNacimiento,
         genero, formaPago, fechaRegistro, idPatrocinador, fotoUrl
