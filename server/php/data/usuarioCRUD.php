@@ -126,15 +126,40 @@ class UsuarioMetodos
       $pdo->closeConnection();
     }
   }
-  function ObtenerMisInvitados($usuario){
+  function ObtenerMiPatrocinador($idUsuario){
+    $pdo = new Connection();
+    $conn = $pdo->getConnection();
+    try {
+      $stm = $conn->prepare("call miPatrocinador(?)");
+      $stm->bindParam(1,$idUsuario);
+      $stm->execute();
+      $result = $stm->fetchAll();
+      foreach ($result as $row)
+      return $row;
+    } catch (PDOException $e) {
+      die($e->getMessage());
+    } finally {
+      $conn = null;
+      $pdo->closeConnection();
+    }
+  }
+  function ObtenerMisInvitados($idUsuario){
     $pdo = new Connection();
     $conn = $pdo->getConnection();
     try {
       $stm = $conn->prepare("call misInvitados(?)");
-      $stm->bindParam(1,$usuario->getIdUsuario());
+      $stm->bindParam(1,$idUsuario);
       $stm->execute();
       $result = $stm->fetchAll();
-      return json_encode($result);
+      $usuarios = array();
+      $contador = 0;
+      foreach ($result as $row){
+        $usuario2 = $row['idUsuario'];
+        $usuarios[$contador] = $row;
+        $usuarios[$contador]['invitados'] = $this->ObtenerMisInvitados($usuario2);
+        $contador = $contador + 1;
+      }
+      return $usuarios;
     } catch (PDOException $e) {
       die($e->getMessage());
     } finally {
