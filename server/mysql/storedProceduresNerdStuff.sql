@@ -53,13 +53,25 @@ create procedure modificarContrasena(in nombreU nvarchar(50), in contraOriginal 
 	end
 $$
 
+/*SP para traer al usuario que me invitó*/
+delimiter $$
+create procedure miPatrocinador(in idU smallint unsigned)
+	begin
+		select U1.idUsuario, U1.nombreUsuario, concat(U1.primerNombre, ' ', U1.segundoNombre, ' ', U1.apellidoPaterno, ' ', U1.apellidoMaterno) as nombre, U1.fotoUrl
+        from usuario U1
+        inner join usuario U2
+		on U2.idPatrocinador = U1.idUsuario
+		where U2.idUsuario = idU;
+    end
+$$
+
 /*SP para traer mi lista de invitados*/
 delimiter $$
-create procedure misInvitados(in idU smallint unsigned)
+create procedure misInvitados(in idP smallint unsigned)
 	begin
-		select idUsuario, nombreUsuario, concat(primerNombre, ' ', segundoNombre, ' ', apellidoPaterno, ' ', apellidoMaterno) as nombre, idPatrocinador
+		select idPatrocinador, idUsuario, nombreUsuario, concat(primerNombre, ' ', segundoNombre, ' ', apellidoPaterno, ' ', apellidoMaterno) as nombre, fotoUrl
         from usuario
-        where idPatrocinador = idU;
+        where idPatrocinador = idP;
 	end
 $$
 
