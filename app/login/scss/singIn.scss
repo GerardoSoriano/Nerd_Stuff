@@ -1,48 +1,59 @@
 div.formContainer{
-  width: 500px;
-  margin-right: 50px;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  width: 100%;
+  height: 100%;
+  display: inline;
   align-items: center;
   position: relative;
   z-index: 1;
   >div.logo{
-    width: 100%;
-    height: 130px;
-    margin-bottom: 45px;
+    position: relative;
+    background-color: $primary-color;
+    float: left;
+    width: 50%;
+    height: 100%;
     text-align: center;
+    border-right: solid 2px $primary-color-dark;
     >img{
-      width: auto;
-      height: auto;
-      min-height: 100%;
+      position: absolute;
+      top: 10%;
+      left: 20%;
+      height: 10%;
+      min-height: 5%;
       max-height: 100%;
     }
   }
+  >div.outerSquare{
+    height: 100%;
   >div.square{
-    width: 300px;
-    max-width: 300px;
+    position: absolute;
+    top: 50%;
+    left: 75%;
+    transform: translate(-50%, -50%);
+    height: 100%;
     min-width: 300px;
-    border-radius: 3px;
-    padding: 20px 25px;
-    margin: 0;
-    display: block;
     text-align: center;
-    background: $blackTransparent;
+    background: $primary-color-text;
+    >img{
+      height: 30%;
+      margin: 40px;
+      min-height: 5%;
+      max-height: 100%;
+    }
     >div.links{
       width: 100%;
+      margin-bottom: 20px;
       display: flex;
       padding: 0 10px 10px;
-      border-bottom: 1px solid $fGrey;
+      border-bottom: 1px solid $divider-color;
       box-sizing: border-box;
       >a{
         flex-grow: 1;
         text-align: center;
         font: bold 20px _Century_Gothic_;
-        color: $fGrey;
+        color: $primary-text-color;
         text-decoration: none;
         &:visited,&:hover,&:focus{
-          color: $fBlack;
+          color: $primary-color;
           cursor: pointer;
         }
       }
@@ -57,12 +68,12 @@ div.formContainer{
         width: 100%;
         display: flex;
         padding: 0 10px 10px;
-        border-bottom: 1px solid $fGrey;
+        border-bottom: 1px solid $divider-color;
         >a{
           flex-grow: 1;
           text-align: center;
           font: bold 20px _Century_Gothic_;
-          color: $fGrey;
+          color: $primary-color-dark;
           text-decoration: none;
           &:visited,&:hover,&:focus{
             color: $fGrey;
@@ -79,24 +90,25 @@ div.formContainer{
         border: 0;
         border-radius: 3px;
         outline: 0;
-        color: $fGrey;
+        color: $secondary-text-color;
+        border: solid 1px $divider-color;
         font-family: _Century_Gothic_;
-        font-weight: bold;
         box-shadow: inset 0 0 0 $golden;
         &:first-child{
           margin-top: 0;
         }
         &:focus{
-          box-shadow: inset 0 0 7px $golden;
+          border: solid 1px $primary-color-dark;
         }
         &.error{
-          box-shadow: inset 0 0 7px $fail;
+          box-shadow: inset 0 0 7px $accent-color;
+          border: 0px;
         }
         &[type="submit"]{
           width: 50%;
-          background-color: $firstColor;
+          background-color: $primary-color;
           color: white;
-          box-shadow: 0 0 3px $thirdColor;
+          
           cursor: pointer;
           &:hover, &:focus{
             box-shadow: 0 0 6px $thirdColor;
@@ -119,6 +131,8 @@ div.formContainer{
     }
     >form.registerForm{
       display: none;
+      text-align: center;
     }
   }
+}
 }

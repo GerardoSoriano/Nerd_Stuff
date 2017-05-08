@@ -25,119 +25,137 @@ body {
     color: inherit; }
 
 div[class^="menu"] {
-  width: 300px;
+  width: 250px;
   max-width: 300px;
   height: 100vh;
   display: flex;
   flex-wrap: wrap;
-  background-color: #0c0f38;
+  background-color: #FFFFFF;
   overflow: hidden;
   box-sizing: border-box;
   align-content: flex-start;
-  padding: 5px;
   position: fixed;
   z-index: 3; }
-  div[class^="menu"] > div.logo {
+  div[class^="menu"] > div.topContainer {
+    background-color: #00BCD4;
     width: 100%;
-    height: 100px;
-    text-align: left;
-    overflow: hidden;
-    display: flex;
-    align-items: center; }
-    div[class^="menu"] > div.logo > img {
-      width: auto;
-      height: auto;
-      min-height: 100%;
-      max-height: 100%;
-      display: inline-block; }
-    div[class^="menu"] > div.logo > h1 {
-      color: #c2c8e2;
-      font: bold 39px _Impact_;
-      text-transform: uppercase;
-      display: inline-block;
-      margin: 0; }
-  div[class^="menu"] > div.userInfo {
-    width: 100%;
-    height: 130px;
-    border: 0 solid #c2c8e2;
-    border-bottom-width: 3px;
-    overflow: hidden;
-    margin: 10px 0 0;
-    display: flex;
-    align-items: center;
-    justify-content: flex-start; }
-    div[class^="menu"] > div.userInfo > div.profilePicture {
-      width: 100px;
-      height: 100px;
-      border: 3px solid #c2c8e2;
-      border-radius: 50%;
+    padding: 5px 5px 0px 5px;
+    border-bottom: 1px solid #0097A7;
+    border-right: 1px solid #0097A7; }
+    div[class^="menu"] > div.topContainer > div.logo {
+      margin-top: 3px;
       text-align: center;
-      display: inline-block;
+      width: 100%;
+      height: 38px;
       overflow: hidden;
-      margin-right: 10px; }
-      div[class^="menu"] > div.userInfo > div.profilePicture > img {
+      align-items: center; }
+      div[class^="menu"] > div.topContainer > div.logo > img {
         width: auto;
         height: auto;
         max-height: 100%;
-        min-height: 100%; }
-    div[class^="menu"] > div.userInfo > h1 {
-      color: #c2c8e2;
-      font: bold 15px _Century_Gothic_;
-      display: inline-block; }
-  div[class^="menu"] > ul.sections {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    width: 100%; }
-    div[class^="menu"] > ul.sections > a {
-      text-decoration: none; }
-      div[class^="menu"] > ul.sections > a > li {
+        display: inline-block; }
+      div[class^="menu"] > div.topContainer > div.logo > h1 {
         color: #c2c8e2;
-        font: 17px _Century_Gothic_;
-        padding: 10px 10px;
-        width: 100%;
-        box-sizing: border-box;
-        border-bottom: 1px solid #c2c8e2;
-        cursor: pointer; }
-        div[class^="menu"] > ul.sections > a > li.current {
-          border-left: 7px solid #c2c8e2; }
-        div[class^="menu"] > ul.sections > a > li:hover {
-          color: black;
-          background-color: #a0a4ad; }
-        div[class^="menu"] > ul.sections > a > li > i.fa {
-          margin-right: 10px; }
-  div[class^="menu"] > div.help {
-    position: absolute;
-    bottom: 5px;
-    width: 290px;
-    height: 70px;
-    max-height: 70px;
-    box-sizing: border-box;
-    padding: 10px 5px;
-    overflow: hidden;
-    background-color: rgba(255, 255, 255, 0.15);
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    border-radius: 15px;
-    cursor: pointer; }
-    div[class^="menu"] > div.help > div.sphere {
-      width: 50px;
-      height: 50px;
-      border-radius: 50%;
-      background-color: #c2c8e2;
+        font: bold 39px _Impact_;
+        text-transform: uppercase;
+        display: inline-block;
+        margin: 0; }
+    div[class^="menu"] > div.topContainer > div.userInfo {
+      width: 100%;
+      height: 90px;
+      overflow: hidden;
+      margin: 10px 0 10px;
       display: flex;
-      justify-content: center;
       align-items: center;
-      margin-right: 10px; }
-      div[class^="menu"] > div.help > div.sphere > i.fa {
-        color: #0c0f38;
-        font-size: 35px; }
-    div[class^="menu"] > div.help > h1 {
-      font: bold 22px _Century_Gothic_;
+      justify-content: flex-start; }
+      div[class^="menu"] > div.topContainer > div.userInfo > div.profilePicture {
+        width: 70px;
+        height: 70px;
+        border: 1px solid #757575;
+        border-radius: 50%;
+        text-align: center;
+        display: inline-block;
+        overflow: hidden;
+        margin-right: 10px;
+        margin-left: 5px; }
+        div[class^="menu"] > div.topContainer > div.userInfo > div.profilePicture > img {
+          width: auto;
+          height: auto;
+          max-height: 100%;
+          min-height: 100%; }
+      div[class^="menu"] > div.topContainer > div.userInfo > h1 {
+        color: #FFFFFF;
+        font: bold 15px _Century_Gothic_;
+        display: inline-block; }
+  div[class^="menu"] > div.bottomContainer {
+    background-color: #FFFFFF;
+    width: 100%;
+    height: 100%;
+    padding-top: 10px;
+    padding-left: 3px;
+    border-right: 1px solid #BDBDBD; }
+    div[class^="menu"] > div.bottomContainer > ul.sections {
+      list-style: none;
+      padding: 0;
       margin: 0;
-      display: inline-block;
-      color: #c2c8e2; }
+      width: 100%; }
+      div[class^="menu"] > div.bottomContainer > ul.sections > a {
+        text-decoration: none; }
+        div[class^="menu"] > div.bottomContainer > ul.sections > a > li {
+          color: #212121;
+          font: 16px _Century_Gothic_;
+          padding: 8px 20px;
+          width: 100%;
+          box-sizing: border-box;
+          cursor: pointer; }
+          div[class^="menu"] > div.bottomContainer > ul.sections > a > li.current {
+            border-left: 7px solid #00BCD4; }
+          div[class^="menu"] > div.bottomContainer > ul.sections > a > li:hover {
+            color: #212121;
+            background-color: #B2EBF2; }
+          div[class^="menu"] > div.bottomContainer > ul.sections > a > li > i.fa {
+            margin-right: 10px; }
+    div[class^="menu"] > div.bottomContainer > div.help {
+      position: absolute;
+      margin-left: 1px;
+      bottom: 5px;
+      width: 240px;
+      height: 60px;
+      max-height: 70px;
+      box-sizing: border-box;
+      padding: 10px 5px;
+      overflow: hidden;
+      background-color: rgba(255, 82, 82, 0.3);
+      border: solid 1px #FF5252;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      border-radius: 15px;
+      cursor: pointer; }
+      div[class^="menu"] > div.bottomContainer > div.help:hover {
+        box-shadow: 0 0 20px #757575;
+        background-color: #FF5252; }
+        div[class^="menu"] > div.bottomContainer > div.help:hover > div.sphere {
+          background-color: #FFFFFF; }
+      div[class^="menu"] > div.bottomContainer > div.help > div.sphere {
+        width: 42px;
+        height: 42px;
+        border-radius: 50%;
+        border: solid 1px #FF5252;
+        background-color: rgba(255, 82, 82, 0.5);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-right: 5px;
+        margin-left: 3px; }
+        div[class^="menu"] > div.bottomContainer > div.help > div.sphere > i.fa {
+          color: #212121;
+          font-size: 30px; }
+      div[class^="menu"] > div.bottomContainer > div.help > h1 {
+        font: bold 18px _Century_Gothic_;
+        margin: 0;
+        display: inline-block;
+        color: #212121; }
 
 div[class$="-min"] {
   width: 100px;
@@ -179,13 +197,13 @@ div[class^="content"] {
 div[class^="header"] {
   height: 50px;
   width: 100%;
-  background-color: #c2c8e2;
-  border: 0 solid #0c0f38;
-  border-bottom-width: 2px;
+  background-color: #0097A7;
+  border: 0 solid #0097A7;
+  border-bottom-width: 1px;
   display: flex;
   overflow: hidden;
   align-items: center;
-  padding: 5px 10px 5px 310px;
+  padding: 5px 10px 5px 270px;
   box-sizing: border-box;
   position: fixed;
   z-index: 2; }
@@ -194,9 +212,11 @@ div[class^="header"] {
     align-items: center; }
     div[class^="header"] > div.button > i.fa {
       font-size: 20px;
-      margin-right: 10px; }
+      margin-right: 10px;
+      color: #FFFFFF; }
     div[class^="header"] > div.button > h1 {
       font: bold 18px _Century_Gothic_;
+      color: #FFFFFF;
       margin: 0; }
   div[class^="header"] > div.userInfo {
     height: 100%;
@@ -206,28 +226,29 @@ div[class^="header"] {
     align-items: center; }
     div[class^="header"] > div.userInfo > div.mail {
       display: flex;
-      margin-right: 15px; }
+      margin-right: 25px;
+      color: #FFFFFF; }
       div[class^="header"] > div.userInfo > div.mail > div.sphere {
         width: 20px;
         height: 20px;
         border-radius: 50px;
         overflow: hidden;
-        background-color: yellow;
+        background-color: #FF5252;
         display: flex;
         align-items: center;
         justify-content: center;
         transform: translate(35px, -10px); }
         div[class^="header"] > div.userInfo > div.mail > div.sphere > h1 {
-          font: 13px _Century_Gothic_;
-          color: #0c0f38; }
+          font: 12px _Century_Gothic_;
+          color: #FFFFFF; }
       div[class^="header"] > div.userInfo > div.mail > i.fa {
-        font-size: 25px; }
+        font-size: 20px; }
     div[class^="header"] > div.userInfo > div.profilePicture {
-      width: 40px;
-      height: 40px;
+      width: 38px;
+      height: 38px;
       overflow: hidden;
       border-radius: 50%;
-      border: 2px solid #0c0f38;
+      border: 1px solid #757575;
       box-sizing: border-box;
       margin-right: 5px; }
       div[class^="header"] > div.userInfo > div.profilePicture > img {
@@ -237,7 +258,9 @@ div[class^="header"] {
         max-height: 100%; }
     div[class^="header"] > div.userInfo > h1 {
       font: 18px _Century_Gothic_;
-      margin: 0; }
+      margin-left: 5px;
+      margin-right: 5px;
+      color: #FFFFFF; }
 
 div.dashboard {
   width: 100%;
@@ -346,24 +369,35 @@ div.categoria {
   padding: 18px 0; }
   div.categoria > * {
     margin-bottom: 18px; }
-  div.categoria > div.name {
-    width: 75%;
-    height: 40px;
-    background-color: #c2c8e2;
-    box-sizing: border-box;
-    display: flex;
-    justify-content: center;
-    align-items: center; }
-    div.categoria > div.name > h1 {
-      font: bold 25px _Century_Gothic_;
+  div.categoria > ul.navBar {
+    width: 100%;
+    margin: 0;
+    margin-bottom: 15px;
+    padding: 0 30px;
+    height: 50px;
+    align-items: center;
+    border-bottom: 1px solid #BDBDBD; }
+    div.categoria > ul.navBar > li {
+      display: inline-block;
       margin: 0;
-      text-transform: uppercase; }
+      padding: 0 30px;
+      height: 100%;
+      align-items: center;
+      justify-content: center; }
+      div.categoria > ul.navBar > li:hover {
+        border-bottom: 3px solid #FF5252; }
+        div.categoria > ul.navBar > li:hover > h1 {
+          color: #212121; }
+        div.categoria > ul.navBar > li:hover.current {
+          border-bottom: 3px solid #FF5252; }
+      div.categoria > ul.navBar > li > h1 {
+        font: bold 20px _Century_Gothic_;
+        color: #757575; }
   div.categoria > div.offers {
     width: 100%;
-    height: 300px;
+    height: 261px;
     background-color: #c2c8e2;
-    box-sizing: border-box;
-    padding: 20px 10px; }
+    box-sizing: border-box; }
     div.categoria > div.offers > button {
       visibility: hidden;
       width: 60px;
@@ -414,9 +448,10 @@ div.categoria {
   div.categoria > div.section {
     width: 300px;
     min-width: 300px;
-    height: 300px;
-    border-top: 2px solid #0c0f38;
-    margin: 10px 0 18px;
+    height: 350px;
+    border-top: 1px solid #BDBDBD;
+    margin: 30px 0 18px;
+    padding-top: 30px;
     box-sizing: border-box;
     display: inline-flex;
     flex-wrap: wrap; }
@@ -442,10 +477,11 @@ div.categoria {
         min-width: 300px; } }
     div.categoria > div.section > label {
       background-color: white;
+      color: #212121;
       font: bold 25px _Century_Gothic_;
       margin: 0;
-      transform: translateY(-60%);
-      padding-right: 10px;
+      transform: translateY(-150%);
+      padding-right: 20px;
       position: absolute; }
     div.categoria > div.section > div.productContainer {
       width: 100%;
@@ -464,6 +500,7 @@ div.categoria {
         top: 0;
         z-index: 1; }
         div.categoria > div.section > div.productContainer > button:hover:after {
+          background-color: #BDBDBD;
           opacity: 0.8; }
         div.categoria > div.section > div.productContainer > button::after {
           display: flex;
@@ -474,18 +511,19 @@ div.categoria {
           width: 100%;
           height: 100%;
           border: 0;
-          background-color: grey;
-          opacity: 0.5;
+          background-color: rgba(255, 255, 255, 0);
           font: 40px FontAwesome; }
         div.categoria > div.section > div.productContainer > button.slick-prev {
           left: 0;
-          top: -15px; }
+          top: -15px;
+          color: #757575; }
           div.categoria > div.section > div.productContainer > button.slick-prev::after {
             content: '\f0d9';
             padding-right: 5px; }
         div.categoria > div.section > div.productContainer > button.slick-next {
           right: 0;
-          top: -15px; }
+          top: -15px;
+          color: #757575; }
           div.categoria > div.section > div.productContainer > button.slick-next::after {
             content: '\f0da';
             padding-left: 5px; }
@@ -498,21 +536,64 @@ div.categoria {
             padding: 10px;
             box-sizing: border-box; }
             div.categoria > div.section > div.productContainer > div.slick-list > div.slick-track > div.product > div.infoCard {
-              background-color: #c2c8e2;
+              background-color: #FFFFFF;
               box-sizing: border-box;
               width: 100%;
-              height: 100%; }
+              height: 100%;
+              padding: 15px;
+              border: 1px solid #BDBDBD;
+              border-radius: 10px;
+              display: flex;
+              flex-wrap: wrap;
+              overflow: hidden;
+              align-content: flex-start; }
+              div.categoria > div.section > div.productContainer > div.slick-list > div.slick-track > div.product > div.infoCard:hover {
+                box-shadow: 0 0 8px rgba(57, 57, 57, 0.4); }
+              div.categoria > div.section > div.productContainer > div.slick-list > div.slick-track > div.product > div.infoCard > div.productImage {
+                width: 100%;
+                height: 50%;
+                border-top-left-radius: 8px;
+                border-top-right-radius: 8px;
+                border: solid 1px #BDBDBD;
+                margin-bottom: 10px;
+                text-align: center;
+                overflow: hidden; }
+                div.categoria > div.section > div.productContainer > div.slick-list > div.slick-track > div.product > div.infoCard > div.productImage > img {
+                  width: auto;
+                  height: auto;
+                  max-width: 100%; }
+              div.categoria > div.section > div.productContainer > div.slick-list > div.slick-track > div.product > div.infoCard > h1 {
+                font: bold 16px _Century_Gothic_;
+                margin: 0;
+                color: #212121;
+                -webkit-margin-before: 0;
+                -webkit-margin-after: 0;
+                -webkit-margin-start: 0;
+                -webkit-margin-end: 0;
+                width: 100%;
+                margin-bottom: 8px; }
+              div.categoria > div.section > div.productContainer > div.slick-list > div.slick-track > div.product > div.infoCard > p {
+                width: 100%;
+                color: #757575;
+                font: 14px _Century_Gothic_;
+                margin: 0; }
+              div.categoria > div.section > div.productContainer > div.slick-list > div.slick-track > div.product > div.infoCard > h5 {
+                position: absolute;
+                bottom: 8px;
+                color: #FF5252;
+                font: 15px _Century_Gothic_;
+                font-weight: bold; }
 
 div.carrito {
   width: 100%;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  padding: 18px 0; }
+  padding: 30px 0; }
   div.carrito > div.section {
     width: 300px;
     min-width: 300px;
-    border-top: 2px solid #0c0f38;
+    border-top: 1px solid #BDBDBD;
     margin: 10px 0 18px;
     box-sizing: border-box;
     display: inline-flex;
@@ -540,37 +621,42 @@ div.carrito {
     div.carrito > div.section > label {
       background-color: white;
       font: bold 25px _Century_Gothic_;
+      color: #212121;
       margin: 0;
       transform: translateY(-60%);
-      padding-right: 10px;
+      padding-right: 20px;
+      padding-top: 2px;
       position: absolute; }
     div.carrito > div.section > div.category {
       width: 100%;
       display: flex;
-      margin: 18px 0 0;
-      padding: 0 0 18px;
-      border-bottom: 2px solid #0c0f38; }
+      margin: 50px 0 0;
+      padding: 0 0 50px;
+      border-bottom: 1px solid #BDBDBD; }
       div.carrito > div.section > div.category > div.card {
         width: 100%;
         border-radius: 15px;
-        background-color: #b0b4cd;
+        border: solid 1px #BDBDBD;
+        background-color: #FFFFFF;
         overflow: hidden;
-        padding: 10px;
+        padding: 20px 3px 15px 3px;
         box-sizing: border-box;
         display: flex;
         flex-wrap: wrap; }
         div.carrito > div.section > div.category > div.card > label {
           font: bold 20px _Century_Gothic_;
-          margin: 0; }
+          margin: 0;
+          margin-left: 55px;
+          margin-bottom: 10px;
+          color: #212121; }
         div.carrito > div.section > div.category > div.card > div.productContainer {
           width: 100%;
           height: 300px;
           align-self: flex-end;
-          overflow: overlay;
-          padding: 0 50px; }
+          padding: 0 43px; }
           div.carrito > div.section > div.category > div.card > div.productContainer > button {
             visibility: hidden;
-            width: 50px;
+            width: 40px;
             height: 100%;
             padding: 0;
             margin: 0;
@@ -579,6 +665,7 @@ div.carrito {
             top: 0;
             z-index: 1; }
             div.carrito > div.section > div.category > div.card > div.productContainer > button:hover:after {
+              background-color: #BDBDBD;
               opacity: 0.8; }
             div.carrito > div.section > div.category > div.card > div.productContainer > button::after {
               display: flex;
@@ -588,19 +675,22 @@ div.carrito {
               box-sizing: border-box;
               width: 100%;
               height: 100%;
+              margin-top: 9px;
               border: 0;
-              background-color: grey;
-              opacity: 0.5;
+              background-color: white;
+              opacity: 1.0;
               font: 40px FontAwesome; }
             div.carrito > div.section > div.category > div.card > div.productContainer > button.slick-prev {
               left: 0;
-              top: -15px; }
+              top: -15px;
+              color: #757575; }
               div.carrito > div.section > div.category > div.card > div.productContainer > button.slick-prev::after {
                 content: '\f0d9';
                 padding-right: 5px; }
             div.carrito > div.section > div.category > div.card > div.productContainer > button.slick-next {
               right: 0;
-              top: -15px; }
+              top: -15px;
+              color: #757575; }
               div.carrito > div.section > div.category > div.card > div.productContainer > button.slick-next::after {
                 content: '\f0da';
                 padding-left: 5px; }
@@ -618,24 +708,31 @@ div.carrito {
                   height: 20px;
                   position: absolute;
                   top: 0;
-                  right: 35px;
-                  background-color: #c2c8e2;
-                  border: 1px solid #0c0f38;
+                  right: 20px;
+                  background-color: #FFFFFF;
+                  border: 1px solid #BDBDBD;
                   border-radius: 50%; }
                 div.carrito > div.section > div.category > div.card > div.productContainer > div.slick-list > div.slick-track > div.product > div.infoCard {
-                  background-color: #c2c8e2;
+                  background-color: #FFFFFF;
                   box-sizing: border-box;
                   width: 100%;
                   height: 100%;
-                  border: 1px solid #0c0f38;
-                  border-radius: 15px;
+                  padding: 15px;
+                  border: 1px solid #BDBDBD;
+                  border-radius: 10px;
                   display: flex;
                   flex-wrap: wrap;
                   overflow: hidden;
                   align-content: flex-start; }
+                  div.carrito > div.section > div.category > div.card > div.productContainer > div.slick-list > div.slick-track > div.product > div.infoCard:hover {
+                    box-shadow: 0 0 8px rgba(57, 57, 57, 0.4); }
                   div.carrito > div.section > div.category > div.card > div.productContainer > div.slick-list > div.slick-track > div.product > div.infoCard > div.productImage {
                     width: 100%;
                     height: 50%;
+                    border-top-left-radius: 8px;
+                    border-top-right-radius: 8px;
+                    border: solid 1px #BDBDBD;
+                    margin-bottom: 10px;
                     text-align: center;
                     overflow: hidden; }
                     div.carrito > div.section > div.category > div.card > div.productContainer > div.slick-list > div.slick-track > div.product > div.infoCard > div.productImage > img {
@@ -643,24 +740,28 @@ div.carrito {
                       height: auto;
                       max-width: 100%; }
                   div.carrito > div.section > div.category > div.card > div.productContainer > div.slick-list > div.slick-track > div.product > div.infoCard > h1 {
-                    font: bold 15px _Century_Gothic_;
+                    font: bold 16px _Century_Gothic_;
                     margin: 0;
+                    color: #212121;
                     -webkit-margin-before: 0;
                     -webkit-margin-after: 0;
                     -webkit-margin-start: 0;
                     -webkit-margin-end: 0;
                     width: 100%;
-                    margin-bottom: 5px; }
+                    margin-bottom: 8px; }
                   div.carrito > div.section > div.category > div.card > div.productContainer > div.slick-list > div.slick-track > div.product > div.infoCard > p {
                     width: 100%;
-                    font: 13px _Century_Gothic_;
+                    color: #757575;
+                    font: 14px _Century_Gothic_;
                     margin: 0; }
                   div.carrito > div.section > div.category > div.card > div.productContainer > div.slick-list > div.slick-track > div.product > div.infoCard > h5 {
                     position: absolute;
-                    right: 0;
-                    bottom: 0;
+                    right: 15px;
+                    bottom: 8px;
                     margin: 0 20px 20px 0;
-                    font: 13px _Century_Gothic_; }
+                    color: #FF5252;
+                    font: 15px _Century_Gothic_;
+                    font-weight: bold; }
 
 _Century_Gothic_div.filtro {
   width: 100%;

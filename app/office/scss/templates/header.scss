@@ -1,13 +1,13 @@
 div[class^="header"]{
   height: 50px;
   width: 100%;
-  background-color: $secondColor;
-  border: 0 solid $firstColor;
-  border-bottom-width: 2px;
+  background-color: $primary-color-dark;
+  border: 0 solid $primary-color-dark;
+  border-bottom-width: 1px;
   display: flex;
   overflow: hidden;
   align-items: center;
-  padding: 5px 10px 5px 310px;
+  padding: 5px 10px 5px 270px;
   box-sizing: border-box;
   position: fixed;
   z-index: 2;
@@ -17,9 +17,11 @@ div[class^="header"]{
     >i.fa{
       font-size: 20px;
       margin-right: 10px;
+      color: $primary-color-text;
     }
     >h1{
       font: bold 18px _Century_Gothic_;
+      color: $primary-color-text;
       margin: 0;
     }
   }
@@ -31,32 +33,33 @@ div[class^="header"]{
     align-items: center;
     >div.mail{
       display: flex;
-      margin-right: 15px;
+      margin-right: 25px;
+      color: $primary-color-text;
       >div.sphere{
         width: 20px;
         height: 20px;
         border-radius: 50px;
         overflow: hidden;
-        background-color: yellow;
+        background-color: $accent-color;
         display: flex;
         align-items: center;
         justify-content: center;
         transform: translate(35px,-10px);
         >h1{
-          font: 13px _Century_Gothic_;
-          color: $firstColor;
+          font: 12px _Century_Gothic_;
+          color: $primary-color-text;
         }
       }
       >i.fa{
-        font-size: 25px;
+        font-size: 20px;
       }
     }
     >div.profilePicture{
-      width: 40px;
-      height: 40px;
+      width: 38px;
+      height: 38px;
       overflow: hidden;
       border-radius: 50%;
-      border: 2px solid $firstColor;
+      border: 1px solid $secondary-text-color;
       box-sizing: border-box;
       margin-right: 5px;
       >img{
@@ -68,7 +71,9 @@ div[class^="header"]{
     }
     >h1{
       font: 18px _Century_Gothic_;
-      margin: 0;
+      margin-left: 5px;
+      margin-right: 5px;
+      color: $primary-color-text;
     }
   }
 }

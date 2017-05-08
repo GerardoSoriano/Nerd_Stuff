@@ -1,27 +1,32 @@
 div[class^="menu"]{
-  width: 300px;
+  width: 250px;
   max-width: 300px;
   height: 100vh;
   display: flex;
   flex-wrap: wrap;
-  background-color: $firstColor;
+  background-color: $primary-color-text;
   overflow: hidden;
+
   box-sizing: border-box;
   align-content: flex-start;
-  padding: 5px;
   position: fixed;
   z-index: 3;
-  >div.logo{
+  >div.topContainer{
+    background-color: $primary-color;
     width: 100%;
-    height: 100px;
-    text-align: left;
+    padding: 5px 5px 0px 5px;
+    border-bottom: 1px solid $primary-color-dark;
+    border-right: 1px solid $primary-color-dark;
+  >div.logo{
+    margin-top: 3px;
+    text-align: center;
+    width: 100%;
+    height: 38px;
     overflow: hidden;
-    display: flex;
     align-items: center;
     >img{
       width: auto;
       height: auto;
-      min-height: 100%;
       max-height: 100%;
       display: inline-block;
     }
@@ -35,23 +40,22 @@ div[class^="menu"]{
   }
   >div.userInfo{
     width: 100%;
-    height: 130px;
-    border: 0 solid $secondColor;
-    border-bottom-width: 3px;
+    height: 90px;
     overflow: hidden;
-    margin: 10px 0 0;
+    margin: 10px 0 10px;
     display: flex;
     align-items: center;
     justify-content: flex-start;
     >div.profilePicture{
-      width: 100px;
-      height: 100px;
-      border: 3px solid $secondColor;
+      width: 70px;
+      height: 70px;
+      border: 1px solid $secondary-text-color;
       border-radius: 50%;
       text-align: center;
       display: inline-block;
       overflow: hidden;
       margin-right: 10px;
+      margin-left: 5px;
       >img{
         width: auto;
         height: auto;
@@ -60,11 +64,19 @@ div[class^="menu"]{
       }
     }
     >h1{
-      color: $secondColor;
+      color: $primary-color-text;
       font: bold 15px _Century_Gothic_;
       display: inline-block;
     }
   }
+}
+  >div.bottomContainer{
+    background-color: $primary-color-text;
+    width: 100%;
+    height: 100%;
+    padding-top: 10px;
+    padding-left: 3px;
+    border-right: 1px solid $divider-color;
   >ul.sections{
     list-style: none;
     padding: 0;
@@ -73,19 +85,18 @@ div[class^="menu"]{
     >a{
       text-decoration: none;
       >li{
-        color: $secondColor;
-        font: 17px _Century_Gothic_;
-        padding: 10px 10px;
+        color: $primary-text-color;
+        font: 16px _Century_Gothic_;
+        padding: 8px 20px;
         width: 100%;
         box-sizing: border-box;
-        border-bottom: 1px solid $secondColor;
         cursor: pointer;
         &.current{
-          border-left: 7px solid $secondColor;
+          border-left: 7px solid $primary-color;
         }
         &:hover{
-          color: black;
-          background-color: $fourColor;
+          color: $primary-text-color;
+          background-color: $primary-color-light;
         }
         >i.fa{
           margin-right: 10px;
@@ -95,40 +106,52 @@ div[class^="menu"]{
   }
   >div.help{
     position: absolute;
+    margin-left: 1px;
     bottom: 5px;
-    width: 290px;
-    height: 70px;
+    width: 240px;
+    height: 60px;
     max-height: 70px;
     box-sizing: border-box;
     padding: 10px 5px;
     overflow: hidden;
-    background-color: rgba(255,255,255,0.15);
+    background-color: rgba(255,82,82,0.30);
+    border: solid 1px $accent-color;
     display: flex;
     justify-content: flex-start;
     align-items: center;
     border-radius: 15px;
     cursor: pointer;
+    &:hover{
+      box-shadow: 0 0 20px $secondary-text-color;
+      background-color: $accent-color;
+      >div.sphere{
+        background-color: $primary-color-text;
+      }
+    }
     >div.sphere{
-      width: 50px;
-      height: 50px;
+      width: 42px;
+      height: 42px;
       border-radius: 50%;
-      background-color: $secondColor;
+      border: solid 1px $accent-color;
+      background-color: rgba(255,82,82,0.50);
       display: flex;
       justify-content: center;
       align-items: center;
-      margin-right: 10px;
+      margin-right: 5px;
+      margin-left: 3px;
       >i.fa{
-        color: $firstColor;
-        font-size: 35px;
+        color: $primary-text-color;
+        font-size: 30px;
       }
     }
     >h1{
-      font: bold 22px _Century_Gothic_;
+      font: bold 18px _Century_Gothic_;
       margin: 0;
       display: inline-block;
-      color: $secondColor;
+      color: $primary-text-color;
     }
   }
+}
 }
 div[class$="-min"]{
   width: 100px;

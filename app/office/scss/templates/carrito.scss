@@ -3,11 +3,11 @@ div.carrito{
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  padding: 18px 0;
+  padding: 30px 0;
   >div.section{
     width: $small;
     min-width: $small;
-    border-top: 2px solid $firstColor;
+    border-top: 1px solid $divider-color;
     margin: 10px 0 18px;
     box-sizing: border-box;
     display: inline-flex;
@@ -35,39 +35,44 @@ div.carrito{
     >label{
       background-color: white;
       font: bold 25px _Century_Gothic_;
+      color: $primary-text-color;
       margin: 0;
       transform: translateY(-60%);
-      padding-right: 10px;
+      padding-right: 20px;
+      padding-top: 2px;
       position: absolute;
     }
     >div.category{
       width: 100%;
       display: flex;
-      margin: 18px 0 0;
-      padding: 0 0 18px;
-      border-bottom: 2px solid $firstColor;
+      margin: 50px 0 0;
+      padding: 0 0 50px;
+      border-bottom: 1px solid $divider-color;
       >div.card{
         width: 100%;
         border-radius: 15px;
-        background-color: $thirdColor;
+        border: solid 1px $divider-color;
+        background-color: $primary-color-text;
         overflow: hidden;
-        padding: 10px;
+        padding: 20px 3px 15px 3px;
         box-sizing: border-box;
         display: flex;
         flex-wrap: wrap;
         >label{
           font: bold 20px _Century_Gothic_;
           margin: 0;
+          margin-left: 55px;
+          margin-bottom: 10px;
+          color: $primary-text-color;
         }
         >div.productContainer{
           width: 100%;
           height: 300px;
           align-self: flex-end;
-          overflow: overlay;
-          padding: 0 50px;
+          padding: 0 43px;
           >button{
             visibility: hidden;
-            width: 50px;
+            width: 40px;
             height: 100%;
             padding: 0;
             margin: 0;
@@ -76,6 +81,7 @@ div.carrito{
             top: 0;
             z-index: 1;
             &:hover:after{
+              background-color: $divider-color;
               opacity: 0.8;
             }
             &::after{
@@ -86,14 +92,16 @@ div.carrito{
               box-sizing: border-box;
               width: 100%;
               height: 100%;
+              margin-top: 9px;
               border: 0;
-              background-color: grey;
-              opacity: 0.5;
+              background-color: white;
+              opacity: 1.0;
               font: 40px FontAwesome;
             }
             &.slick-prev{
               left: 0;
               top: -15px;
+              color: $secondary-text-color;
               &::after{
                 content: '\f0d9';
                 padding-right: 5px;
@@ -102,6 +110,7 @@ div.carrito{
             &.slick-next{
               right: 0;
               top: -15px;
+              color: $secondary-text-color;
               &::after{
                 content: '\f0da';
                 padding-left: 5px;
@@ -122,25 +131,33 @@ div.carrito{
                   height: 20px;
                   position: absolute;
                   top: 0;
-                  right: 35px;
-                  background-color: $secondColor;
-                  border: 1px solid $firstColor;
+                  right: 20px;
+                  background-color: $primary-color-text;
+                  border: 1px solid $divider-color;
                   border-radius: 50%;
                 }
                 >div.infoCard{
-                  background-color: $secondColor;
+                  background-color: $primary-color-text;
                   box-sizing: border-box;
                   width: 100%;
                   height: 100%;
-                  border: 1px solid $firstColor;
-                  border-radius: 15px;
+                  padding: 15px;
+                  border: 1px solid $divider-color;
+                  border-radius: 10px;
                   display: flex;
                   flex-wrap: wrap;
                   overflow: hidden;
                   align-content: flex-start;
+                  &:hover{
+                    box-shadow: 0 0 8px rgba(57,57,57, 0.4);
+                  }
                   >div.productImage{
                     width: 100%;
                     height: 50%;
+                    border-top-left-radius: 8px;
+                    border-top-right-radius: 8px;
+                    border: solid 1px $divider-color;
+                    margin-bottom: 10px;
                     text-align: center;
                     overflow: hidden;
                     >img{
@@ -150,26 +167,30 @@ div.carrito{
                     }
                   }
                   >h1{
-                    font: bold 15px _Century_Gothic_;
+                    font: bold 16px _Century_Gothic_;
                     margin: 0;
+                    color: $primary-text-color;
                     -webkit-margin-before: 0;
                     -webkit-margin-after: 0;
                     -webkit-margin-start: 0;
                     -webkit-margin-end: 0;
                     width: 100%;
-                    margin-bottom: 5px;
+                    margin-bottom: 8px;
                   }
                   >p{
                     width: 100%;
-                    font: 13px _Century_Gothic_;
+                    color: $secondary-text-color;
+                    font: 14px _Century_Gothic_;
                     margin: 0;
                   }
                   >h5{
                     position: absolute;
-                    right: 0;
-                    bottom: 0;
+                    right: 15px;
+                    bottom: 8px;
                     margin: 0 20px 20px 0;
-                    font: 13px _Century_Gothic_;
+                    color: $accent-color;
+                    font: 15px _Century_Gothic_;
+                    font-weight: bold;
                   }
                 }
               }

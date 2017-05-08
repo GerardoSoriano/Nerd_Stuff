@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "script":{
+    "gulp":"gulp"
+  },
   "author": "gerardosoriano97@gmail.com",
   "license": "ISC",
   "devDependencies": {
