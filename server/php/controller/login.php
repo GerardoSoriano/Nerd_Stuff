@@ -27,5 +27,5 @@ $return = array();
 $return['msg'] = "success";
 $return['usuario'] = $json[0];
 $return['token'] = $token;
-print_r($return);
+print_r(json_encode($return));
  ?>
