@@ -1,13 +1,13 @@
 <div class="content">
-  <div class="plugin">
-    <div class="section">
-      <label>Mis invitados</label>
-      <div class="card">
-        <button type="button" name="add">Agregar</button>
-        <div class="tree">
-          Aqui va el plugin
-        </div>
+  <section class="management-hierarchy">
+
+    <h1> Mi red </h1>
+
+    <div ng-controller="treeController" class="hv-container">
+      <div class="hv-wrapper">
+        <div ng-repeat="data in usuarios.invitados" ng-include="'office/templates/invitados/rama-arbol.html'"></div>
       </div>
     </div>
-  </div>
+
+  </section>
 </div>

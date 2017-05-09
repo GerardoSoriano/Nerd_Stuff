@@ -1,0 +1,112 @@
+{
+  "patrocinador": {
+    "idUsuario": 1,
+    "nombreUsuario": "Malex1",
+    "nombre": "Mario Alejandro Aguirre López",
+    "fotoUrl": "profile.jpg"
+  },
+  "invitados": [
+    {
+      "idPatrocinador": 2,
+      "idUsuario": 4,
+      "nombreUsuario": "Ruthie37",
+      "nombre": "Ruth Collin Carney ",
+      "fotoUrl": "profile.jpg",
+      "invitados": [
+        {
+          "idPatrocinador": 4,
+          "idUsuario": 7,
+          "nombreUsuario": "Hayden24",
+          "nombre": "Hayden Miranda Hammond Rodgers",
+          "fotoUrl": "profile.jpg",
+          "invitados": [
+            {
+              "idPatrocinador": 7,
+              "idUsuario": 14,
+              "nombreUsuario": "Conrad71",
+              "nombre": "Michael Conrad Dickerson ",
+              "fotoUrl": "profile.jpg",
+              "invitados": [
+                {
+                  "idPatrocinador": 14,
+                  "idUsuario": 31,
+                  "nombreUsuario": "melizhu31",
+                  "nombre": "Melisa Linda Sumitomo Zapata",
+                  "fotoUrl": "profile.jpg",
+                  "invitados": []
+                }
+              ]
+            },
+            {
+              "idPatrocinador": 7,
+              "idUsuario": 23,
+              "nombreUsuario": "McKree73",
+              "nombre": "Jesse Marty McCree Jonhson",
+              "fotoUrl": "profile.jpg",
+              "invitados": []
+            }
+          ]
+        },
+        {
+          "idPatrocinador": 4,
+          "idUsuario": 12,
+          "nombreUsuario": "Evelyn28",
+          "nombre": "Kate Evelyn Wolf Turner",
+          "fotoUrl": "profile.jpg",
+          "invitados": [
+            {
+              "idPatrocinador": 12,
+              "idUsuario": 26,
+              "nombreUsuario": "JackMore48",
+              "nombre": "Jack David Morrison Soles",
+              "fotoUrl": "profile.jpg",
+              "invitados": []
+            },
+            {
+              "idPatrocinador": 12,
+              "idUsuario": 29,
+              "nombreUsuario": "Hanzar38",
+              "nombre": "Hansel Manuel Zaragoza Smith",
+              "fotoUrl": "profile.jpg",
+              "invitados": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "idPatrocinador": 2,
+      "idUsuario": 8,
+      "nombreUsuario": "Penny12",
+      "nombre": "Penelope Reed Odom",
+      "fotoUrl": "profile.jpg",
+      "invitados": [
+        {
+          "idPatrocinador": 8,
+          "idUsuario": 13,
+          "nombreUsuario": "Luz27",
+          "nombre": "Mullen Chaney Everett Gillespie",
+          "fotoUrl": "profile.jpg",
+          "invitados": [
+            {
+              "idPatrocinador": 13,
+              "idUsuario": 28,
+              "nombreUsuario": "Lenox26",
+              "nombre": "Lena Elizabeth Oxton Pearce",
+              "fotoUrl": "profile.jpg",
+              "invitados": []
+            }
+          ]
+        },
+        {
+          "idPatrocinador": 8,
+          "idUsuario": 24,
+          "nombreUsuario": "Phara32",
+          "nombre": "Fareeha Lizeth Amari Barbosa",
+          "fotoUrl": "profile.jpg",
+          "invitados": []
+        }
+      ]
+    }
+  ]
+}

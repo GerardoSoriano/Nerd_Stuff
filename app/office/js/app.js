@@ -29,10 +29,10 @@ angular.module('app', ['ngRoute'])
     }])
 
     .controller('mainController', ['$scope', function ($scope) {
-        
+
         if (localStorage.getItem("usuario") != null) {
             $scope.usuario = localStorage.usuario;
-        } else {            
+        } else {
             // window.location.href = "login.html";
             console.log("No tiene un usuario");
         }
@@ -48,5 +48,13 @@ angular.module('app', ['ngRoute'])
             })
             $(element).addClass("current");
         }
-    }]);
+    }])
 
+    .controller("treeController", ['$scope', '$http', function ($scope, $http) {
+        $scope.usuarios = "";
+        $http.get("resources/test.json")
+            .then(function (response) {
+                console.log("Aqui entro una vez");
+                $scope.usuarios = response.data;
+            });
+    }]);
