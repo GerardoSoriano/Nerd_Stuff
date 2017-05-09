@@ -397,8 +397,8 @@ $$
 
 /*SP para traerte todas las categorias*/
 delimiter $$
-create or replace procedure categorias()
-begin
-	select * from categoria;
-end
+create procedure categorias()
+	begin
+		select idCategoria, nombreCategoria from categoria;
+	end
 $$
