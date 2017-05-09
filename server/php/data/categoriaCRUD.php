@@ -1,18 +1,17 @@
 <?php
 include_once('connection.php');
-include_once(dirname(__DIR__).'/model/favoritos.php');
+include_once(dirname(__DIR__).'/model/categoria.php');
 
-class FavoritosMetodos
+class CategoriaMetodos
 {
 
   function __construct(){}
 
-  function MostrarFavoritos($favoritos){
+  function ObtenerCategorias(){
     $pdo = new Connection();
     $conn = $pdo->getConnection();
     try {
-      $stm = $conn->prepare("call mostrarFavoritos(?)");
-      $stm->bindParam(1,$favoritos->getIdUsuario());
+      $stm = $conn->prepare("call categorias()");
       $stm->execute();
       $result = $stm->fetchAll();
       return $result;

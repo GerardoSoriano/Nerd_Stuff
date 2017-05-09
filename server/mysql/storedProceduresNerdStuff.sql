@@ -392,3 +392,13 @@ create procedure mostrarTarjetas(in idU smallint unsigned)
         where idUsuario = idU;
 	end
 $$
+
+/*TABLA CATEGORIA*/
+
+/*SP para traerte todas las categorias*/
+delimiter $$
+create or replace procedure categorias()
+begin
+	select * from categoria;
+end
+$$

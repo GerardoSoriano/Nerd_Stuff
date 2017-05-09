@@ -1,4 +1,4 @@
-<div class="content" ng-controller="comprasController">
+<div class="content">
   <div class="categoria" id="carrito">
       <ul class="navBar">
         <li class="tab"><h1 class="titulo">Categoria</h1></li>
@@ -85,6 +85,18 @@
 </div>
 <script type="text/javascript">
   $('div#carrito').ready(function(){
+    $.ajax({
+      method: "POST",
+      url: "../server/php/controller/comprar.php",
+      data: { "token": localStorage.getItem("token") }
+    }).done(function (response) {
+      var info = JSON.parse(response);
+      if(info.msg = "success"){
+        console.log(info);
+      } else {
+        console.log("Credenciales incorrectas");
+      }
+    });
     $('div.categoria>div.offers').slick({
       infinite: true,
       speed: 300,
