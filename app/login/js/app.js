@@ -12,8 +12,7 @@ $(document).ready(function () {
         regx: /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/
       },
       contrasena: {
-        required: true,
-        regx: /(?=.*\d)(?=.*[a-z])(?=.*[A-Z])/
+        required: true
       }
     },
     messages: {
