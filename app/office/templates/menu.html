@@ -1,33 +1,47 @@
-<div class="menu" ng-controller="menuController">
+<div class="menu">
     <div class="topContainer">
-      <div class="logo">
-          <img src="resources/img/imagotipoHorizontal_NerdStuffWhiteSh_lq.png" alt="Logo de la empresa">
-      </div>
-      <div class="userInfo">
-          <div class="profilePicture">
-              <img src="resources/img/profile.jpg" alt="Imagen de perfil">
-          </div>
-          <h1>
-              Bienvenido,<br>
-              <span class="username">gerardosoriano97</span>
-          </h1>
-      </div>
+        <div class="logo">
+            <img src="resources/img/imagotipoHorizontal_NerdStuffWhiteSh_lq.png" alt="Logo de la empresa">
+        </div>
+        <div class="userInfo">
+            <div class="profilePicture">
+                <img src="resources/img/profile.jpg" alt="Imagen de perfil">
+            </div>
+            <h1>
+                Bienvenido,<br>
+                <span class="username">gerardosoriano97</span>
+            </h1>
+        </div>
     </div>
     <div class="bottomContainer">
-      <ul class="sections">
-          <a href="#main" ng-click="menuOnClick($event)"><li class="current">Inicio</li></a>
-          <a href="#carrito" ng-click="menuOnClick($event)"><li>Carrito</li></a>
-          <a href="#comprar" ng-click="menuOnClick($event)"><li>Comprar</li></a>
-          <a href="#cuenta" ng-click="menuOnClick($event)"><li>Mi cuenta</li></a>
-          <a href="#historial" ng-click="menuOnClick($event)"><li>Historial</li></a>
-          <a href="#invitados" ng-click="menuOnClick($event)"><li>Invitados</li></a>
-          <a href="" ng-click="menuOnClick($event)"><li>Salir</li></a>
-      </ul>
-      <div class="help">
-          <div class="sphere">
-              <i class="fa fa-question" aria-hidden="true"></i>
-          </div>
-          <h1>¿Necesitas ayuda?</h1>
-      </div>
+        <ul class="sections">
+            <a href="#main" ng-click="menuOnClick($event)">
+                <li class="current">Inicio</li>
+            </a>
+            <a href="#carrito" ng-click="menuOnClick($event)">
+                <li>Carrito</li>
+            </a>
+            <a href="#comprar" ng-click="menuOnClick($event)">
+                <li>Comprar</li>
+            </a>
+            <a href="#cuenta" ng-click="menuOnClick($event)">
+                <li>Mi cuenta</li>
+            </a>
+            <a href="#historial" ng-click="menuOnClick($event)">
+                <li>Historial</li>
+            </a>
+            <a href="#invitados" ng-click="menuOnClick($event)">
+                <li>Invitados</li>
+            </a>
+            <a href="" ng-click="menuOnClick($event)">
+                <li>Salir</li>
+            </a>
+        </ul>
+        <div class="help">
+            <div class="sphere">
+                <i class="fa fa-question" aria-hidden="true"></i>
+            </div>
+            <h1>¿Necesitas ayuda?</h1>
+        </div>
     </div>
 </div>

@@ -50,6 +50,14 @@ angular.module('app', ['ngRoute'])
         }
     }])
 
+    .controller('headerController', ['$scope', function ($scope) {
+        $scope.headerOnClick = function ($event) {
+            $('div[class^="menu"]').toggleClass('menu menu-min');
+            $('div[class^="header"]').toggleClass('header header-max');
+            $('div[class^="content"]').toggleClass('content content-max');
+        }
+    }])
+
     .controller("treeController", ['$scope', '$http', function ($scope, $http) {
         $scope.usuarios = "";
         $http.get("resources/test.json")
