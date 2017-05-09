@@ -38,6 +38,9 @@ div[class^="menu"]{
       margin: 0;
     }
   }
+  >div.logoMin{
+    display: none;
+  }
   >div.userInfo{
     width: 100%;
     height: 90px;
@@ -84,23 +87,36 @@ div[class^="menu"]{
     width: 100%;
     >a{
       text-decoration: none;
+      display: flex;
+      align-items: center;
+      padding: 2px 0;
       >li{
         color: $primary-text-color;
         font: 16px _Century_Gothic_;
-        padding: 8px 20px;
+        font-weight: lighter;
+        padding: 8px 13px;
         width: 100%;
         box-sizing: border-box;
         cursor: pointer;
-        &.current{
-          border-left: 7px solid $primary-color;
-        }
-        &:hover{
-          color: $primary-text-color;
-          background-color: $primary-color-light;
-        }
         >i.fa{
           margin-right: 10px;
         }
+
+      }
+      >i{
+        padding: 0 10px;
+        font-size: 22px;
+        color: $secondary-text-color;
+      }
+      &.current{
+        border-left: 7px solid $primary-color;
+        >i{
+          color: $primary-color;
+        }
+      }
+      &:hover{
+        color: $primary-text-color;
+        background-color: $primary-color-light;
       }
     }
   }
@@ -122,7 +138,7 @@ div[class^="menu"]{
     border-radius: 15px;
     cursor: pointer;
     &:hover{
-      box-shadow: 0 0 20px $secondary-text-color;
+      box-shadow: 0 0 4px;
       background-color: $accent-color;
       >div.sphere{
         background-color: $primary-color-text;
@@ -142,6 +158,7 @@ div[class^="menu"]{
       >i.fa{
         color: $primary-text-color;
         font-size: 30px;
+        margin-right: 2px;
       }
     }
     >h1{
@@ -153,43 +170,105 @@ div[class^="menu"]{
   }
 }
 }
-div[class$="-min"]{
-  width: 100px;
-  max-width: 100px;
-  >div.logo{
-    >img{
-      min-width: 100%;
-      max-width: 100%;
-      min-height: auto;
-      max-height: auto;
-    }
-    >h1{
-      display: none;
-    }
-  }
-  >div.userInfo{
+div[class~="-min"]{
+  width: 60px;
+  max-width: 70px;
+  justify-content: center;
+  background-color: $primary-color;
+  border-right: 1px solid $primary-color-dark;
+  >div.topContainer{
+    background-color: inherit;
     border: 0;
-    justify-content: center;
-    >div.profilePicture{
-      width: 70px;
-      height: 70px;
-      margin: 0;
-    }
-    >h1{
+    >div.logo{
       display: none;
     }
-  }
-  >ul.sections{
-    display: none;
-  }
-  >div.help{
-    width: 90px;
-    justify-content: center;
-    >div.sphere{
-      margin: 0;
+    >div.logoMin{
+      display: block;
+      width: 100%;
+      text-align: center;
+      >img{
+        width: 45px;
     }
-    >h1{
-      display: none;
+    }
+    >div.userInfo{
+      border: 0;
+      margin: 0;
+      justify-content: center;
+      >div.profilePicture{
+        margin: 0;
+        width: 45px;
+        height: 45px;
+        >img{
+          width: 45px;
+          height: 45px;
+        }
+      }
+      >h1{
+        display: none;
+      }
+    }
+  }
+  >div.bottomContainer{
+    background-color: inherit;
+    padding: 0;
+    border: 0;
+    >ul.sections{
+      >a{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        >li{
+          display: none;
+        }
+        >i{
+          color: $primary-color-text;
+          font-size: 22px;
+          padding: 10px;
+        }
+        &.current{
+          border-left: 0;
+
+          >i{
+            color: $secondary-text-color;
+          }
+        }
+        &:hover{
+          color: $primary-text-color;
+          background-color: $primary-color-dark;
+          >i{
+            color: $primary-color-text;
+          }
+        }
+      }
+    }
+    >div.help{
+      width: 99%;
+      height: auto;
+      justify-content: center;
+      background-color: inherit;
+      border: 0;
+      >div.sphere{
+        margin: 0;
+        >i{
+          margin-right: 2px;
+        }
+      }
+      >h1{
+        display: none;
+      }
+      &:hover{
+        background-color: inherit;
+        border: 0;
+        box-shadow: 0 0 0px;
+        >div.sphere{
+          background-color: $accent-color;
+          box-shadow: 0 0 3px;
+          >i{
+            color: $primary-color-text;
+            margin-right: 2px;
+          }
+        }
+      }
     }
   }
 }

@@ -24,6 +24,7 @@ div.categoria{
       justify-content: center;
       &:hover{
         border-bottom: 3px solid $accent-color;
+        cursor: pointer;
         >h1{
           color: $primary-text-color;
         }

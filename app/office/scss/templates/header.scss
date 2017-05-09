@@ -77,3 +77,6 @@ div[class^="header"]{
     }
   }
 }
+div[class~="-Hmin"]{
+  padding: 5px 10px 5px 70px;
+}
