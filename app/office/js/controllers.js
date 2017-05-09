@@ -14,10 +14,11 @@ angular.module('app')
     .controller('menuController', ['$scope', function ($scope) {
         $scope.menuOnClick = function ($event) {
             var element = $event.target;
-            $("ul.sections li").each(function () {
+            console.log($(element).parent().get(0));
+            $("ul.sections a").each(function () {
                 $(this).removeClass("current");
             })
-            $(element).addClass("current");
+            $(element).parent().addClass("current");
         }
     }])
 
