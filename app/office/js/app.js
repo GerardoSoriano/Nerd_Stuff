@@ -1,4 +1,4 @@
-var rootPath = 'office/templates/';
+var rootPath = 'office/routes/';
 
 angular.module('app', ['ngRoute'])
     .config(['$routeProvider', '$locationProvider', function ($routeProvider, $locationProvider) {
