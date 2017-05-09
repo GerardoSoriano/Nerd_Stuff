@@ -1,7 +1,10 @@
-<div class="menu">
+<div class="menu" ng-controller="menuController">
     <div class="topContainer">
         <div class="logo">
             <img src="resources/img/imagotipoHorizontal_NerdStuffWhiteSh_lq.png" alt="Logo de la empresa">
+        </div>
+        <div class="logoMin">
+            <img src="resources/img/isotipo_NerdStuffWhiteSh_lq.png" alt="Logo de la empresa">
         </div>
         <div class="userInfo">
             <div class="profilePicture">
@@ -14,28 +17,14 @@
         </div>
     </div>
     <div class="bottomContainer">
-        <ul class="sections">
-            <a href="#main" ng-click="menuOnClick($event)">
-                <li class="current">Inicio</li>
-            </a>
-            <a href="#carrito" ng-click="menuOnClick($event)">
-                <li>Carrito</li>
-            </a>
-            <a href="#comprar" ng-click="menuOnClick($event)">
-                <li>Comprar</li>
-            </a>
-            <a href="#cuenta" ng-click="menuOnClick($event)">
-                <li>Mi cuenta</li>
-            </a>
-            <a href="#historial" ng-click="menuOnClick($event)">
-                <li>Historial</li>
-            </a>
-            <a href="#invitados" ng-click="menuOnClick($event)">
-                <li>Invitados</li>
-            </a>
-            <a href="" ng-click="menuOnClick($event)">
-                <li>Salir</li>
-            </a>
+        <ul class="sections" ng-click="menuOnClick($event)">
+            <a href="#main"><i class="fa fa-home"></i><li class="current">Inicio</li></a>
+            <a href="#carrito"><i class="fa fa-shopping-cart"></i><li>Carrito</li></a>
+            <a href="#comprar"><i class="fa fa-star"></i><li>Comprar</li></a>
+            <a href="#cuenta"><i class="fa fa-user"></i><li>Mi cuenta</li></a>
+            <a href="#historial"><i class="fa fa-file-text-o"></i><li>Historial</li></a>
+            <a href="#invitados"><i class="fa fa-users"></i><li>Invitados</li></a>
+            <a href=""><i class="fa fa-sign-out"></i><li>Salir</li></a>
         </ul>
         <div class="help">
             <div class="sphere">
