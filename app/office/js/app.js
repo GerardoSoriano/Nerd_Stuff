@@ -57,4 +57,14 @@ angular.module('app', ['ngRoute'])
                 console.log("Aqui entro una vez");
                 $scope.usuarios = response.data;
             });
+    }])
+
+    .controller("comprasController", ['$scope', '$http', function($scope, $http){
+        $http({
+            url: '../server/php/controller/comprar.php',
+            method: "POST",
+            data: { 'token' : localStorage.getItem("token") }
+        }).then(function(response){
+          console.log(response.data);
+        });
     }]);

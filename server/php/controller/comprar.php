@@ -5,6 +5,7 @@ include_once(dirname(__DIR__).'/data/favoritosCRUD.php');
 include_once(dirname(__DIR__).'/data/productoCompraCRUD.php');
 include_once(dirname(__DIR__).'/data/jwt_helper.php');
 
+print_r($_POST);
 $token = $_POST['token'];
 $token = JWT::decode($token,'9286');
 if (array_key_exists("idUsuario",$token)) {
