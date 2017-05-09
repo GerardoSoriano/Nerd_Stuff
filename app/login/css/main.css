@@ -15,7 +15,7 @@ body {
     height: 100vh;
     justify-content: center;
     align-items: center;
-    background-color: #FFFFFF; }
+    background-color: #f2f2f2; }
   body * {
     font-family: "Helvetica Neue",Helvetica,Arial,sans-serif; }
   body > div[class$="-max"] {

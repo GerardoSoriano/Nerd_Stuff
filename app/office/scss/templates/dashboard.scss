@@ -37,6 +37,7 @@ div.dashboard{
       height: 150px;
       overflow: hidden;
       margin-bottom: 18px;
+      border: 1px solid $divider-color;
       background-color: $grey;
       >canvas.graphics{
         width: 600px;
