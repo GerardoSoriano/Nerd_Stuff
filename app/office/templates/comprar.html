@@ -1,10 +1,16 @@
-<div class="content">
+<div class="content" ng-controller="comprasController">
   <div class="categoria" id="carrito">
-      <ul class="navBar">
-        <li class="tab"><h1 class="titulo">Categoria</h1></li>
-        <li class="tab"><h1 class="titulo">Categoria</h1></li>
-        <li class="tab"><h1 class="titulo">Categoria</h1></li>
-      </ul>
+    <ul class="navBar">
+      <li class="tab">
+        <h1 class="titulo">Categoria</h1>
+      </li>
+      <li class="tab">
+        <h1 class="titulo">Categoria</h1>
+      </li>
+      <li class="tab">
+        <h1 class="titulo">Categoria</h1>
+      </li>
+    </ul>
     <div class="offers">
       <div class="offer">Oferta 1</div>
       <div class="offer">Oferta 2</div>
@@ -17,7 +23,7 @@
         <div class="product">
           <div class="infoCard">
             <div class="productImage">
-              <img src="../../resources/img/thumbnail.jpg" alt="Imagen del producto">
+              <img src="resources/img/thumbnail.jpg" alt="Imagen del producto">
             </div>
             <h1>Nombre del producto</h1>
             <p>descripción</p>
@@ -27,52 +33,57 @@
         <div class="product">
           <div class="infoCard">
             <div class="productImage">
-              <img src="../../resources/img/thumbnail.jpg" alt="Imagen del producto">
+              <img src="resources/img/thumbnail.jpg" alt="Imagen del producto">
             </div>
             <h1>Nombre del producto</h1>
             <p>descripción</p>
             <h5>precio</h5>
           </div>
-        </div><div class="product">
+        </div>
+        <div class="product">
           <div class="infoCard">
             <div class="productImage">
-              <img src="../../resources/img/thumbnail.jpg" alt="Imagen del producto">
+              <img src="resources/img/thumbnail.jpg" alt="Imagen del producto">
             </div>
             <h1>Nombre del producto</h1>
             <p>descripción</p>
             <h5>precio</h5>
           </div>
-        </div><div class="product">
+        </div>
+        <div class="product">
           <div class="infoCard">
             <div class="productImage">
-              <img src="../../resources/img/thumbnail.jpg" alt="Imagen del producto">
+              <img src="resources/img/thumbnail.jpg" alt="Imagen del producto">
             </div>
             <h1>Nombre del producto</h1>
             <p>descripción</p>
             <h5>precio</h5>
           </div>
-        </div><div class="product">
+        </div>
+        <div class="product">
           <div class="infoCard">
             <div class="productImage">
-              <img src="../../resources/img/thumbnail.jpg" alt="Imagen del producto">
+              <img src="resources/img/thumbnail.jpg" alt="Imagen del producto">
             </div>
             <h1>Nombre del producto</h1>
             <p>descripción</p>
             <h5>precio</h5>
           </div>
-        </div><div class="product">
+        </div>
+        <div class="product">
           <div class="infoCard">
             <div class="productImage">
-              <img src="../../resources/img/thumbnail.jpg" alt="Imagen del producto">
+              <img src="resources/img/thumbnail.jpg" alt="Imagen del producto">
             </div>
             <h1>Nombre del producto</h1>
             <p>descripción</p>
             <h5>precio</h5>
           </div>
-        </div><div class="product">
+        </div>
+        <div class="product">
           <div class="infoCard">
             <div class="productImage">
-              <img src="../../resources/img/thumbnail.jpg" alt="Imagen del producto">
+              <img src="resources/img/thumbnail.jpg" alt="Imagen del producto">
             </div>
             <h1>Nombre del producto</h1>
             <p>descripción</p>
@@ -84,7 +95,7 @@
   </div>
 </div>
 <script type="text/javascript">
-  $('div#carrito').ready(function(){
+  $('div#carrito').ready(function () {
     $('div.categoria>div.offers').slick({
       infinite: true,
       speed: 300,
@@ -117,4 +128,5 @@
       ]
     });
   });
+
 </script>
