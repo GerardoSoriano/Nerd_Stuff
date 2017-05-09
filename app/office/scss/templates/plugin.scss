@@ -7,8 +7,8 @@ div.plugin{
   >div.section{
     width: $small;
     min-width: $small;
-    border-top: 2px solid $firstColor;
-    margin: 10px 0 18px;
+    border-top: 1px solid $divider-color;
+    margin: 30px 0 18px;
     box-sizing: border-box;
     display: inline-flex;
     flex-wrap: wrap;
@@ -35,9 +35,10 @@ div.plugin{
     >label{
       background-color: white;
       font: bold 25px _Century_Gothic_;
+      color:$primary-text-color;
       margin: 0;
       transform: translateY(-60%);
-      padding-right: 10px;
+      padding-right: 20px;
       position: absolute;
     }
     >div.card{
@@ -48,17 +49,19 @@ div.plugin{
       flex-wrap: wrap;
       position: relative;
       >button[name="add"]{
-        margin-top: 10px;
-        border: 0;
-        border-radius: 5px;
-        background-color: $firstColor;
+        margin-top: 15px;
+        border: 1px solid $primary-color-dark;
+        padding: 7px 15px;
+        float: right;
+        border-radius: 3px;
+        background-color: $primary-color;
         font: bold 20px _Century_Gothic_;
         color: white;
-        padding: 5px 15px;
         margin-bottom: 18px;
       }
       >div.tree{
-        background: $mainGradient;
+        background: $primary-color-text;
+        border: 1px solid $divider-color;
         width: 100%;
         height: 500px;
         display: flex;

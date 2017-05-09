@@ -50,7 +50,7 @@ div.carrito{
       border-bottom: 1px solid $divider-color;
       >div.card{
         width: 100%;
-        border-radius: 15px;
+        border-radius: 3px;
         border: solid 1px $divider-color;
         background-color: $primary-color-text;
         overflow: hidden;
@@ -143,7 +143,7 @@ div.carrito{
                   height: 100%;
                   padding: 15px;
                   border: 1px solid $divider-color;
-                  border-radius: 10px;
+                  border-radius: 5px;
                   display: flex;
                   flex-wrap: wrap;
                   overflow: hidden;

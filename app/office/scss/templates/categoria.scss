@@ -207,7 +207,7 @@ div.categoria{
               height: 100%;
               padding: 15px;
               border: 1px solid $divider-color;
-              border-radius: 10px;
+              border-radius: 5px;
               display: flex;
               flex-wrap: wrap;
               overflow: hidden;
@@ -250,7 +250,7 @@ div.categoria{
               >h5{
                 position: absolute;
                 bottom: 8px;
-                color: $accent-color;
+                color: $primary-color;
                 font: 15px _Century_Gothic_;
                 font-weight: bold;
               }
