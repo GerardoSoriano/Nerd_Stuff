@@ -1,7 +1,8 @@
-var rootPath = 'office/routes/';
+
 
 angular.module('app', ['ngRoute'])
     .config(['$routeProvider', '$locationProvider', function ($routeProvider, $locationProvider) {
+        var rootPath = 'office/routes/';
         $locationProvider.hashPrefix('');
         $routeProvider.
             when('/', {
