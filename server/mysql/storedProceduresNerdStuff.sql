@@ -1,3 +1,5 @@
+use nerdstuff;
+
 /*TABLA USUARIO*/
 
 /*SP para agregar Usuarios*/
@@ -215,6 +217,15 @@ create procedure mostrarFavoritos(in idU smallint unsigned)
         from favoritos F
         inner join producto P on F.idProducto = P.idProducto
         where F.idUsuario = idU;
+    end
+$$
+
+/*SP para agregar un producto a favoritos de un usuario*/
+delimiter $$
+create procedure agregarFavoritos(in idU smallint unsigned, in idP smallint unsigned)
+	begin
+		insert into favoritos(idUsuario, idProducto)
+        values (idU, idP);
     end
 $$
 

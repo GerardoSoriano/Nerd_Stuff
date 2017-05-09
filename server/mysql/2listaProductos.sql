@@ -1,5 +1,4 @@
-insert into categoria(nombreCategoria)
-	values ('Ropa'), ('Accesorios'), ('Muebles'), ('Decoración'), ('Juguetes'), ('Libros'), ('Historietas');
+use nerdstuff;
 
 insert into producto(nombreProducto, costo, puntaje, descripcion, idCategoria, direccionFoto)
 	values 	('Llavero Thor', 100, 7, 'Llavero de Mjolnir de Thor.', 2, ''),
