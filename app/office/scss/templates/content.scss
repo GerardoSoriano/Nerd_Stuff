@@ -6,3 +6,6 @@ div[class^="content"]{
   box-sizing: border-box;
   z-index: 1;
 }
+div[class~="-Cmin"]{
+  padding: 50px 10px 10px 70px;
+}

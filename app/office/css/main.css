@@ -69,6 +69,8 @@ div[class^="menu"] {
         text-transform: uppercase;
         display: inline-block;
         margin: 0; }
+    div[class^="menu"] > div.topContainer > div.logoMin {
+      display: none; }
     div[class^="menu"] > div.topContainer > div.userInfo {
       width: 100%;
       height: 90px;
@@ -109,21 +111,31 @@ div[class^="menu"] {
       margin: 0;
       width: 100%; }
       div[class^="menu"] > div.bottomContainer > ul.sections > a {
-        text-decoration: none; }
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        padding: 2px 0; }
         div[class^="menu"] > div.bottomContainer > ul.sections > a > li {
           color: #212121;
           font: 16px _Century_Gothic_;
-          padding: 8px 20px;
+          font-weight: lighter;
+          padding: 8px 13px;
           width: 100%;
           box-sizing: border-box;
           cursor: pointer; }
-          div[class^="menu"] > div.bottomContainer > ul.sections > a > li.current {
-            border-left: 7px solid #00BCD4; }
-          div[class^="menu"] > div.bottomContainer > ul.sections > a > li:hover {
-            color: #212121;
-            background-color: #B2EBF2; }
           div[class^="menu"] > div.bottomContainer > ul.sections > a > li > i.fa {
             margin-right: 10px; }
+        div[class^="menu"] > div.bottomContainer > ul.sections > a > i {
+          padding: 0 10px;
+          font-size: 22px;
+          color: #757575; }
+        div[class^="menu"] > div.bottomContainer > ul.sections > a.current {
+          border-left: 7px solid #00BCD4; }
+          div[class^="menu"] > div.bottomContainer > ul.sections > a.current > i {
+            color: #00BCD4; }
+        div[class^="menu"] > div.bottomContainer > ul.sections > a:hover {
+          color: #212121;
+          background-color: #B2EBF2; }
     div[class^="menu"] > div.bottomContainer > div.help {
       position: absolute;
       margin-left: 1px;
@@ -142,7 +154,7 @@ div[class^="menu"] {
       border-radius: 15px;
       cursor: pointer; }
       div[class^="menu"] > div.bottomContainer > div.help:hover {
-        box-shadow: 0 0 20px #757575;
+        box-shadow: 0 0 4px;
         background-color: #FF5252; }
         div[class^="menu"] > div.bottomContainer > div.help:hover > div.sphere {
           background-color: #FFFFFF; }
@@ -159,41 +171,89 @@ div[class^="menu"] {
         margin-left: 3px; }
         div[class^="menu"] > div.bottomContainer > div.help > div.sphere > i.fa {
           color: #212121;
-          font-size: 30px; }
+          font-size: 30px;
+          margin-right: 2px; }
       div[class^="menu"] > div.bottomContainer > div.help > h1 {
         font: bold 18px _Century_Gothic_;
         margin: 0;
         display: inline-block;
         color: #212121; }
 
-div[class$="-min"] {
-  width: 100px;
-  max-width: 100px; }
-  div[class$="-min"] > div.logo > img {
-    min-width: 100%;
-    max-width: 100%;
-    min-height: auto;
-    max-height: auto; }
-  div[class$="-min"] > div.logo > h1 {
-    display: none; }
-  div[class$="-min"] > div.userInfo {
-    border: 0;
-    justify-content: center; }
-    div[class$="-min"] > div.userInfo > div.profilePicture {
-      width: 70px;
-      height: 70px;
-      margin: 0; }
-    div[class$="-min"] > div.userInfo > h1 {
+div[class~="-min"] {
+  width: 60px;
+  max-width: 70px;
+  justify-content: center;
+  background-color: #00BCD4;
+  border-right: 1px solid #0097A7; }
+  div[class~="-min"] > div.topContainer {
+    background-color: inherit;
+    border: 0; }
+    div[class~="-min"] > div.topContainer > div.logo {
       display: none; }
-  div[class$="-min"] > ul.sections {
-    display: none; }
-  div[class$="-min"] > div.help {
-    width: 90px;
-    justify-content: center; }
-    div[class$="-min"] > div.help > div.sphere {
-      margin: 0; }
-    div[class$="-min"] > div.help > h1 {
-      display: none; }
+    div[class~="-min"] > div.topContainer > div.logoMin {
+      display: block;
+      width: 100%;
+      text-align: center; }
+      div[class~="-min"] > div.topContainer > div.logoMin > img {
+        width: 45px; }
+    div[class~="-min"] > div.topContainer > div.userInfo {
+      border: 0;
+      margin: 0;
+      justify-content: center; }
+      div[class~="-min"] > div.topContainer > div.userInfo > div.profilePicture {
+        margin: 0;
+        width: 45px;
+        height: 45px; }
+        div[class~="-min"] > div.topContainer > div.userInfo > div.profilePicture > img {
+          width: 45px;
+          height: 45px; }
+      div[class~="-min"] > div.topContainer > div.userInfo > h1 {
+        display: none; }
+  div[class~="-min"] > div.bottomContainer {
+    background-color: inherit;
+    padding: 0;
+    border: 0; }
+    div[class~="-min"] > div.bottomContainer > ul.sections > a {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center; }
+      div[class~="-min"] > div.bottomContainer > ul.sections > a > li {
+        display: none; }
+      div[class~="-min"] > div.bottomContainer > ul.sections > a > i {
+        color: #FFFFFF;
+        font-size: 22px;
+        padding: 10px; }
+      div[class~="-min"] > div.bottomContainer > ul.sections > a.current {
+        border-left: 0; }
+        div[class~="-min"] > div.bottomContainer > ul.sections > a.current > i {
+          color: #757575; }
+      div[class~="-min"] > div.bottomContainer > ul.sections > a:hover {
+        color: #212121;
+        background-color: #0097A7; }
+        div[class~="-min"] > div.bottomContainer > ul.sections > a:hover > i {
+          color: #FFFFFF; }
+    div[class~="-min"] > div.bottomContainer > div.help {
+      width: 99%;
+      height: auto;
+      justify-content: center;
+      background-color: inherit;
+      border: 0; }
+      div[class~="-min"] > div.bottomContainer > div.help > div.sphere {
+        margin: 0; }
+        div[class~="-min"] > div.bottomContainer > div.help > div.sphere > i {
+          margin-right: 2px; }
+      div[class~="-min"] > div.bottomContainer > div.help > h1 {
+        display: none; }
+      div[class~="-min"] > div.bottomContainer > div.help:hover {
+        background-color: inherit;
+        border: 0;
+        box-shadow: 0 0 0px; }
+        div[class~="-min"] > div.bottomContainer > div.help:hover > div.sphere {
+          background-color: #FF5252;
+          box-shadow: 0 0 3px; }
+          div[class~="-min"] > div.bottomContainer > div.help:hover > div.sphere > i {
+            color: #FFFFFF;
+            margin-right: 2px; }
 
 div[class^="content"] {
   width: 100%;
@@ -202,6 +262,9 @@ div[class^="content"] {
   padding: 50px 10px 10px 260px;
   box-sizing: border-box;
   z-index: 1; }
+
+div[class~="-Cmin"] {
+  padding: 50px 10px 10px 70px; }
 
 div[class^="header"] {
   height: 50px;
@@ -270,6 +333,9 @@ div[class^="header"] {
       margin-left: 5px;
       margin-right: 5px;
       color: #FFFFFF; }
+
+div[class~="-Hmin"] {
+  padding: 5px 10px 5px 70px; }
 
 div.dashboard {
   width: 100%;
@@ -395,7 +461,8 @@ div.categoria {
       align-items: center;
       justify-content: center; }
       div.categoria > ul.navBar > li:hover {
-        border-bottom: 3px solid #FF5252; }
+        border-bottom: 3px solid #FF5252;
+        cursor: pointer; }
         div.categoria > ul.navBar > li:hover > h1 {
           color: #212121; }
         div.categoria > ul.navBar > li:hover.current {
