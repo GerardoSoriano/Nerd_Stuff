@@ -1,10 +1,16 @@
-<div class="content">
+<div class="content" ng-controller="comprasController">
   <div class="categoria" id="carrito">
-      <ul class="navBar">
-        <li class="tab"><h1 class="titulo">Categoria</h1></li>
-        <li class="tab"><h1 class="titulo">Categoria</h1></li>
-        <li class="tab"><h1 class="titulo">Categoria</h1></li>
-      </ul>
+    <ul class="navBar">
+      <li class="tab">
+        <h1 class="titulo">Categoria</h1>
+      </li>
+      <li class="tab">
+        <h1 class="titulo">Categoria</h1>
+      </li>
+      <li class="tab">
+        <h1 class="titulo">Categoria</h1>
+      </li>
+    </ul>
     <div class="offers">
       <div class="offer">Oferta 1</div>
       <div class="offer">Oferta 2</div>
@@ -33,7 +39,8 @@
             <p>descripción</p>
             <h5>precio</h5>
           </div>
-        </div><div class="product">
+        </div>
+        <div class="product">
           <div class="infoCard">
             <div class="productImage">
               <img src="resources/img/thumbnail.jpg" alt="Imagen del producto">
@@ -42,7 +49,8 @@
             <p>descripción</p>
             <h5>precio</h5>
           </div>
-        </div><div class="product">
+        </div>
+        <div class="product">
           <div class="infoCard">
             <div class="productImage">
               <img src="resources/img/thumbnail.jpg" alt="Imagen del producto">
@@ -51,7 +59,8 @@
             <p>descripción</p>
             <h5>precio</h5>
           </div>
-        </div><div class="product">
+        </div>
+        <div class="product">
           <div class="infoCard">
             <div class="productImage">
               <img src="resources/img/thumbnail.jpg" alt="Imagen del producto">
@@ -60,7 +69,8 @@
             <p>descripción</p>
             <h5>precio</h5>
           </div>
-        </div><div class="product">
+        </div>
+        <div class="product">
           <div class="infoCard">
             <div class="productImage">
               <img src="resources/img/thumbnail.jpg" alt="Imagen del producto">
@@ -69,7 +79,8 @@
             <p>descripción</p>
             <h5>precio</h5>
           </div>
-        </div><div class="product">
+        </div>
+        <div class="product">
           <div class="infoCard">
             <div class="productImage">
               <img src="resources/img/thumbnail.jpg" alt="Imagen del producto">
@@ -84,19 +95,7 @@
   </div>
 </div>
 <script type="text/javascript">
-  $('div#carrito').ready(function(){
-    $.ajax({
-      method: "POST",
-      url: "../server/php/controller/comprar.php",
-      data: { "token": localStorage.getItem("token") }
-    }).done(function (response) {
-      var info = JSON.parse(response);
-      if(info.msg = "success"){
-        console.log(info);
-      } else {
-        console.log("Credenciales incorrectas");
-      }
-    });
+  $('div#carrito').ready(function () {
     $('div.categoria>div.offers').slick({
       infinite: true,
       speed: 300,
@@ -129,4 +128,5 @@
       ]
     });
   });
+
 </script>

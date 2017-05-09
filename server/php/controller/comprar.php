@@ -6,8 +6,10 @@ include_once(dirname(__DIR__).'/data/productoCompraCRUD.php');
 include_once(dirname(__DIR__).'/data/categoriaCRUD.php');
 include_once(dirname(__DIR__).'/data/jwt_helper.php');
 
-$token = $_POST['token'];
-$token = JWT::decode($token,'9286');
+$postdata = file_get_contents("php://input");
+$token = json_decode($postdata);
+$token = JWT::decode($token->token,'9286');
+
 if (array_key_exists("idUsuario",$token)) {
   //Obetenemos las categorias
   $categorias = CategoriaMetodos::ObtenerCategorias();
