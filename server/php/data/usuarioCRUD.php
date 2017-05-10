@@ -12,8 +12,10 @@ class UsuarioMetodos
     $conn = $pdo->getConnection();
     try {
       $stm = $conn->prepare("call login(?,?)");
-      $stm->bindParam(1,$usuario->getEmail());
-      $stm->bindParam(2,$usuario->getContrasena());
+      $email = $usuario->getEmail();
+      $contrasena = $usuario->getContrasena();
+      $stm->bindParam(1,$email);
+      $stm->bindParam(2,$contrasena);
       $stm->execute();
       $result = $stm->fetchAll();
       return json_encode($result);

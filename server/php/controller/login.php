@@ -8,7 +8,7 @@ $obj = json_decode($json);
 
 $usuario = new Usuario();
 $usuario->setEmail($obj->email);
-$usuario->setContrasena(md5($obj->contrasena));
+$usuario->setContrasena($obj->contrasena);
 
 $um = new UsuarioMetodos();
 $json = $um->LoginUsuario($usuario);
