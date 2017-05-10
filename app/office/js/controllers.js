@@ -40,11 +40,20 @@ angular.module('app')
     }])
 
     .controller("comprasController", ['$scope', '$http', function ($scope, $http) {
+        $scope.compras = "";
         $http({
             url: '../server/php/controller/comprar.php',
             method: "POST",
             data: { 'token': localStorage.getItem("token") }
         }).then(function (response) {
-            console.log(response.data);
+            $scope.compras = response.data;
+            console.log($scope.compras);
         });
+
+        $scope.$watch("compras", function (value) {
+            console.log("CAMBIO COMPRAS");
+
+            
+        });
+
     }]);
