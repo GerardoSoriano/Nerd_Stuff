@@ -41,6 +41,43 @@ angular.module('app')
 
     .controller("comprasController", ['$scope', '$http', function ($scope, $http) {
         $scope.compras = "";
+
+        $scope.activarSlick = function (selector) {
+            $(selector).slick({
+                slidesToShow: 4,
+                slidesToScroll: 1,
+                autoplaySpeed: 2000,
+                responsive: [
+                    {
+                        breakpoint: 1572,
+                        settings: {
+                            slidesToShow: 3
+                        }
+                    },
+                    {
+                        breakpoint: 1254,
+                        settings: {
+                            slidesToShow: 2
+                        }
+                    },
+                    {
+                        breakpoint: 936,
+                        settings: {
+                            slidesToShow: 1
+                        }
+                    }
+                ]
+            });
+        }
+
+        $scope.$on('Last-Elem-Favoritos-Event', function (event) {
+            $scope.activarSlick("#compras-favoritos");
+        });
+
+        $scope.$on('Last-Elem-Ultimas-Event', function (event) {
+            $scope.activarSlick("#compras-ultimasCompras");
+        });
+
         $http({
             url: '../server/php/controller/comprar.php',
             method: "POST",
@@ -52,8 +89,6 @@ angular.module('app')
 
         $scope.$watch("compras", function (value) {
             console.log("CAMBIO COMPRAS");
-
-            
         });
 
     }]);

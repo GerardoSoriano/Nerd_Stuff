@@ -14,4 +14,18 @@ angular.module('app')
             templateUrl: rootPath + 'header.html',
             controller: 'headerController'
         };
+    })
+    .directive('verifyRepeatFavoritos', function () {
+        return function (scope, element, attrs) {
+            if (scope.$last) {
+                scope.$emit('Last-Elem-Favoritos-Event');
+            }
+        };
+    })
+    .directive('verifyRepeatUltimas', function () {
+        return function (scope, element, attrs) {
+            if (scope.$last) {
+                scope.$emit('Last-Elem-Ultimas-Event');
+            }
+        };
     });
