@@ -14,8 +14,10 @@ class ProductoCompraMetodos
     $conn = $pdo->getConnection();
     try {
       $stm = $conn->prepare("call productoComprado(?,?)");
-      $stm->bindParam(1,$productoCompra->getIdCompra());
-      $stm->bindParam(2,$productoCompra->getIdProducto());
+      $idCompra = $productoCompra->getIdCompra();
+      $idProducto = $productoCompra->getIdProducto();
+      $stm->bindParam(1,$idCompra);
+      $stm->bindParam(2,$idProducto);
       $result = $stm->execute();
       return $result;
     } catch (PDOException $e) {
@@ -112,7 +114,8 @@ class ProductoCompraMetodos
     $conn = $pdo->getConnection();
     try {
       $stm = $conn->prepare("call ultimasCompras(?)");
-      $stm->bindParam(1,$usuario->getIdUsuario());
+      $idUsuario = $usuario->getIdUsuario();
+      $stm->bindParam(1,$idUsuario);
       $stm->execute();
       $result = $stm->fetchAll();
       return $result;

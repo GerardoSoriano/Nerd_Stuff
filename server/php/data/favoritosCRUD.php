@@ -12,7 +12,8 @@ class FavoritosMetodos
     $conn = $pdo->getConnection();
     try {
       $stm = $conn->prepare("call mostrarFavoritos(?)");
-      $stm->bindParam(1,$favoritos->getIdUsuario());
+      $idUsuario = $favoritos->getIdUsuario();
+      $stm->bindParam(1,$idUsuario);
       $stm->execute();
       $result = $stm->fetchAll();
       return $result;
