@@ -16,9 +16,6 @@ angular.module('app', ['ngRoute'])
             when('/about', {
                 templateUrl: rootPath + 'about.html'
             }).
-            when('/blog', {
-                templateUrl: rootPath + 'blog.html'
-            }).
             when('/contact', {
                 templateUrl: rootPath + 'contact.html'
             }).
