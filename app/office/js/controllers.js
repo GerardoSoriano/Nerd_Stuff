@@ -24,9 +24,44 @@ angular.module('app')
 
     .controller('headerController', ['$scope', function ($scope) {
         $scope.headerOnClick = function ($event) {
-            $('div[class^="menu"]').toggleClass('menu menu-min');
-            $('div[class^="header"]').toggleClass('header header-max');
-            $('div[class^="content"]').toggleClass('content content-max');
+            if (($('.profilePicture').hasClass('.-profScaleMin')) || ($('.profilePicture').hasClass('.-profScaleMax'))) {
+                $('.profilePicture -profScaleMin').toggleClass('.profilePicture -profScaleMax');
+            } else {
+                $('.profilePicture').addClass('.-profScaleMin')
+            }
+            if ($('.menu').hasClass('-min')) {
+                $('div[class^="menu"]').toggleClass('menu menu -min');
+
+                $('.menu').animate({
+                    width: '+=190px'
+                }, 500, function () {
+                    // Animation complete.
+
+                });
+                $('.header').animate({
+                    'padding-left': 270
+                }, 500);
+                $('.content').animate({
+                    'padding-left': 280
+                }, 500);
+            } else {
+                $('.menu').animate({
+                    width: '-=190px'
+                }, 500, function () {
+                    $('div[class^="menu"]').toggleClass('menu menu -min');
+
+                });
+                $('.header').animate({
+                    'padding-left': 70
+                }, 500);
+                $('.content').animate({
+                    'padding-left': 50
+                }, 500);
+
+            }
+
+            $('div[class^="header"]').toggleClass('header header -Hmin');
+            $('div[class~="content"]').toggleClass('content content -Cmin');
         }
     }])
 
