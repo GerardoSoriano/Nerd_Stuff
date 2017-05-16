@@ -5,12 +5,12 @@ use nerdstuff;
 /*SP para agregar Usuarios*/
 delimiter $$
 create procedure agregarUsuario(in nombreU nvarchar(50), in primerNom nvarchar (50), in segundoNom nvarchar(50), in apellidoPat nvarchar (50),
-	in apellidoMat nvarchar (50), in correo nvarchar(50), in contra nvarchar(20), in fechaNac date, in sexo enum('Masculino', 'Femenino'),
+	in apellidoMat nvarchar (50), in correo nvarchar(50), in contra nvarchar(20), in fechaNac date, in sexo enum('Masculino', 'Femenino'), in urlFoto nvarchar(50),
     in metodoPago enum('DepositoBancario', 'Tarjeta'), in idPat smallint unsigned)
     begin 
 		insert into usuario(nombreUsuario, primerNombre, segundoNombre, apellidoPaterno, apellidoMaterno, email, contrasena, fechaNacimiento,
-		genero, formaPago, fechaRegistro, idPatrocinador) 
-		values (nombreU, primerNom, segundoNom, apellidoPat, apellidoMat, correo, contra, fechaNac, sexo, metodoPago, curdate(), idPat);
+		genero, fotoUrl, formaPago, fechaRegistro, idPatrocinador) 
+		values (nombreU, primerNom, segundoNom, apellidoPat, apellidoMat, correo, contra, fechaNac, sexo, urlFoto, metodoPago, curdate(), idPat);
 	end
 $$
 
@@ -19,7 +19,7 @@ delimiter $$
 create procedure datosPersonales(in nombreU nvarchar(50))
 	begin
 		select idUsuario, nombreUsuario, primerNombre, segundoNombre, apellidoPaterno, apellidoMaterno, email, contrasena, fechaNacimiento,
-        genero, formaPago, fechaRegistro, idPatrocinador
+        genero, fotoUrl, formaPago, fechaRegistro, idPatrocinador
         from usuario
         where nombreU = nombreUsuario;
 	end
@@ -29,7 +29,7 @@ $$
 delimiter $$
 create procedure modificarDatosPersonales(in nombreU nvarchar(50), in primerNom nvarchar (50), in segundoNom nvarchar(50),
 	in apellidoPat nvarchar (50), in apellidoMat nvarchar (50), in correo nvarchar(50), in contra nvarchar(20), in fechaNac date,
-    in sexo enum('Masculino', 'Femenino'), in metodoPago enum('DepositoBancario', 'Tarjeta'), in idPat smallint unsigned)
+    in sexo enum('Masculino', 'Femenino'), in urlFoto nvarchar(50), in metodoPago enum('DepositoBancario', 'Tarjeta'), in idPat smallint unsigned)
     begin
 		update usuario
         set primerNombre = primerNom,
@@ -39,6 +39,7 @@ create procedure modificarDatosPersonales(in nombreU nvarchar(50), in primerNom 
             email = correo,
             fechaNacimiento = fechaNac,
             genero = sexo,
+            fotoUrl = urlFoto,
             formaPago = metodoPago,
             idPatrocinador = idPat
 		where nombreUsuario = nombreU and contrasena = contra;
