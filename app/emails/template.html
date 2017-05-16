@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <style media="screen">
+      body{
+        margin: 0;
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        background-color: #ebebeb;}
+        body span.user{
+          font-weight: bold;}
+        body span.company{
+          font-weight: bold;
+          font: 23px "Impact";
+          letter-spacing: 1px;}
+        body>div.logo{
+          display: block;
+          width: 100%;
+          height: 50px;
+          padding: 15px;
+          overflow: hidden;
+          text-align: center;
+          box-sizing: border-box;}
+          body>div.logo>img{
+          width: auto;
+          height: auto;
+          max-height: 100%;}
+        body>div.content{
+          display: flex;
+          width: 450px;
+          min-height: 450px;
+          border: 1px solid #cccccc;
+          background-color: #fff;
+          box-sizing: border-box;
+          padding: 25px 30px;
+          flex-wrap: wrap;
+          align-content: flex-start;
+          justify-content: center;
+          position: relative;}
+          body>div.content>div.header{
+            width: 100%;
+            box-sizing: border-box;
+            padding: 10px;
+            color: #757575;
+            font: 20px "Century Gothic";
+            text-align: center;
+            border-bottom: 1px solid #cccccc;}
+          body>div.content>div.body{
+            width: 100%;
+            box-sizing: border-box;
+            padding: 25px 10px 10px;
+            color: #757575;
+            font: 20px "Century Gothic";}
+          body>div.content>button[name="join"]{
+            position: absolute;
+            bottom: 30px;
+            background-color: #00BCD4;
+            border: none;
+            font: 20px "Century Gothic";
+            text-transform: uppercase;
+            color: #fff;
+            width: 185px;
+            height: 50px;
+            border-radius: 5px;
+          }
+    </style>
+  </head>
+  <body>
+    <div class="logo">
+      <img src="../resources/img/imagotipoHorizontal_NerdStuff2_lq.png" alt="">
+    </div>
+    <div class="content">
+      <div class="header">
+        <span class="user">Usuario</span> te ha invitado a unirte a <br><span class="company">Nerd Stuff</span>
+      </div>
+      <div class="body">
+        Hola, <span class="user">Usuario</span>
+        <p>
+          <span class="user">Usuario</span> te ha invitado a unirte a las filas de <span class="company">Nerd Stuff</span>
+        </p>
+      </div>
+      <button type="button" name="join">unirse</button>
+    </div>
+  </body>
+</html>
