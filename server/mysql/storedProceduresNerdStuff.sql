@@ -5,12 +5,12 @@ use nerdstuff;
 /*SP para agregar Usuarios*/
 delimiter $$
 create procedure agregarUsuario(in nombreU nvarchar(50), in primerNom nvarchar (50), in segundoNom nvarchar(50), in apellidoPat nvarchar (50),
-	in apellidoMat nvarchar (50), in correo nvarchar(50), in contra nvarchar(20), in sexo enum('Masculino', 'Femenino'), in urlFoto nvarchar(50),
+	in apellidoMat nvarchar (50), in correo nvarchar(50), in contra nvarchar(20), in urlFoto nvarchar(50),
     in metodoPago enum('DepositoBancario', 'Tarjeta'), in idPat smallint unsigned)
     begin 
 		insert into usuario(nombreUsuario, primerNombre, segundoNombre, apellidoPaterno, apellidoMaterno, email, contrasena,
-		genero, fotoUrl, formaPago, fechaRegistro, idPatrocinador) 
-		values (nombreU, primerNom, segundoNom, apellidoPat, apellidoMat, correo, contra, sexo, urlFoto, metodoPago, curdate(), idPat);
+		fotoUrl, formaPago, fechaRegistro, idPatrocinador) 
+		values (nombreU, primerNom, segundoNom, apellidoPat, apellidoMat, correo, contra, urlFoto, metodoPago, curdate(), idPat);
 	end
 $$
 
@@ -19,7 +19,7 @@ delimiter $$
 create procedure datosPersonales(in nombreU nvarchar(50))
 	begin
 		select idUsuario, nombreUsuario, primerNombre, segundoNombre, apellidoPaterno, apellidoMaterno, email, contrasena,
-        genero, fotoUrl, formaPago, fechaRegistro, idPatrocinador
+        fotoUrl, formaPago, fechaRegistro, idPatrocinador
         from usuario
         where nombreU = nombreUsuario;
 	end
@@ -29,7 +29,7 @@ $$
 delimiter $$
 create procedure modificarDatosPersonales(in nombreU nvarchar(50), in primerNom nvarchar (50), in segundoNom nvarchar(50),
 	in apellidoPat nvarchar (50), in apellidoMat nvarchar (50), in correo nvarchar(50), in contra nvarchar(20),
-    in sexo enum('Masculino', 'Femenino'), in urlFoto nvarchar(50), in metodoPago enum('DepositoBancario', 'Tarjeta'), in idPat smallint unsigned)
+    in urlFoto nvarchar(50), in metodoPago enum('DepositoBancario', 'Tarjeta'), in idPat smallint unsigned)
     begin
 		update usuario
         set primerNombre = primerNom,
@@ -37,7 +37,6 @@ create procedure modificarDatosPersonales(in nombreU nvarchar(50), in primerNom 
             apellidoPaterno = apellidoPat,
             apellidoMaterno = apellidoMat,
             email = correo,
-            genero = sexo,
             fotoUrl = urlFoto,
             formaPago = metodoPago,
             idPatrocinador = idPat
@@ -102,7 +101,7 @@ delimiter $$
 create procedure login(in _usuario nvarchar(50), in _contrasena nvarchar(20))
 	begin
 		select idUsuario, nombreUsuario, primerNombre, segundoNombre, apellidoPaterno, apellidoMaterno, email, contrasena,
-        genero, formaPago, fechaRegistro, idPatrocinador, fotoUrl
+        formaPago, fechaRegistro, idPatrocinador, fotoUrl
         from usuario
         where nombreUsuario = _usuario or email = _usuario and contrasena = _contrasena;
 	end
