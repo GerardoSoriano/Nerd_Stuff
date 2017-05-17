@@ -19,6 +19,9 @@ angular.module('app', ['ngRoute'])
             when('/contact', {
                 templateUrl: rootPath + 'contact.html'
             }).
+            when('/catalog', {
+                templateUrl: rootPath + 'catalog.html'
+            }).
             otherwise({
                 redirectTo: '/'
             });
