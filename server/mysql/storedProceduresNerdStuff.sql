@@ -16,12 +16,12 @@ $$
 
 /*SP para traer los datos del Usuario*/
 delimiter $$
-create procedure datosPersonales(in nombreU nvarchar(50))
+create procedure datosPersonales(in idUser smallint unsigned)
 	begin
 		select idUsuario, nombreUsuario, primerNombre, segundoNombre, apellidoPaterno, apellidoMaterno, email, contrasena,
         fotoUrl, formaPago, fechaRegistro, idPatrocinador
         from usuario
-        where nombreU = nombreUsuario;
+        where idUsuario = idUser;
 	end
 $$
 
@@ -29,7 +29,7 @@ $$
 delimiter $$
 create procedure modificarDatosPersonales(in nombreU nvarchar(50), in primerNom nvarchar (50), in segundoNom nvarchar(50),
 	in apellidoPat nvarchar (50), in apellidoMat nvarchar (50), in correo nvarchar(50), in contra nvarchar(20),
-    in urlFoto nvarchar(50), in metodoPago enum('DepositoBancario', 'Tarjeta'), in idPat smallint unsigned)
+    in urlFoto nvarchar(50), in metodoPago enum('DepositoBancario', 'Tarjeta'))
     begin
 		update usuario
         set primerNombre = primerNom,
@@ -39,7 +39,6 @@ create procedure modificarDatosPersonales(in nombreU nvarchar(50), in primerNom 
             email = correo,
             fotoUrl = urlFoto,
             formaPago = metodoPago,
-            idPatrocinador = idPat
 		where nombreUsuario = nombreU and contrasena = contra;
     end
 $$

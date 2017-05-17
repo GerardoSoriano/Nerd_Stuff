@@ -3,21 +3,40 @@
     <div class="section">
       <label>Mi Cuenta</label>
       <div class="card">
-        <label for="primerNombre">Primer nombre:</label>
-        <input type="text" class="data" id="primerNombre" name="primerNombre" placeholder="Primer nombre">
-        <label for="segundoNombre">Segundo nombre:</label>
-        <input type="text" class="data" id="segundoNombre" name="segundoNombre" placeholder="Segundo nombre">
-        <label for="apellidoPaterno">Apellido paterno:</label>
-        <input type="text" class="data" id="apellidoPaterno" name="apellidoPaterno" placeholder="Apellido Paterno">
-        <label for="apellidoMaterno">Apellido Materno:</label>
-        <input type="text" class="data" id="apellidoMaterno" name="apellidoMaterno" placeholder="Apellido Materno">
-        <label for="email">Correo:</label>
-        <input type="email" class="data" id="email" name="email" placeholder="Correo">
+        <form class="updateForm" method="post">
+          <div>
+            <input type="text" name="nombreUsuario" placeholder="Nombre de usuario *">
+            <input type="text" name="primerNombre" placeholder="Primer nombre *"><div class="buttonEdit"></div>
+            <input type="text" name="primerNombre" placeholder="Segundo nombre"><div class="buttonEdit"></div>
+            <input type="text" name="apellidoPaterno" placeholder="Apellido paterno*"><div class="buttonEdit"></div>
+            <input type="text" name="apellidoPaterno" placeholder="Apellido materno"><div class="buttonEdit"></div>
+            <input type="email" name="email" placeholder="Correo *"><div class="buttonEdit"></div>
+            <input type="password" name="contrasena" placeholder="Contraseña *"><div class="buttonEdit"></div>
+            <input type="submit" name="send" value="Guardar cambios"><br>
+            <labe>Miembro desde 15-04-2017.</label>
+          </div>
+          <div class="profilePicture">
+              <img src="resources/img/profile.jpg" alt="Imagen de perfil">
+          </div>
+        </form>
       </div>
     </div>
     <div class="section">
       <label>Metodo de Pago</label>
       <div class="card">
+        <input type="radio" name="formaPago" value="1"> Depósito bancario<br>
+        <input type="radio" name="formaPago" value="2"> Tarjeta de crédito<br>
+        <input type="button" name="agregarTarjeta" value="Agregar Tarjeta"><br>
+        <div class="addCreditCard">
+          <label>Tipo de tarjeta</label>
+          <select name="tipoTarjeta">
+            <option value="1">Visa</option>
+            <option value="2">Master Card</option>
+            <option value="3">American Express</option>
+          </select><br>
+          <input type="text" name="numeroTarjeta" placeholder="Número de tarjeta *">
+          <input type="text" name="numeroSeguridad" placeholder="Número de seguridad *"><br>
+        </div>
       </div>
     </div>
   </div>
