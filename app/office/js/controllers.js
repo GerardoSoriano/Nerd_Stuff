@@ -125,6 +125,15 @@ angular.module('app')
         }).then(function (response) {
             $scope.compras = response.data;
             console.log($scope.compras);
+
+            $http({
+                url: '../server/php/controller/productosPorCategoria.php',
+                method: "POST",
+                data: { 'token': localStorage.getItem("token") }
+            }).then(function (response) {
+                var productos = response.data;
+                console.log(productos);
+            });
         });
 
         $scope.$watch("compras", function (value) {
