@@ -2,11 +2,11 @@
 include_once(dirname(__DIR__).'./../model/usuario.php');
 include_once(dirname(__DIR__).'./../data/usuarioCRUD.php');
 
-$json = $_POST['json'];
-$obj = json_decode($json);
+//$json = $_POST['json'];
+//$obj = json_decode($json);
 
 $usuario = new Usuario();
-$usuario->setIdUsuario($obj->idUsuario);
+$usuario->setIdUsuario(2);//$obj->idUsuario);
 
 $um = new UsuarioMetodos();
 $obj1 = $um->ObtenerMiPatrocinador($usuario->getIdUsuario());

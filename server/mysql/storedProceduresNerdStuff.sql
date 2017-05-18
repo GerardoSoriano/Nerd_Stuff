@@ -38,7 +38,7 @@ create procedure modificarDatosPersonales(in nombreU nvarchar(50), in primerNom 
             apellidoMaterno = apellidoMat,
             email = correo,
             fotoUrl = urlFoto,
-            formaPago = metodoPago,
+            formaPago = metodoPago
 		where nombreUsuario = nombreU and contrasena = contra;
     end
 $$
