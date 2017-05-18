@@ -3,7 +3,7 @@
     <div class="section">
       <label>Mi Cuenta</label>
       <div class="card">
-        <form class="updateForm" method="post">
+        <form class="updateForm" action="" method="post" enctype="multipart/form-data">
           <div>
             <input type="text" name="nombreUsuario" placeholder="Nombre de usuario *">
             <input type="text" name="primerNombre" placeholder="Primer nombre *"><div class="buttonEdit"></div>
@@ -16,7 +16,8 @@
             <labe>Miembro desde 15-04-2017.</label>
           </div>
           <div class="profilePicture">
-              <img src="resources/img/profile.jpg" alt="Imagen de perfil">
+            <img src="resources/img/profile.jpg" alt="Imagen de perfil"><!-- ¿Se podrá hacer que esto funcione como botón y que esconda al input de abajo? -->
+            <input type="file" name="fotoPerfil" id="fotoPerfil" accept="image/jpeg,image/jpg,image/gif,image/png">
           </div>
         </form>
       </div>
