@@ -1,5 +1,5 @@
 <div class="content">
-  <div class="cuenta">
+  <div class="cuenta" ng-controller="cuentaController">
     <div class="section">
       <label>Mi Cuenta</label>
       <div class="card">
@@ -17,7 +17,8 @@
           </div>
           <div class="profilePicture">
             <img src="resources/img/profile.jpg" alt="Imagen de perfil"><!-- ¿Se podrá hacer que esto funcione como botón y que esconda al input de abajo? -->
-            <input type="file" name="fotoPerfil" id="fotoPerfil" accept="image/jpeg,image/jpg,image/gif,image/png">
+            <!--<input type="file" name="fotoPerfil" id="fotoPerfil" accept="image/jpeg,image/jpg,image/gif,image/png">-->
+            <input type="button" ngf-select="onFileSelect($file)">
           </div>
         </form>
       </div>

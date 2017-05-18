@@ -126,4 +126,24 @@ angular.module('app')
             console.log("CAMBIO COMPRAS");
         });
 
+    }])
+
+    .controller("cuentaController", ['$scope', '$http', 'Upload', function ($scope, $http, Upload) {
+
+        $scope.usuario = JSON.parse(localStorage.usuario);
+
+        $scope.onFileSelect = function (file) {
+            if (!file) return;
+            Upload.upload({
+                url: '../server/php/controller/modificarPerfil.php',
+                data: {
+                    image: file,
+                    nombre: $scope.usuario.primerNombre,
+                    token: localStorage.token
+                }
+            }).then(function (resp) {
+                // file is uploaded successfully
+                console.log(resp.data);
+            });
+        };
     }]);

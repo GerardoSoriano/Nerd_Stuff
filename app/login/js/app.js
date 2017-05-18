@@ -41,7 +41,7 @@ $(document).ready(function () {
       }).done(function (response) {
         var info = JSON.parse(response);
         if(info.msg = "success"){
-          localStorage.usuario = info.usuario;
+          localStorage.usuario = JSON.stringify(info.usuario);
           localStorage.token = info.token;
           window.location = 'office.html';
         } else {

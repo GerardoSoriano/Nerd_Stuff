@@ -1,4 +1,4 @@
-angular.module('app', ['ngRoute'])
+angular.module('app', ['ngRoute', 'ngFileUpload'])
     .config(['$routeProvider', '$locationProvider', function ($routeProvider, $locationProvider) {
         var rootPath = 'office/routes/';
         $locationProvider.hashPrefix('');
