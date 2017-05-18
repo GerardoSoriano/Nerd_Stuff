@@ -14,7 +14,12 @@ $obj2 = $um->ObtenerDatosPersonalesArbol($usuario->getIdUsuario());
 $obj3 = $um->ObtenerMisInvitados($usuario->getIdUsuario());
 $obj = array();
 $obj2[0]['invitados'] = $obj3;
-$obj1[0]['invitados'] = $obj2;
+if (!$obj1 == null) {
+  $obj1[0]['invitados'] = $obj2;
+}
+else {
+  $obj1 = $obj2;
+}
 $obj['invitados'] = $obj1;
 print_r(json_encode($obj));
  ?>
