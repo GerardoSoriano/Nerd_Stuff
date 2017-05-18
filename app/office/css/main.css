@@ -33,6 +33,9 @@ body {
     font-family: inherit;
     color: inherit; }
 
+.hide {
+  display: none !important; }
+
 div[class^="menu"] {
   width: 250px;
   max-width: 300px;
@@ -136,7 +139,7 @@ div[class^="menu"] {
         div[class^="menu"] > div.bottomContainer > ul.sections > a:hover {
           color: #212121;
           background-color: #B2EBF2; }
-    div[class^="menu"] > div.bottomContainer > a.help {
+    div[class^="menu"] > div.bottomContainer > div.help {
       position: absolute;
       margin-left: 1px;
       bottom: 5px;
@@ -153,12 +156,12 @@ div[class^="menu"] {
       align-items: center;
       border-radius: 15px;
       cursor: pointer; }
-      div[class^="menu"] > div.bottomContainer > a.help:hover {
+      div[class^="menu"] > div.bottomContainer > div.help:hover {
         box-shadow: 0 0 4px;
         background-color: #FF5252; }
-        div[class^="menu"] > div.bottomContainer > a.help:hover > div.sphere {
+        div[class^="menu"] > div.bottomContainer > div.help:hover > div.sphere {
           background-color: #FFFFFF; }
-      div[class^="menu"] > div.bottomContainer > a.help > div.sphere {
+      div[class^="menu"] > div.bottomContainer > div.help > div.sphere {
         width: 42px;
         height: 42px;
         border-radius: 50%;
@@ -169,11 +172,11 @@ div[class^="menu"] {
         align-items: center;
         margin-right: 5px;
         margin-left: 3px; }
-        div[class^="menu"] > div.bottomContainer > a.help > div.sphere > i.fa {
+        div[class^="menu"] > div.bottomContainer > div.help > div.sphere > i.fa {
           color: #212121;
           font-size: 30px;
           margin-right: 2px; }
-      div[class^="menu"] > div.bottomContainer > a.help > h1 {
+      div[class^="menu"] > div.bottomContainer > div.help > h1 {
         font: bold 18px _Century_Gothic_;
         margin: 0;
         display: inline-block;
@@ -231,26 +234,26 @@ div[class~="-min"] {
         background-color: #0097A7; }
         div[class~="-min"] > div.bottomContainer > ul.sections > a:hover > i {
           color: #FFFFFF; }
-    div[class~="-min"] > div.bottomContainer > a.help {
+    div[class~="-min"] > div.bottomContainer > div.help {
       width: 99%;
       height: auto;
       justify-content: center;
       background-color: inherit;
       border: 0; }
-      div[class~="-min"] > div.bottomContainer > a.help > div.sphere {
+      div[class~="-min"] > div.bottomContainer > div.help > div.sphere {
         margin: 0; }
-        div[class~="-min"] > div.bottomContainer > a.help > div.sphere > i {
+        div[class~="-min"] > div.bottomContainer > div.help > div.sphere > i {
           margin-right: 2px; }
-      div[class~="-min"] > div.bottomContainer > a.help > h1 {
+      div[class~="-min"] > div.bottomContainer > div.help > h1 {
         display: none; }
-      div[class~="-min"] > div.bottomContainer > a.help:hover {
+      div[class~="-min"] > div.bottomContainer > div.help:hover {
         background-color: inherit;
         border: 0;
         box-shadow: 0 0 0px; }
-        div[class~="-min"] > div.bottomContainer > a.help:hover > div.sphere {
+        div[class~="-min"] > div.bottomContainer > div.help:hover > div.sphere {
           background-color: #FF5252;
           box-shadow: 0 0 3px; }
-          div[class~="-min"] > div.bottomContainer > a.help:hover > div.sphere > i {
+          div[class~="-min"] > div.bottomContainer > div.help:hover > div.sphere > i {
             color: #FFFFFF;
             margin-right: 2px; }
 
@@ -710,12 +713,14 @@ div.categoria {
         top: 50%;
         transform: translateY(-100%); }
     div.categoria > div.category > div.productContainer > div.products {
+      display: flex;
+      flex-wrap: wrap;
       padding: 15px; }
       div.categoria > div.category > div.productContainer > div.products > div.infoCard {
         background-color: #FFFFFF;
         box-sizing: border-box;
         width: 200px;
-        height: 250px;
+        height: 300px;
         padding: 15px;
         border: 1px solid #BDBDBD;
         border-radius: 5px;

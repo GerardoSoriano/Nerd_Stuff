@@ -309,12 +309,14 @@ div.categoria{
         }
       }
       >div.products{
+        display: flex;
+        flex-wrap: wrap;
         padding: 15px;
         >div.infoCard{
                 background-color: $primary-color-text;
                 box-sizing: border-box;
                 width: 200px;
-                height: 250px;
+                height: 300px;
                 padding: 15px;
                 border: 1px solid $divider-color;
                 border-radius: 5px;

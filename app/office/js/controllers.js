@@ -88,6 +88,7 @@ angular.module('app')
     .controller("comprasController", ['$scope', '$http', function ($scope, $http) {
         $scope.compras = "";
         $scope.categories = "";
+        $scope.firstSlick = true;
 
         $scope.$on('Last-Elem-Favoritos-Event', function (event) {
             $scope.activarSlick("#compras-favoritos");
@@ -119,35 +120,52 @@ angular.module('app')
             console.log("CAMBIO COMPRAS");
         });
 
+        $scope.categoriaClick = function ($event) {
+            var element = $event.target;
+            var categoryName = $(element).text();
+
+            $(".category").addClass('hide');
+            $(".category#" + categoryName ).removeClass('hide');
+        };
+
         $scope.activarSlick = function (selector) {
-            $(selector).slick({
-                slidesToShow: 4,
-                slidesToScroll: 1,
-                autoplaySpeed: 2000,
-                responsive: [
-                    {
-                        breakpoint: 1572,
-                        settings: {
-                            slidesToShow: 3
+            $.when(
+                $(selector).slick({
+                    slidesToShow: 4,
+                    slidesToScroll: 1,
+                    autoplaySpeed: 2000,
+                    responsive: [
+                        {
+                            breakpoint: 1572,
+                            settings: {
+                                slidesToShow: 3
+                            }
+                        },
+                        {
+                            breakpoint: 1254,
+                            settings: {
+                                slidesToShow: 2
+                            }
+                        },
+                        {
+                            breakpoint: 936,
+                            settings: {
+                                slidesToShow: 1
+                            }
                         }
-                    },
-                    {
-                        breakpoint: 1254,
-                        settings: {
-                            slidesToShow: 2
-                        }
-                    },
-                    {
-                        breakpoint: 936,
-                        settings: {
-                            slidesToShow: 1
-                        }
-                    }
-                ]
+                    ]
+                })
+            ).then(function () {
+                if ($scope.firstSlick)
+                    $scope.firstSlick = false;
+                else {
+                    $(".category").addClass('hide');
+                }
+
             });
         }
-
     }])
+
 
     .controller("cuentaController", ['$scope', '$http', 'Upload', function ($scope, $http, Upload) {
 
@@ -155,99 +173,99 @@ angular.module('app')
 
         $scope.uploadPic = function (file) {
             $('form.updateForm').validate({
-              debug: true,
-              rules: {
-                primerNombre: {
-                  required: true
+                debug: true,
+                rules: {
+                    primerNombre: {
+                        required: true
+                    },
+                    segundoNombre: {
+                        required: false
+                    },
+                    apellidoPaterno: {
+                        required: true
+                    },
+                    apellidoMaterno: {
+                        required: false
+                    },
+                    email: {
+                        required: true
+                    },
+                    contrasena: {
+                        required: true
+                    }
                 },
-                segundoNombre: {
-                  required: false
+                messages: {
+                    primerNombre: {
+                        required: "Tu primer nombre debe de ser especificado"
+                    },
+                    apellidoPaterno: {
+                        required: "Necesitamos aunque sea un apellido tuyo"
+                    },
+                    email: {
+                        required: "Necesitamos un correo para poder contactar"
+                    },
+                    contrasena: {
+                        required: "Para modificar cambios, necesitas introducir de nuevo tu contraseña"
+                    }
                 },
-                apellidoPaterno: {
-                  required: true
-                },
-                apellidoMaterno: {
-                  required: false
-                },
-                email: {
-                  required: true
-                },
-                contrasena: {
-                  required: true
+                invalidHandler: function (event, validator) {
+                    var errors = validator.numberOfInvalids();
+                    if (errors) {
+                        var message = errors == 1
+                            ? 'Tienes un campo que no cumple con lo requerido'
+                            : 'Tienes ' + errors + ' campos que no cumplen con lo requerido';
+                        alert(message);
+                    }
                 }
-              },
-              messages: {
-                primerNombre: {
-                  required: "Tu primer nombre debe de ser especificado"
-                },
-                apellidoPaterno: {
-                  required: "Necesitamos aunque sea un apellido tuyo"
-                },
-                email: {
-                  required: "Necesitamos un correo para poder contactar"
-                },
-                contrasena: {
-                  required: "Para modificar cambios, necesitas introducir de nuevo tu contraseña"
-                }
-              },
-              invalidHandler: function (event, validator) {
-                var errors = validator.numberOfInvalids();
-                if (errors) {
-                  var message = errors == 1
-                    ? 'Tienes un campo que no cumple con lo requerido'
-                    : 'Tienes ' + errors + ' campos que no cumplen con lo requerido';
-                  alert(message);
-                }
-              }
             });
 
             if ($('form.updateForm').valid()) {
-              var jsonObj = {};
-              $('form.updateForm').find(".toJson").each(function (key, value) {
-                jsonObj[$(value).attr("name")] = $(value).val();
-              });
-              var json = JSON.stringify(jsonObj);
-              Upload.upload({
-                url: '../server/php/controller/modificarPerfil.php',
-                data: {
-                  image: file,
-                  token: localStorage.token,
-                  jsonDatos: json
-                }
-              }).then(function (resp) {
-                // file is uploaded successfully
-                console.log(resp.data);
-              });
+                var jsonObj = {};
+                $('form.updateForm').find(".toJson").each(function (key, value) {
+                    jsonObj[$(value).attr("name")] = $(value).val();
+                });
+                var json = JSON.stringify(jsonObj);
+                Upload.upload({
+                    url: '../server/php/controller/modificarPerfil.php',
+                    data: {
+                        image: file,
+                        token: localStorage.token,
+                        jsonDatos: json
+                    }
+                }).then(function (resp) {
+                    // file is uploaded successfully
+                    console.log(resp.data);
+                });
             }
 
         };
 
-        $scope.uploadCreditCard = function(){
+        $scope.uploadCreditCard = function () {
             $('form.creditCardForm').validate({
-              debug:true,
-              rules:{
-                formaPago:{
-                  required: true
+                debug: true,
+                rules: {
+                    formaPago: {
+                        required: true
+                    }
+                },
+                messages: {
+                    formaPago: {
+                        required: "Tienes que especificar una forma de pago"
+                    }
+                },
+                invalidHandler: function (event, validator) {
+                    var errors = validator.numberOfInvalids();
+                    if (errors) {
+                        var message = errors == 1
+                            ? 'Tienes un campo que no cumple con lo requerido'
+                            : 'Tienes ' + errors + ' campos que no cumplen con lo requerido';
+                        alert(message);
+                    }
                 }
-              },
-              messages:{
-                formaPago:{
-                  required: "Tienes que especificar una forma de pago"
-                }
-              },
-              invalidHandler: function (event, validator) {
-                var errors = validator.numberOfInvalids();
-                if (errors) {
-                  var message = errors == 1
-                    ? 'Tienes un campo que no cumple con lo requerido'
-                    : 'Tienes ' + errors + ' campos que no cumplen con lo requerido';
-                  alert(message);
-                }
-              }
             });
 
             if ($('form.creditCardForm').valid()) {
-              //a la espera de ver como funcionara lo de la tarjeta de credito
+                //a la espera de ver como funcionara lo de la tarjeta de credito
             }
         }
     }]);
