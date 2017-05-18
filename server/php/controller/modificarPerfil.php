@@ -1,78 +1,74 @@
 <?php
 include_once(dirname(__DIR__).'/data/usuarioCRUD.php');
-include_once(dirname(__DIR__).'/model/usuario.php');
+include_once(dirname(__DIR__).'/data/jwt_helper.php');
 
-// $postdata = file_get_contents("php://input");
-// $token = json_decode($postdata);
-// $token = JWT::decode($token->token,'9286');
-// $usuarioJson = $token->usuario;
-
-
-$fname = $_POST["nombre"];
+//obtenemos el token
 $token = $_POST["token"];
+$token = JWT::decode($token,'9286');
+//si el token es valido
+if (array_key_exists("idUsuario",$token)){
+  //variable para manejo de errores
+  $return = array();
+  //todo lo correspondiente a la info del usuario
+  $usuario = new Usuario();
+  $usuario->setIdUsuario($token->idUsuario);
+  $usuario->setNombreUsuario($token->nombreUsuario);
+  //obtenemos un backup del usuario
+  $backup = UsuarioMetodos::ObtenerDatosPersonales($usuario);
+  if (isset($_POST['jsonDatos'])) {
+    $json = json_decode($_POST['jsonDatos']);
 
-if(isset($_FILES['image']))
-{
-    //The error validation could be done on the javascript client side.
+    $usuario->setPrimerNombre($json->primerNombre);
+    $usuario->setSegundoNombre($json->segundoNombre);
+    $usuario->setApellidoPaterno($json->apellidoPaterno);
+    $usuario->setApellidoMaterno($json->apellidoMaterno);
+    $usuario->setEmail($json->email);
+    $usuario->setContrasena($json->contrasena);
+  }else {
+    $usuario->setNombreUsuario($backup[0]['nombreUsuario']);
+    $usuario->setPrimerNombre($backup[0]['primerNombre']);
+    $usuario->setSegundoNombre($backup[0]['segundoNombre']);
+    $usuario->setApellidoPaterno($backup[0]['apellidoPaterno']);
+    $usuario->setApellidoMaterno($backup[0]['apellidoMaterno']);
+    $usuario->setEmail($backup[0]['email']);
+    $usuario->setContrasena($backup[0]['contrasena']);
+  }
+  //todo lo correspondiente a la imagen
+  if(isset($_FILES['image'])){
     $errors= array();
+
     $file_name = $_FILES['image']['name'];
     $file_size =$_FILES['image']['size'];
     $file_tmp =$_FILES['image']['tmp_name'];
     $file_type=$_FILES['image']['type'];
     $file_ext = strtolower(pathinfo($file_name, PATHINFO_EXTENSION));
     $extensions = array("jpeg","jpg","png");
-    if(in_array($file_ext,$extensions )=== false)
-    {
-     $errors[]="image extension not allowed, please choose a JPEG or PNG file.";
+
+    if(in_array($file_ext,$extensions )=== false){
+      $errors['errorExtension'] = 'La imagen que se envio no es un JPG o un PNG';
     }
-    if($file_size > 2097152)
-    {
-    $errors[]='File size cannot exceed 2 MB';
+
+    if($file_size > 2097152){
+      $errors['errorTamaño'] = 'La imagen pesa mas de 2MB';
     }
-    if(empty($errors)==true)
-    {
-        move_uploaded_file($file_tmp,"../../../app/resources/img/".$file_name);
-        echo "TEST uploaded file: " . "images/" . $file_name;
+
+    if(empty($errors)==true){
+      move_uploaded_file($file_tmp,'../../../app/resources/img/'.$file_name);
+      $return['imagen'] = 'La imagen fue subida exitosamente';
+      $usuario->setFotoUrl($file_name);
+    }else{
+      $return['imagen'] = $errors;
+      $usuario->setFotoUrl($backup[0]['fotoUrl']);
     }
-    else
-    {
-        print_r($errors);
-    }
+  }else{
+    $return['imagen'] = 'No se encontro ninguna imagen';
+    $usuario->setFotoUrl($backup[0]['fotoUrl']);
+  }
+
+  $sp = UsuarioMetodos::ModificarDatosPersonales($usuario);
+
+  $return['mysqlDatos'] = $sp;
+
+  print_r(json_encode($return));
 }
-else
-{
-  echo "No se obtuvo imagen";
-}
-
-
-// if (array_key_exists("idUsuario",$token)) {
-
-//   if (is_uploaded_file($_FILES['fotoPerfil']['tmp_name']))
-//   {
-//     $fileTmp = $_FILES['fotoPerfil']['tmp_name'];
-//     list($tmpPath, $fileTmpName) = explode('php', $_FILES['fotoPerfil']['tmp_name']);
-//     $fileName = substr($fileTmpName, 0, -3);
-//     list($nm, $ext) = explode('.',$_FILES['fotoPerfil']['name']);
-//     $fileName = $fileName.$ext;
-//     $address = '../../../app/resources/'.$fileName;
-//     if (!move_uploaded_file($fileTmp, $address))
-//     {
-//       echo "<script>alert(\"No se pudo guardar el archivo.\");</script>";
-//     }
-//     $imageURL = $address;
-//   }
-//   $usuario = new Usuario();
-//   $usuario->setNombreUsuario($usuarioJson->nombreUsuario);
-//   $usuario->setPrimerNombre($usuarioJson->primerNombre);
-//   $usuario->setSegundoNombre($usuarioJson->segundoNombre);
-//   $usuario->setApellidoPaterno($usuarioJson->apellidoPaterno);
-//   $usuario->setApellidoMaterno($usuarioJson->apellidoMaterno);
-//   $usuario->setEmail($usuarioJson->email);
-//   $usuario->setContrasena($usuarioJson->contrasena);
-//   $usuario->setFotoUrl($imagenUrl);
-//   $usuario->setFormaPago($usuarioJson->formaPago);
-//   $usuarioInfo = UsuarioMetodos::ModificarDatosPersonales($usuario);
-//   print_r($usuarioInfo);
-// }
-//
 ?>

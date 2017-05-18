@@ -78,7 +78,7 @@ class UsuarioMetodos
       $stm->bindParam(1,$usuario->getIdUsuario());
       $stm->execute();
       $result = $stm->fetchAll();
-      return json_encode($result);
+      return $result;
     } catch (PDOException $e) {
       die($e->getMessage());
     } finally {

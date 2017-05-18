@@ -154,18 +154,100 @@ angular.module('app')
         $scope.usuario = JSON.parse(localStorage.usuario);
 
         $scope.uploadPic = function (file) {
-            if (!file) return;
+            $('form.updateForm').validate({
+              debug: true,
+              rules: {
+                primerNombre: {
+                  required: true
+                },
+                segundoNombre: {
+                  required: false
+                },
+                apellidoPaterno: {
+                  required: true
+                },
+                apellidoMaterno: {
+                  required: false
+                },
+                email: {
+                  required: true
+                },
+                contrasena: {
+                  required: true
+                }
+              },
+              messages: {
+                primerNombre: {
+                  required: "Tu primer nombre debe de ser especificado"
+                },
+                apellidoPaterno: {
+                  required: "Necesitamos aunque sea un apellido tuyo"
+                },
+                email: {
+                  required: "Necesitamos un correo para poder contactar"
+                },
+                contrasena: {
+                  required: "Para modificar cambios, necesitas introducir de nuevo tu contraseña"
+                }
+              },
+              invalidHandler: function (event, validator) {
+                var errors = validator.numberOfInvalids();
+                if (errors) {
+                  var message = errors == 1
+                    ? 'Tienes un campo que no cumple con lo requerido'
+                    : 'Tienes ' + errors + ' campos que no cumplen con lo requerido';
+                  alert(message);
+                }
+              }
+            });
 
-            file.upload = Upload.upload({
+            if ($('form.updateForm').valid()) {
+              var jsonObj = {};
+              $('form.updateForm').find(".toJson").each(function (key, value) {
+                jsonObj[$(value).attr("name")] = $(value).val();
+              });
+              var json = JSON.stringify(jsonObj);
+              Upload.upload({
                 url: '../server/php/controller/modificarPerfil.php',
                 data: {
-                    image: file,
-                    nombre: $scope.usuario.primerNombre,
-                    token: localStorage.token
+                  image: file,
+                  token: localStorage.token,
+                  jsonDatos: json
                 }
-            }).then(function (resp) {
+              }).then(function (resp) {
                 // file is uploaded successfully
                 console.log(resp.data);
-            });
+              });
+            }
+
         };
+
+        $scope.uploadCreditCard = function(){
+            $('form.creditCardForm').validate({
+              debug:true,
+              rules:{
+                formaPago:{
+                  required: true
+                }
+              },
+              messages:{
+                formaPago:{
+                  required: "Tienes que especificar una forma de pago"
+                }
+              },
+              invalidHandler: function (event, validator) {
+                var errors = validator.numberOfInvalids();
+                if (errors) {
+                  var message = errors == 1
+                    ? 'Tienes un campo que no cumple con lo requerido'
+                    : 'Tienes ' + errors + ' campos que no cumplen con lo requerido';
+                  alert(message);
+                }
+              }
+            });
+
+            if ($('form.creditCardForm').valid()) {
+              //a la espera de ver como funcionara lo de la tarjeta de credito
+            }
+        }
     }]);
