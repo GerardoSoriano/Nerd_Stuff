@@ -20,11 +20,12 @@
         <div id="compras-favoritos" class="product" ng-repeat="compra in compras.favoritos" verify-repeat-favoritos>
           <div class="infoCard">
             <div class="productImage">
-              <img src="resources/img/thumbnail.jpg" alt="Imagen del producto">
+              <img ng-src="resources/img/products/{{compra.direccionFoto}}" alt="Imagen del producto">
             </div>
             <h1>{{compra.nombreProducto}}</h1>
             <p>{{compra.descripcion}}</p>
-            <h5>{{compra.costo}}</h5>
+            <p><b>${{compra.costo}}</b></p>
+            <h5>{{compra.puntaje}}</h5>
           </div>
         </div>
       </div>
@@ -36,23 +37,26 @@
         <div class="product" ng-repeat="compra in compras.ultimasCompras" verify-repeat-ultimas>
           <div class="infoCard">
             <div class="productImage">
-              <img src="resources/img/thumbnail.jpg" alt="Imagen del producto">
+              <img ng-src="resources/img/products/{{compra.direccionFoto}}" alt="Imagen del producto">
             </div>
             <h1>{{compra.nombreProducto}}</h1>
             <p>{{compra.descripcion}}</p>
-            <h5>{{compra.costo}}</h5>
+            <p><b>${{compra.costo}}</b></p>
+            <h5>{{compra.puntaje}}</h5>
           </div>
         </div>
       </div>
     </div>
 
     <div class="category">
-      <div class="productContainer"> <!-- id="compras-ultimasCompras" -->
+      <div class="productContainer">
+        <!-- id="compras-ultimasCompras" -->
         <div class="sectionTitle">
           <label>Productos</label>
           <hr>
         </div>
-        <div class="products"> <!--ng-repeat="compra in compras.ultimasCompras" verify-repeat-ultimas-->
+        <div class="products">
+          <!--ng-repeat="compra in compras.ultimasCompras" verify-repeat-ultimas-->
           <div class="infoCard">
             <div class="productImage">
               <img src="resources/img/thumbnail.jpg" alt="Imagen del producto">
@@ -158,7 +162,7 @@
             <h5>$100</h5>
           </div>
         </div>
-      </div>          
+      </div>
     </div>
 
   </div>

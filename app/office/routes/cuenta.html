@@ -20,7 +20,7 @@
             <button ng-click="uploadPic(picFile)">Submit</button>
           </div>
           <div class="profilePicture">
-            <img src="resources/img/profile.jpg" alt="Imagen de perfil">
+            <img ng-src="resources/img/{{usuario.fotoUrl}}" alt="Imagen de perfil" />
             <!-- ¿Se podrá hacer que esto funcione como botón y que esconda al input de abajo? -->
             <!--<input type="file" name="fotoPerfil" id="fotoPerfil" accept="image/jpeg,image/jpg,image/gif,image/png">-->
 
