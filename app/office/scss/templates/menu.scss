@@ -120,7 +120,8 @@ div[class^="menu"]{
       }
     }
   }
-  >div.help{
+  >a.help{
+    text-decoration: none;
     position: absolute;
     margin-left: 1px;
     bottom: 5px;
@@ -242,7 +243,7 @@ div[class~="-min"]{
         }
       }
     }
-    >div.help{
+    >a.help{
       width: 99%;
       height: auto;
       justify-content: center;
