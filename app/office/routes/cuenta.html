@@ -4,19 +4,52 @@
       <label>Mi Cuenta</label>
       <div class="card">
         <form class="updateForm">
-          <span class="usuario">{{usuario.nombreUsuario}}</span>
-          <input class="toJson" type="text" name="primerNombre" placeholder="Primer nombre *" value="{{usuario.primerNombre}}">
-          <input class="toJson" type="text" name="segundoNombre" placeholder="Segundo nombre" value="{{usuario.segundoNombre}}">
-          <input class="toJson" type="text" name="apellidoPaterno" placeholder="Apellido paterno*" value="{{usuario.apellidoPaterno}}">
-          <input class="toJson" type="text" name="apellidoMaterno" placeholder="Apellido materno" value="{{usuario.apellidoMaterno}}">
-          <input class="toJson" type="email" name="email" placeholder="Correo *" value="{{usuario.email}}">
-          <input class="toJson" type="password" name="contrasena">
+          <div class="accountForm">
+            <label>Primer Nombre</label>
+            <div>
+              <input class="toJson" type="text" name="primerNombre" placeholder="Primer nombre *" value="{{usuario.primerNombre}}">
+              <i class="fa fa-pencil"></i>
+            </div>
+            <label>Contraseña</label>
+            <div>
+              <input class="toJson" type="password" name="contrasena">
+              <i class="fa fa-pencil"></i>
+            </div>
+            <label>Segundo Nombre</label>
+            <div>
+              <input class="toJson" type="text" name="segundoNombre" placeholder="Segundo nombre" value="{{usuario.segundoNombre}}">
+              <i class="fa fa-pencil"></i>
+            </div>
+            <label>Apellido Paterno</label>
+            <div>
+              <input class="toJson" type="text" name="apellidoPaterno" placeholder="Apellido paterno*" value="{{usuario.apellidoPaterno}}">
+              <i class="fa fa-pencil"></i>
+            </div>
+            <label>Apellido Materno</label>
+            <div>
+              <input class="toJson" type="text" name="apellidoMaterno" placeholder="Apellido materno" value="{{usuario.apellidoMaterno}}">
+              <i class="fa fa-pencil"></i>
+            </div>
+            <label>Correo Electrónico</label>
+            <div>
+              <input class="toJson" type="email" name="email" placeholder="Correo *" value="{{usuario.email}}">
+              <i class="fa fa-pencil"></i>
+            </div>
           <!--input type="submit" name="send" value="Guardar cambios"-->
           <button ng-click="uploadPic(picFile)">Submit</button>
+        </div>
           <div class="profilePicture">
             <label for="picFile">
               <img ng-src="resources/img/{{usuario.fotoUrl}}" alt="Imagen de perfil" />
             </label>
+            <div class="disabledInfo">
+              <div>
+                <i class="fa fa-user"></i><span class="usuario">{{usuario.nombreUsuario}}</span>
+              </div>
+              <label>Patrocinador</label>
+              <label>Miembro desde:</label>
+              <label>21-04-1997</label>
+            </div>
             <!-- ¿Se podrá hacer que esto funcione como botón y que esconda al input de abajo? -->
             <!--<input type="file" name="fotoPerfil" id="fotoPerfil" accept="image/jpeg,image/jpg,image/gif,image/png">-->
 
