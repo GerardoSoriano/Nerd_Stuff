@@ -2,12 +2,15 @@
   <div class="categoria" id="carrito">
 
     <ul class="navBar">
+      <li class="offer" ng-click="categoriaClick($event)">
+        <h1 class="titulo">Ofertas</h1>
+      </li>
       <li class="offer" ng-repeat="categoria in compras.categorias" ng-click="categoriaClick($event)">
         <h1 class="titulo">{{categoria.nombreCategoria}}</h1>
       </li>
     </ul>
 
-    <div class="category categoria">
+    <div class="category categoria" id="Ofertas">
 
       <div class="offers">
         <div class="offer">Oferta 1</div>

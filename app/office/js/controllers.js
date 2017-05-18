@@ -123,6 +123,7 @@ angular.module('app')
         $scope.categoriaClick = function ($event) {
             var element = $event.target;
             var categoryName = $(element).text();
+            categoryName = categoryName.trim();
 
             $(".category").addClass('hide');
             $(".category#" + categoryName ).removeClass('hide');
