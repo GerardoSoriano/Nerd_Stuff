@@ -66,11 +66,17 @@ angular.module('app')
 
     .controller("treeController", ['$scope', '$http', function ($scope, $http) {
         $scope.usuarios = "";
-        $http.get("resources/test.json")
-            .then(function (response) {
-                console.log("Aqui entro una vez");
-                $scope.usuarios = response.data;
-            });
+
+        $http({
+            url: '../server/php/controller/otros/misInvitados.php',
+            method: "POST",
+            data: { 'token': localStorage.getItem("token") }
+        }).then(function (response) {
+            console.log("Aqui entro una vez");
+            $scope.usuarios = response.data;
+            console.log(response.data);
+        });
+
         $scope.colapse = function ($event) {
             var element = $event.target;
             var test = $(element).closest(".person");
@@ -126,14 +132,14 @@ angular.module('app')
             $scope.compras = response.data;
             console.log($scope.compras);
 
-            $http({
-                url: '../server/php/controller/productosPorCategoria.php',
-                method: "POST",
-                data: { 'token': localStorage.getItem("token") }
-            }).then(function (response) {
-                var productos = response.data;
-                console.log(productos);
-            });
+            // $http({
+            //     url: '../server/php/controller/productosPorCategoria.php',
+            //     method: "POST",
+            //     data: { 'token': localStorage.getItem("token") }
+            // }).then(function (response) {
+            //     var productos = response.data;
+            //     console.log(productos);
+            // });
         });
 
         $scope.$watch("compras", function (value) {
