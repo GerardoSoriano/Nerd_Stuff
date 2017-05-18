@@ -71,6 +71,12 @@ angular.module('app')
                 console.log("Aqui entro una vez");
                 $scope.usuarios = response.data;
             });
+        $scope.colapse = function ($event) {
+            var element = $event.target;
+            var test = $(element).closest(".person");
+            console.log(element);
+            console.log(test);
+        }
     }])
 
     .controller("comprasController", ['$scope', '$http', function ($scope, $http) {
