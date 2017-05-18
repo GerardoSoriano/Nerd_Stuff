@@ -2,13 +2,12 @@ angular.module('app')
     .controller('mainController', ['$scope', function ($scope) {
 
         if (localStorage.getItem("usuario") != null) {
-            $scope.usuario = localStorage.usuario;
+            $scope.usuario = JSON.parse(localStorage.usuario);
+            console.log($scope.usuario);
         } else {
             // window.location.href = "login.html";
             console.log("No tiene un usuario");
         }
-
-        $scope.test = "Testing";
     }])
 
     .controller('menuController', ['$scope', function ($scope) {
