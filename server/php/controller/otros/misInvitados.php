@@ -10,9 +10,11 @@ $usuario->setIdUsuario(2);//$obj->idUsuario);
 
 $um = new UsuarioMetodos();
 $obj1 = $um->ObtenerMiPatrocinador($usuario->getIdUsuario());
-$obj2 = $um->ObtenerMisInvitados($usuario->getIdUsuario());
+$obj2 = $um->ObtenerDatosPersonalesArbol($usuario->getIdUsuario());
+$obj3 = $um->ObtenerMisInvitados($usuario->getIdUsuario());
 $obj = array();
-$obj['patrocinador'] = $obj1;
-$obj['invitados'] = $obj2;
+$obj2[0]['invitados'] = $obj3;
+$obj1[0]['invitados'] = $obj2;
+$obj['invitados'] = $obj1;
 print_r(json_encode($obj));
  ?>

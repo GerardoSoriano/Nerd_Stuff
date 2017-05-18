@@ -134,8 +134,23 @@ class UsuarioMetodos
       $stm->bindParam(1,$idUsuario);
       $stm->execute();
       $result = $stm->fetchAll();
-      foreach ($result as $row)
-      return $row;
+      return $result;
+    } catch (PDOException $e) {
+      die($e->getMessage());
+    } finally {
+      $conn = null;
+      $pdo->closeConnection();
+    }
+  }
+  function ObtenerDatosPersonalesArbol($idUsuario){
+    $pdo = new Connection();
+    $conn = $pdo->getConnection();
+    try {
+      $stm = $conn->prepare("call datosPersonalesArbol(?)");
+      $stm->bindParam(1,$idUsuario);
+      $stm->execute();
+      $result = $stm->fetchAll();
+      return $result;
     } catch (PDOException $e) {
       die($e->getMessage());
     } finally {

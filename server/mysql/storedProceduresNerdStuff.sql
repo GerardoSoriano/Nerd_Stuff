@@ -65,6 +65,16 @@ create procedure miPatrocinador(in idU smallint unsigned)
     end
 $$
 
+/*SP para traer los datos del Usuario*/
+delimiter $$
+create procedure datosPersonalesArbol(in idUser smallint unsigned)
+	begin
+		select idPatrocinador, idUsuario, nombreUsuario, concat(primerNombre, ' ', segundoNombre, ' ', apellidoPaterno, ' ', apellidoMaterno) as nombre, fotoUrl
+        from usuario
+        where idUsuario = idUser;
+	end
+$$
+
 /*SP para traer mi lista de invitados*/
 delimiter $$
 create procedure misInvitados(in idP smallint unsigned)
