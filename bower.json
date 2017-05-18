@@ -23,7 +23,8 @@
     "angular-route": "^1.6.4",
     "angular": "^1.6.4",
     "turnjs": "*",
-    "ng-file-upload": "^12.2.13"
+    "ng-file-upload": "^12.2.13",
+    "intro.js": "^2.5.0"
   },
   "devDependencies": {
     "jquery-validation": "^1.16.0"
