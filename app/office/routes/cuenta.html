@@ -6,7 +6,6 @@
         <form class="updateForm">
           <div>
             <input type="text" name="nombreUsuario" placeholder="Nombre de usuario *" value="{{usuario.nombreUsuario}}">
-            <div class="buttonEdit"></div>
             <input type="text" name="primerNombre" placeholder="Primer nombre *" value="{{usuario.primerNombre}}">
             <div class="buttonEdit"></div>
             <input type="text" name="primerNombre" placeholder="Segundo nombre" value="{{usuario.segundoNombre}}">
@@ -17,13 +16,19 @@
             <div class="buttonEdit"></div>
             <input type="email" name="email" placeholder="Correo *" value="{{usuario.email}}">
             <div class="buttonEdit"></div>
-            <input type="submit" name="send" value="Guardar cambios"><br>
+            <!--input type="submit" name="send" value="Guardar cambios"-->
+            <button ng-click="uploadPic(picFile)">Submit</button>
           </div>
           <div class="profilePicture">
             <img src="resources/img/profile.jpg" alt="Imagen de perfil">
             <!-- ¿Se podrá hacer que esto funcione como botón y que esconda al input de abajo? -->
             <!--<input type="file" name="fotoPerfil" id="fotoPerfil" accept="image/jpeg,image/jpg,image/gif,image/png">-->
-            <input type="button" ngf-select="onFileSelect($file)">
+
+            <!-- input type="button" ngf-select="onFileSelect($file)" -->
+
+            <input type="file" ngf-select ng-model="picFile" name="file" accept="image/*" ngf-max-size="2MB" title="Cambiar foto de perfil">
+            <i ng-show="myForm.file.$error.maxSize">File too large {{errorFile.size / 1000000|number:1}}MB: max 2M</i>
+            <img ng-show="myForm.file.$valid" ngf-thumbnail="picFile" class="thumb"> <button ng-click="picFile = null" ng-show="picFile">Remove</button>
           </div>
         </form>
       </div>
@@ -31,19 +36,21 @@
     <div class="section">
       <label>Metodo de Pago</label>
       <div class="card">
-        <input type="radio" name="formaPago" value="1"> Depósito bancario<br>
-        <input type="radio" name="formaPago" value="2"> Tarjeta de crédito<br>
-        <input type="button" name="agregarTarjeta" value="Agregar Tarjeta"><br>
-        <div class="addCreditCard">
-          <label>Tipo de tarjeta</label>
-          <select name="tipoTarjeta">
-      <option value="1">Visa</option>
-      <option value="2">Master Card</option>
-      <option value="3">American Express</option>
-    </select><br>
-          <input type="text" name="numeroTarjeta" placeholder="Número de tarjeta *">
-          <input type="text" name="numeroSeguridad" placeholder="Número de seguridad *"><br>
-        </div>
+        <form class="" action="index.html" method="post">
+          <input type="radio" name="formaPago" value="1"> Depósito bancario<br>
+          <input type="radio" name="formaPago" value="2"> Tarjeta de crédito<br>
+          <input type="button" name="agregarTarjeta" value="Agregar Tarjeta"><br>
+          <div class="addCreditCard">
+            <label>Tipo de tarjeta</label>
+            <select name="tipoTarjeta">
+              <option value="1">Visa</option>
+              <option value="2">Master Card</option>
+              <option value="3">American Express</option>
+            </select><br>
+            <input type="text" name="numeroTarjeta" placeholder="Número de tarjeta *">
+            <input type="text" name="numeroSeguridad" placeholder="Número de seguridad *"><br>
+          </div>
+        </form>
       </div>
     </div>
   </div>

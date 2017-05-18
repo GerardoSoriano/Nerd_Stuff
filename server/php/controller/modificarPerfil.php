@@ -11,29 +11,36 @@ include_once(dirname(__DIR__).'/model/usuario.php');
 $fname = $_POST["nombre"];
 $token = $_POST["token"];
 
-if(isset($_FILES['image'])){
+if(isset($_FILES['image']))
+{
     //The error validation could be done on the javascript client side.
-    $errors= array();        
+    $errors= array();
     $file_name = $_FILES['image']['name'];
     $file_size =$_FILES['image']['size'];
     $file_tmp =$_FILES['image']['tmp_name'];
-    $file_type=$_FILES['image']['type'];   
+    $file_type=$_FILES['image']['type'];
     $file_ext = strtolower(pathinfo($file_name, PATHINFO_EXTENSION));
-    $extensions = array("jpeg","jpg","png");        
-    if(in_array($file_ext,$extensions )=== false){
+    $extensions = array("jpeg","jpg","png");
+    if(in_array($file_ext,$extensions )=== false)
+    {
      $errors[]="image extension not allowed, please choose a JPEG or PNG file.";
     }
-    if($file_size > 2097152){
+    if($file_size > 2097152)
+    {
     $errors[]='File size cannot exceed 2 MB';
-    }               
-    if(empty($errors)==true){
+    }
+    if(empty($errors)==true)
+    {
         move_uploaded_file($file_tmp,"../../../app/resources/img/".$file_name);
         echo "TEST uploaded file: " . "images/" . $file_name;
-    }else{
+    }
+    else
+    {
         print_r($errors);
     }
 }
-else{
+else
+{
   echo "No se obtuvo imagen";
 }
 
@@ -48,7 +55,7 @@ else{
 //     list($nm, $ext) = explode('.',$_FILES['fotoPerfil']['name']);
 //     $fileName = $fileName.$ext;
 //     $address = '../../../app/resources/'.$fileName;
-//     if (!move_uploaded_file($fileTmp, $address)) 
+//     if (!move_uploaded_file($fileTmp, $address))
 //     {
 //       echo "<script>alert(\"No se pudo guardar el archivo.\");</script>";
 //     }
@@ -67,5 +74,5 @@ else{
 //   $usuarioInfo = UsuarioMetodos::ModificarDatosPersonales($usuario);
 //   print_r($usuarioInfo);
 // }
-// 
+//
 ?>

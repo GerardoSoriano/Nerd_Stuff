@@ -132,9 +132,10 @@ angular.module('app')
 
         $scope.usuario = JSON.parse(localStorage.usuario);
 
-        $scope.onFileSelect = function (file) {
+        $scope.uploadPic = function (file) {
             if (!file) return;
-            Upload.upload({
+
+            file.upload = Upload.upload({
                 url: '../server/php/controller/modificarPerfil.php',
                 data: {
                     image: file,
