@@ -87,7 +87,7 @@ angular.module('app')
 
     .controller("comprasController", ['$scope', '$http', function ($scope, $http) {
         $scope.compras = "";
-        $scope.productos = "";
+        $scope.categories = "";
 
         $scope.$on('Last-Elem-Favoritos-Event', function (event) {
             $scope.activarSlick("#compras-favoritos");
@@ -110,8 +110,8 @@ angular.module('app')
                 method: "POST",
                 data: { 'token': localStorage.getItem("token") }
             }).then(function (response) {
-                $scope.productos = response.data;
-                console.log($scope.productos);
+                $scope.categories = response.data;
+                console.log($scope.categories);
             });
         });
 

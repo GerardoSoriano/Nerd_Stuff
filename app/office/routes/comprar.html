@@ -48,118 +48,21 @@
       </div>
     </div>
 
-    <div class="category">
+    <div class="category" ng-repeat="category in categories">>
       <div class="productContainer">
-        <!-- id="compras-ultimasCompras" -->
         <div class="sectionTitle">
-          <label>Productos</label>
+          <label>{{category.nombreCategoria}}</label>
           <hr>
         </div>
         <div class="products">
-          <!--ng-repeat="compra in compras.ultimasCompras" verify-repeat-ultimas-->
-          <div class="infoCard">
+          <div class="infoCard" ng-repeat="producto in category.productos">
             <div class="productImage">
-              <img src="resources/img/thumbnail.jpg" alt="Imagen del producto">
+              <img ng-src="resources/img/products/{{producto.direccionFoto}}" alt="Imagen del producto">
             </div>
-            <h1>Nombre de Producto</h1>
-            <p>Descripcion de Producto</p>
-            <h5>$100</h5>
-          </div>
-          <div class="infoCard">
-            <div class="productImage">
-              <img src="resources/img/thumbnail.jpg" alt="Imagen del producto">
-            </div>
-            <h1>Nombre de Producto</h1>
-            <p>Descripcion de Producto</p>
-            <h5>$100</h5>
-          </div>
-          <div class="infoCard">
-            <div class="productImage">
-              <img src="resources/img/thumbnail.jpg" alt="Imagen del producto">
-            </div>
-            <h1>Nombre de Producto</h1>
-            <p>Descripcion de Producto</p>
-            <h5>$100</h5>
-          </div>
-          <div class="infoCard">
-            <div class="productImage">
-              <img src="resources/img/thumbnail.jpg" alt="Imagen del producto">
-            </div>
-            <h1>Nombre de Producto</h1>
-            <p>Descripcion de Producto</p>
-            <h5>$100</h5>
-          </div>
-          <div class="infoCard">
-            <div class="productImage">
-              <img src="resources/img/thumbnail.jpg" alt="Imagen del producto">
-            </div>
-            <h1>Nombre de Producto</h1>
-            <p>Descripcion de Producto</p>
-            <h5>$100</h5>
-          </div>
-          <div class="infoCard">
-            <div class="productImage">
-              <img src="resources/img/thumbnail.jpg" alt="Imagen del producto">
-            </div>
-            <h1>Nombre de Producto</h1>
-            <p>Descripcion de Producto</p>
-            <h5>$100</h5>
-          </div>
-          <div class="infoCard">
-            <div class="productImage">
-              <img src="resources/img/thumbnail.jpg" alt="Imagen del producto">
-            </div>
-            <h1>Nombre de Producto</h1>
-            <p>Descripcion de Producto</p>
-            <h5>$100</h5>
-          </div>
-          <div class="infoCard">
-            <div class="productImage">
-              <img src="resources/img/thumbnail.jpg" alt="Imagen del producto">
-            </div>
-            <h1>Nombre de Producto</h1>
-            <p>Descripcion de Producto</p>
-            <h5>$100</h5>
-          </div>
-          <div class="infoCard">
-            <div class="productImage">
-              <img src="resources/img/thumbnail.jpg" alt="Imagen del producto">
-            </div>
-            <h1>Nombre de Producto</h1>
-            <p>Descripcion de Producto</p>
-            <h5>$100</h5>
-          </div>
-          <div class="infoCard">
-            <div class="productImage">
-              <img src="resources/img/thumbnail.jpg" alt="Imagen del producto">
-            </div>
-            <h1>Nombre de Producto</h1>
-            <p>Descripcion de Producto</p>
-            <h5>$100</h5>
-          </div>
-          <div class="infoCard">
-            <div class="productImage">
-              <img src="resources/img/thumbnail.jpg" alt="Imagen del producto">
-            </div>
-            <h1>Nombre de Producto</h1>
-            <p>Descripcion de Producto</p>
-            <h5>$100</h5>
-          </div>
-          <div class="infoCard">
-            <div class="productImage">
-              <img src="resources/img/thumbnail.jpg" alt="Imagen del producto">
-            </div>
-            <h1>Nombre de Producto</h1>
-            <p>Descripcion de Producto</p>
-            <h5>$100</h5>
-          </div>
-          <div class="infoCard">
-            <div class="productImage">
-              <img src="resources/img/thumbnail.jpg" alt="Imagen del producto">
-            </div>
-            <h1>Nombre de Producto</h1>
-            <p>Descripcion de Producto</p>
-            <h5>$100</h5>
+            <h1>{{producto.nombreProducto}}</h1>
+            <p>{{producto.descripcion}}</p>
+            <p><b>${{producto.costo}}</b></p>
+            <h5>{{producto.puntaje}}</h5>
           </div>
         </div>
       </div>
