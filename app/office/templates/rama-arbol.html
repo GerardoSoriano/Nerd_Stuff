@@ -1,6 +1,6 @@
 <div class="hv-item">
 
-    <div ng-if="data.invitados.length > 1">
+    <div ng-if="data.invitados.length >= 1">
         <div class="hv-item-parent">
             <div class="person" ng-click="colapse($event)">
                 <img ng-src="https://randomuser.me/api/portraits/men/{{data.idUsuario}}.jpg" alt="Description" />
@@ -12,28 +12,6 @@
 
         <div class="hv-item-children">
             <div class="hv-item-child" ng-repeat="data in data.invitados" ng-include="'office/templates/rama-arbol.html'"></div>
-        </div>
-    </div>
-
-    <div ng-if="data.invitados.length == 1">
-        <div class="hv-item-parent">
-            <div class="person" ng-click="colapse($event)">
-                <img ng-src="https://randomuser.me/api/portraits/men/{{data.idUsuario}}.jpg" alt="Description" />
-                <p class="name">
-                    {{data.nombre}} <br>{{data.nombreUsuario}} <br> {{data.fotoUrl}}
-                </p>
-            </div>
-        </div>
-
-        <div class="hv-item-children">
-            <div class="hv-item-child">
-                <div class="person" ng-click="colapse($event)">
-                    <img ng-src="https://randomuser.me/api/portraits/men/{{data.invitados[0].idUsuario}}.jpg" alt="Description" />
-                    <p class="name">
-                        {{data.invitados[0].nombre}} <br>{{data.invitados[0].nombreUsuario}} <br> {{data.invitados[0].fotoUrl}}
-                    </p>
-                </div>
-            </div>
         </div>
     </div>
 
