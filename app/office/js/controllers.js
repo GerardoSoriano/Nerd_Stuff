@@ -87,6 +87,37 @@ angular.module('app')
 
     .controller("comprasController", ['$scope', '$http', function ($scope, $http) {
         $scope.compras = "";
+        $scope.productos = "";
+
+        $scope.$on('Last-Elem-Favoritos-Event', function (event) {
+            $scope.activarSlick("#compras-favoritos");
+        });
+
+        $scope.$on('Last-Elem-Ultimas-Event', function (event) {
+            $scope.activarSlick("#compras-ultimasCompras");
+        });
+
+        $http({
+            url: '../server/php/controller/comprar.php',
+            method: "POST",
+            data: { 'token': localStorage.getItem("token") }
+        }).then(function (response) {
+            $scope.compras = response.data;
+            console.log($scope.compras);
+
+            $http({
+                url: '../server/php/controller/productosPorCategoria.php',
+                method: "POST",
+                data: { 'token': localStorage.getItem("token") }
+            }).then(function (response) {
+                $scope.productos = response.data;
+                console.log($scope.productos);
+            });
+        });
+
+        $scope.$watch("compras", function (value) {
+            console.log("CAMBIO COMPRAS");
+        });
 
         $scope.activarSlick = function (selector) {
             $(selector).slick({
@@ -115,36 +146,6 @@ angular.module('app')
                 ]
             });
         }
-
-        $scope.$on('Last-Elem-Favoritos-Event', function (event) {
-            $scope.activarSlick("#compras-favoritos");
-        });
-
-        $scope.$on('Last-Elem-Ultimas-Event', function (event) {
-            $scope.activarSlick("#compras-ultimasCompras");
-        });
-
-        $http({
-            url: '../server/php/controller/comprar.php',
-            method: "POST",
-            data: { 'token': localStorage.getItem("token") }
-        }).then(function (response) {
-            $scope.compras = response.data;
-            console.log($scope.compras);
-
-            // $http({
-            //     url: '../server/php/controller/productosPorCategoria.php',
-            //     method: "POST",
-            //     data: { 'token': localStorage.getItem("token") }
-            // }).then(function (response) {
-            //     var productos = response.data;
-            //     console.log(productos);
-            // });
-        });
-
-        $scope.$watch("compras", function (value) {
-            console.log("CAMBIO COMPRAS");
-        });
 
     }])
 
