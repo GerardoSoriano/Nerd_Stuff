@@ -28,6 +28,7 @@ a{
 }
 a:hover{
     color: #c5cae6;
+    cursor: pointer;
 }
 p {
     font-size: 1.25em;

@@ -261,4 +261,113 @@ div.categoria{
       }
     }
   }
+  >div.category{
+    width: 100%;
+    height: auto;
+    @include fiveColumn{
+      max-width: $xLarge;
+      min-width: $xLarge;
+    };
+    @include fourColumn{
+      max-width: $large;
+      min-width: $large;
+    };
+    @include threeColumn{
+      max-width: $medium;
+      min-width: $medium;
+    };
+    @include twoColumn{
+      max-width: $small;
+      min-width: $small;
+    };
+    @include oneColumn{
+      max-width: $small;
+      min-width: $small;
+    };
+    >div.productContainer{
+      >div.sectionTitle{
+        display: inline-flex;
+        width: 100%;
+                
+        >label{
+          display: inline-block;
+          width: 200px;
+          color: $primary-text-color;
+          font: bold 25px _Century_Gothic_;
+          margin: 0;
+          position: relative;
+          top: 50%;
+          transform: translateY(-50%)
+        }
+        >hr{
+          display: inline-block;
+          width: 100%;
+          height: 0;
+          position: relative;
+          top: 50%;
+          transform: translateY(-100%)
+        }
+      }
+      >div.products{
+        padding: 15px;
+        >div.infoCard{
+                background-color: $primary-color-text;
+                box-sizing: border-box;
+                width: 200px;
+                height: 250px;
+                padding: 15px;
+                border: 1px solid $divider-color;
+                border-radius: 5px;
+                display: inline-flex;
+                flex-wrap: wrap;
+                overflow: hidden;
+                align-content: flex-start;
+                margin: 10px;
+                &:hover{
+                  box-shadow: 0 0 8px rgba(57,57,57, 0.4);
+                }
+                >div.productImage{
+                  width: 100%;
+                  height: 50%;
+                  border-top-left-radius: 8px;
+                  border-top-right-radius: 8px;
+                  border: solid 1px $divider-color;
+                  margin-bottom: 10px;
+                  text-align: center;
+                  overflow: hidden;
+                  >img{
+                    width: auto;
+                    height: auto;
+                    max-width: 100%;
+                  }
+                }
+                >h1{
+                  font: bold 16px _Century_Gothic_;
+                  margin: 0;
+                  color: $primary-text-color;
+                  -webkit-margin-before: 0;
+                  -webkit-margin-after: 0;
+                  -webkit-margin-start: 0;
+                  -webkit-margin-end: 0;
+                  width: 100%;
+                  margin-bottom: 8px;
+                }
+                >p{
+                  width: 100%;
+                  color: $secondary-text-color;
+                  font: 14px _Century_Gothic_;
+                  margin: 0;
+                }
+                >h5{
+                  position: relative;
+                  bottom: 8px;
+                  left: 76%;
+                  color: $primary-color;
+                  font: 15px _Century_Gothic_;
+                  font-weight: bold;
+                }
+              }
+      }
+    }
+  }
 }

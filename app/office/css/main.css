@@ -453,6 +453,7 @@ div.categoria {
   div.categoria > * {
     margin-bottom: 18px; }
   div.categoria > ul.navBar {
+    display: none;
     width: 100%;
     margin: 0;
     margin-bottom: 15px;
@@ -478,6 +479,7 @@ div.categoria {
         font: bold 20px _Century_Gothic_;
         color: #757575; }
   div.categoria > div.offers {
+    display: none;
     width: 100%;
     height: 261px;
     background-color: #c2c8e2;
@@ -530,6 +532,7 @@ div.categoria {
           color: white;
           font: bold 25px _Century_Gothic_; }
   div.categoria > div.section {
+    display: none;
     width: 300px;
     min-width: 300px;
     height: 350px;
@@ -667,6 +670,100 @@ div.categoria {
                 color: #00BCD4;
                 font: 15px _Century_Gothic_;
                 font-weight: bold; }
+  div.categoria > div.category {
+    width: 100%;
+    height: auto; }
+    @media (min-width: 1572px) {
+      div.categoria > div.category {
+        max-width: 1254px;
+        min-width: 1254px; } }
+    @media (min-width: 1254px) and (max-width: 1571px) {
+      div.categoria > div.category {
+        max-width: 936px;
+        min-width: 936px; } }
+    @media (min-width: 936px) and (max-width: 1253px) {
+      div.categoria > div.category {
+        max-width: 618px;
+        min-width: 618px; } }
+    @media (min-width: 618px) and (max-width: 935px) {
+      div.categoria > div.category {
+        max-width: 300px;
+        min-width: 300px; } }
+    @media (min-width: 300px) and (max-width: 617px) {
+      div.categoria > div.category {
+        max-width: 300px;
+        min-width: 300px; } }
+    div.categoria > div.category > div.productContainer > div.sectionTitle {
+      display: inline-flex;
+      width: 100%; }
+      div.categoria > div.category > div.productContainer > div.sectionTitle > label {
+        display: inline-block;
+        width: 200px;
+        color: #212121;
+        font: bold 25px _Century_Gothic_;
+        margin: 0;
+        position: relative;
+        top: 50%;
+        transform: translateY(-50%); }
+      div.categoria > div.category > div.productContainer > div.sectionTitle > hr {
+        display: inline-block;
+        width: 100%;
+        height: 0;
+        position: relative;
+        top: 50%;
+        transform: translateY(-100%); }
+    div.categoria > div.category > div.productContainer > div.products {
+      padding: 15px; }
+      div.categoria > div.category > div.productContainer > div.products > div.infoCard {
+        background-color: #FFFFFF;
+        box-sizing: border-box;
+        width: 200px;
+        height: 250px;
+        padding: 15px;
+        border: 1px solid #BDBDBD;
+        border-radius: 5px;
+        display: inline-flex;
+        flex-wrap: wrap;
+        overflow: hidden;
+        align-content: flex-start;
+        margin: 10px; }
+        div.categoria > div.category > div.productContainer > div.products > div.infoCard:hover {
+          box-shadow: 0 0 8px rgba(57, 57, 57, 0.4); }
+        div.categoria > div.category > div.productContainer > div.products > div.infoCard > div.productImage {
+          width: 100%;
+          height: 50%;
+          border-top-left-radius: 8px;
+          border-top-right-radius: 8px;
+          border: solid 1px #BDBDBD;
+          margin-bottom: 10px;
+          text-align: center;
+          overflow: hidden; }
+          div.categoria > div.category > div.productContainer > div.products > div.infoCard > div.productImage > img {
+            width: auto;
+            height: auto;
+            max-width: 100%; }
+        div.categoria > div.category > div.productContainer > div.products > div.infoCard > h1 {
+          font: bold 16px _Century_Gothic_;
+          margin: 0;
+          color: #212121;
+          -webkit-margin-before: 0;
+          -webkit-margin-after: 0;
+          -webkit-margin-start: 0;
+          -webkit-margin-end: 0;
+          width: 100%;
+          margin-bottom: 8px; }
+        div.categoria > div.category > div.productContainer > div.products > div.infoCard > p {
+          width: 100%;
+          color: #757575;
+          font: 14px _Century_Gothic_;
+          margin: 0; }
+        div.categoria > div.category > div.productContainer > div.products > div.infoCard > h5 {
+          position: relative;
+          bottom: 8px;
+          left: 76%;
+          color: #00BCD4;
+          font: 15px _Century_Gothic_;
+          font-weight: bold; }
 
 div.carrito {
   width: 100%;
