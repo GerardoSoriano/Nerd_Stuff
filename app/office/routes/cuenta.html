@@ -3,20 +3,25 @@
     <div class="section">
       <label>Mi Cuenta</label>
       <div class="card">
-        <form class="updateForm" action="" method="post" enctype="multipart/form-data">
+        <form class="updateForm">
           <div>
-            <input type="text" name="nombreUsuario" placeholder="Nombre de usuario *">
-            <input type="text" name="primerNombre" placeholder="Primer nombre *"><div class="buttonEdit"></div>
-            <input type="text" name="primerNombre" placeholder="Segundo nombre"><div class="buttonEdit"></div>
-            <input type="text" name="apellidoPaterno" placeholder="Apellido paterno*"><div class="buttonEdit"></div>
-            <input type="text" name="apellidoPaterno" placeholder="Apellido materno"><div class="buttonEdit"></div>
-            <input type="email" name="email" placeholder="Correo *"><div class="buttonEdit"></div>
-            <input type="password" name="contrasena" placeholder="Contraseña *"><div class="buttonEdit"></div>
+            <input type="text" name="nombreUsuario" placeholder="Nombre de usuario *" value="{{usuario.nombreUsuario}}">
+            <div class="buttonEdit"></div>
+            <input type="text" name="primerNombre" placeholder="Primer nombre *" value="{{usuario.primerNombre}}">
+            <div class="buttonEdit"></div>
+            <input type="text" name="primerNombre" placeholder="Segundo nombre" value="{{usuario.segundoNombre}}">
+            <div class="buttonEdit"></div>
+            <input type="text" name="apellidoPaterno" placeholder="Apellido paterno*" value="{{usuario.apellidoPaterno}}">
+            <div class="buttonEdit"></div>
+            <input type="text" name="apellidoPaterno" placeholder="Apellido materno" value="{{usuario.apellidoMaterno}}">
+            <div class="buttonEdit"></div>
+            <input type="email" name="email" placeholder="Correo *" value="{{usuario.email}}">
+            <div class="buttonEdit"></div>
             <input type="submit" name="send" value="Guardar cambios"><br>
-            <labe>Miembro desde 15-04-2017.</label>
           </div>
           <div class="profilePicture">
-            <img src="resources/img/profile.jpg" alt="Imagen de perfil"><!-- ¿Se podrá hacer que esto funcione como botón y que esconda al input de abajo? -->
+            <img src="resources/img/profile.jpg" alt="Imagen de perfil">
+            <!-- ¿Se podrá hacer que esto funcione como botón y que esconda al input de abajo? -->
             <!--<input type="file" name="fotoPerfil" id="fotoPerfil" accept="image/jpeg,image/jpg,image/gif,image/png">-->
             <input type="button" ngf-select="onFileSelect($file)">
           </div>
@@ -32,10 +37,10 @@
         <div class="addCreditCard">
           <label>Tipo de tarjeta</label>
           <select name="tipoTarjeta">
-            <option value="1">Visa</option>
-            <option value="2">Master Card</option>
-            <option value="3">American Express</option>
-          </select><br>
+      <option value="1">Visa</option>
+      <option value="2">Master Card</option>
+      <option value="3">American Express</option>
+    </select><br>
           <input type="text" name="numeroTarjeta" placeholder="Número de tarjeta *">
           <input type="text" name="numeroSeguridad" placeholder="Número de seguridad *"><br>
         </div>
