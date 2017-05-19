@@ -6,8 +6,8 @@ angular.module('app', ['ngRoute', 'ngFileUpload'])
             when('/', {
                 templateUrl: rootPath + 'main.html'
             }).
-            when('/carrito', {
-                templateUrl: rootPath + 'carrito.html'
+            when('/finalizar-compra', {
+                templateUrl: rootPath + 'finalizar-compra.html'
             }).
             when('/comprar', {
                 templateUrl: rootPath + 'comprar.html'

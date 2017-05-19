@@ -1,0 +1,41 @@
+<div class="content">
+  <div id="finalizarCompra" ng-controller="finalizarCompra" ng-init="init()">
+
+    <table id="tablaProductos">
+      <tr>
+        <th>Nombre del producto</th>
+        <th>Imagen</th>
+        <th>Cantidad</th>
+        <th>Puntos</th>
+        <th>Total de puntos</th>
+        <th style="width: 80px;">Precio</th>
+        <th style="width: 90px;">Total</th>
+      </tr>
+      <tr ng-repeat="producto in productos">
+        <td>{{producto.nombreProducto}}</td>
+        <td>{{producto.direccionFoto}}</td>
+        <td>{{producto.quantity}}</td>
+        <td>{{producto.puntaje}}</td>
+        <td>{{producto.puntaje * producto.quantity}}</td>
+        <td>{{producto.costo}}</td>
+        <td>{{producto.costo * producto.quantity}}</td>
+      </tr>
+    </table>
+
+    <table id="tablaCostoTotal">
+      <tr>
+        <td style="width: 80px;">PUNTOS</td>
+        <td style="width: 90px;">340</td>
+      </tr>
+      <tr>
+        <td style="width: 80px;">IVA</td>
+        <td style="width: 90px;">$169</td>
+      </tr>
+      <tr>
+        <td style="width: 80px;">TOTAL</td>
+        <td style="width: 90px;">$1227</td>
+      </tr>
+    </table>
+
+  </div>
+</div>

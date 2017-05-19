@@ -12,13 +12,6 @@
 
     <div class="category categoria" id="Ofertas">
 
-      <div class="offers">
-        <div class="offer">Oferta 1</div>
-        <div class="offer">Oferta 2</div>
-        <div class="offer">Oferta 3</div>
-        <div class="offer">Oferta 4</div>
-      </div>
-
       <div class="section">
         <label>Ultimos comprados</label>
         <div class="productContainer" id="compras-favoritos">
@@ -132,7 +125,7 @@
         </div>
 
         <footer>
-          <a href="#0" class="checkout btn"><em>Checkout - $<span>0</span></em></a>
+          <a href="#finalizar-compra" class="checkout btn"><em>Checkout - $<span>0</span></em></a>
         </footer>
       </div>
     </div>
@@ -140,18 +133,3 @@
   </div>
   <!-- cd-cart-container -->
 </div>
-
-
-<script type="text/javascript">
-  $('div#carrito').ready(function () {
-
-    $('div.categoria>div.offers').slick({
-      infinite: true,
-      speed: 300,
-      slidesToShow: 1,
-      adaptiveHeight: true
-    });
-
-  });
-
-</script>

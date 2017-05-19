@@ -952,186 +952,26 @@ div.categoria {
           font: 15px _Century_Gothic_;
           font-weight: bold; }
 
-div.carrito {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  padding: 30px 0; }
-  div.carrito > div.section {
-    width: 300px;
-    min-width: 300px;
-    border-top: 1px solid #BDBDBD;
-    margin: 10px 0 18px;
-    box-sizing: border-box;
-    display: inline-flex;
-    flex-wrap: wrap; }
-    @media (min-width: 1572px) {
-      div.carrito > div.section {
-        max-width: 1254px;
-        min-width: 1254px; } }
-    @media (min-width: 1254px) and (max-width: 1571px) {
-      div.carrito > div.section {
-        max-width: 936px;
-        min-width: 936px; } }
-    @media (min-width: 936px) and (max-width: 1253px) {
-      div.carrito > div.section {
-        max-width: 618px;
-        min-width: 618px; } }
-    @media (min-width: 618px) and (max-width: 935px) {
-      div.carrito > div.section {
-        max-width: 300px;
-        min-width: 300px; } }
-    @media (min-width: 300px) and (max-width: 617px) {
-      div.carrito > div.section {
-        max-width: 300px;
-        min-width: 300px; } }
-    div.carrito > div.section > label {
-      background-color: white;
-      font: bold 25px _Century_Gothic_;
-      color: #212121;
-      margin: 0;
-      transform: translateY(-60%);
-      padding-right: 20px;
-      padding-top: 2px;
-      position: absolute; }
-    div.carrito > div.section > div.category {
-      width: 100%;
-      display: flex;
-      margin: 50px 0 0;
-      padding: 0 0 50px;
-      border-bottom: 1px solid #BDBDBD; }
-      div.carrito > div.section > div.category > div.card {
-        width: 100%;
-        border-radius: 3px;
-        border: solid 1px #BDBDBD;
-        background-color: #FFFFFF;
-        overflow: hidden;
-        padding: 20px 3px 15px 3px;
-        box-sizing: border-box;
-        display: flex;
-        flex-wrap: wrap; }
-        div.carrito > div.section > div.category > div.card > label {
-          font: bold 20px _Century_Gothic_;
-          margin: 0;
-          margin-left: 55px;
-          margin-bottom: 10px;
-          color: #212121; }
-        div.carrito > div.section > div.category > div.card > div.productContainer {
-          width: 100%;
-          height: 300px;
-          align-self: flex-end;
-          padding: 0 43px; }
-          div.carrito > div.section > div.category > div.card > div.productContainer > button {
-            visibility: hidden;
-            width: 40px;
-            height: 100%;
-            padding: 0;
-            margin: 0;
-            border: 0;
-            position: absolute;
-            top: 0;
-            z-index: 1; }
-            div.carrito > div.section > div.category > div.card > div.productContainer > button:hover:after {
-              background-color: #BDBDBD;
-              opacity: 0.8; }
-            div.carrito > div.section > div.category > div.card > div.productContainer > button::after {
-              display: flex;
-              justify-content: center;
-              align-items: center;
-              visibility: visible;
-              box-sizing: border-box;
-              width: 100%;
-              height: 100%;
-              margin-top: 9px;
-              border: 0;
-              background-color: white;
-              opacity: 1.0;
-              font: 40px FontAwesome; }
-            div.carrito > div.section > div.category > div.card > div.productContainer > button.slick-prev {
-              left: 0;
-              top: -15px;
-              color: #757575; }
-              div.carrito > div.section > div.category > div.card > div.productContainer > button.slick-prev::after {
-                content: '\f0d9';
-                padding-right: 5px; }
-            div.carrito > div.section > div.category > div.card > div.productContainer > button.slick-next {
-              right: 0;
-              top: -15px;
-              color: #757575; }
-              div.carrito > div.section > div.category > div.card > div.productContainer > button.slick-next::after {
-                content: '\f0da';
-                padding-left: 5px; }
-          div.carrito > div.section > div.category > div.card > div.productContainer > div.slick-list {
-            height: 100%; }
-            div.carrito > div.section > div.category > div.card > div.productContainer > div.slick-list > div.slick-track {
-              height: 100%; }
-              div.carrito > div.section > div.category > div.card > div.productContainer > div.slick-list > div.slick-track > div.product {
-                height: 100%;
-                padding: 10px;
-                box-sizing: border-box;
-                position: relative; }
-                div.carrito > div.section > div.category > div.card > div.productContainer > div.slick-list > div.slick-track > div.product > div.sphere {
-                  width: 20px;
-                  height: 20px;
-                  position: absolute;
-                  top: 0;
-                  right: 20px;
-                  background-color: #FFFFFF;
-                  border: 1px solid #BDBDBD;
-                  border-radius: 50%; }
-                div.carrito > div.section > div.category > div.card > div.productContainer > div.slick-list > div.slick-track > div.product > div.infoCard {
-                  background-color: #FFFFFF;
-                  box-sizing: border-box;
-                  width: 100%;
-                  height: 100%;
-                  padding: 15px;
-                  border: 1px solid #BDBDBD;
-                  border-radius: 5px;
-                  display: flex;
-                  flex-wrap: wrap;
-                  overflow: hidden;
-                  align-content: flex-start; }
-                  div.carrito > div.section > div.category > div.card > div.productContainer > div.slick-list > div.slick-track > div.product > div.infoCard:hover {
-                    box-shadow: 0 0 8px rgba(57, 57, 57, 0.4);
-                    transform: scale(1.03, 1.03);
-                    -webkit-transition: all 0.5s ease; }
-                  div.carrito > div.section > div.category > div.card > div.productContainer > div.slick-list > div.slick-track > div.product > div.infoCard > div.productImage {
-                    width: 100%;
-                    height: 50%;
-                    border-top-left-radius: 8px;
-                    border-top-right-radius: 8px;
-                    border: solid 1px #BDBDBD;
-                    margin-bottom: 10px;
-                    text-align: center;
-                    overflow: hidden; }
-                    div.carrito > div.section > div.category > div.card > div.productContainer > div.slick-list > div.slick-track > div.product > div.infoCard > div.productImage > img {
-                      width: auto;
-                      height: auto;
-                      max-width: 100%; }
-                  div.carrito > div.section > div.category > div.card > div.productContainer > div.slick-list > div.slick-track > div.product > div.infoCard > h1 {
-                    font: bold 16px _Century_Gothic_;
-                    margin: 0;
-                    color: #212121;
-                    -webkit-margin-before: 0;
-                    -webkit-margin-after: 0;
-                    -webkit-margin-start: 0;
-                    -webkit-margin-end: 0;
-                    width: 100%;
-                    margin-bottom: 8px; }
-                  div.carrito > div.section > div.category > div.card > div.productContainer > div.slick-list > div.slick-track > div.product > div.infoCard > p {
-                    width: 100%;
-                    color: #757575;
-                    font: 14px _Century_Gothic_;
-                    margin: 0; }
-                  div.carrito > div.section > div.category > div.card > div.productContainer > div.slick-list > div.slick-track > div.product > div.infoCard > h5 {
-                    position: absolute;
-                    right: 15px;
-                    bottom: 8px;
-                    margin: 0 20px 20px 0;
-                    color: #FF5252;
-                    font: 15px _Century_Gothic_;
-                    font-weight: bold; }
+#tablaProductos {
+  float: right;
+  margin-right: 10%;
+  width: 80%;
+  margin-top: 50px; }
+
+#tablaCostoTotal {
+  float: right;
+  margin-right: 10%; }
+
+table#tablaProductos, #tablaProductos th, #tablaProductos td {
+  border: 1px solid black;
+  border-collapse: collapse; }
+
+th {
+  padding: 10px; }
+
+td {
+  text-align: center;
+  padding: 15px; }
 
 div.filtro {
   width: 100%;

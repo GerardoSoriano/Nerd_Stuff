@@ -84,6 +84,26 @@ angular.module('app')
         }
     }])
 
+    .controller("finalizarCompra", ['$scope', '$http', function ($scope, $http) {
+        $scope.productos = [];
+        $scope.puntos = "";
+        $scope.iva = "";
+        $scope.total = "";
+
+        $scope.$watch('productos', function (newValue, oldValue) {
+            console.log("update model");
+        });
+
+        $scope.init = function () {
+            $scope.productos = JSON.parse(localStorage.compra);
+            $scope.puntos = "340";
+            $scope.iva = "$169";
+            $scope.total = "$1227";
+
+            console.log($scope.productos);
+        };
+    }])
+
     .controller("comprasController", ['$scope', '$http', function ($scope, $http) {
         $scope.compras = "";
         $scope.categories = "";
@@ -92,7 +112,6 @@ angular.module('app')
         $scope.item = 1;
 
         var cartWrapper = $('.cd-cart-container');
-        var productId = 0;
         var cartBody = cartWrapper.find('.body')
         var cartList = cartBody.find('ul').eq(0);
         var cartTotal = cartWrapper.find('.checkout').find('span');
@@ -206,6 +225,20 @@ angular.module('app')
 
             });
         }
+
+        $(".cd-cart footer").on("click", function () {
+            console.log("footer click");
+
+            compra = $scope.productosCarrito;
+
+            for (var i = 0; i < compra.leght; i++) {
+                if (compra[i].quantity == undefined)
+                    compra[i].quantity = 1;
+            }
+
+            localStorage.compra = JSON.stringify(compra);
+
+        });
 
         function toggleCart(bool) {
             var cartIsOpen = (typeof bool === 'undefined') ? cartWrapper.hasClass('cart-open') : bool;
