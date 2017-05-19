@@ -351,7 +351,7 @@ div[class~="-Hmin"] {
 
 div.dashboard {
   width: 100%;
-  height: 10000px;
+  height: 100%;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -383,22 +383,43 @@ div.dashboard {
       div.dashboard > div.blocks {
         max-width: 300px;
         min-width: 300px; } }
-    div.dashboard > div.blocks > div[class^="block"] {
-      width: 300px;
-      height: 150px;
-      overflow: hidden;
-      margin-bottom: 18px;
+    div.dashboard > div.blocks > div {
+      background-color: #FFFFFF;
       border: 1px solid #BDBDBD;
-      background-color: #f2f2f2; }
-      div.dashboard > div.blocks > div[class^="block"] > canvas.graphics {
-        width: 600px;
-        height: 600px; }
-    div.dashboard > div.blocks > div[class$="_2"] {
-      width: 618px;
-      height: 150px; }
-    div.dashboard > div.blocks > div[class$="_4"] {
-      width: 1254px;
-      height: 600px; }
+      padding: 20px;
+      width: 260px;
+      height: 100px;
+      display: inline-flex;
+      border-radius: 3px;
+      margin-bottom: 10px;
+      margin-left: 10px; }
+      div.dashboard > div.blocks > div > div {
+        width: 50%;
+        text-align: center;
+        height: 100%;
+        align-items: center; }
+      div.dashboard > div.blocks > div > div.icon {
+        font-size: 50px;
+        color: #757575;
+        align-items: center;
+        text-align: center; }
+      div.dashboard > div.blocks > div > div.info {
+        padding-left: 10px;
+        border-left: 1px solid #BDBDBD;
+        align-items: center;
+        text-align: center; }
+        div.dashboard > div.blocks > div > div.info > .number {
+          display: block;
+          color: #00BCD4;
+          font: bold 25px _Century_Gothic_; }
+        div.dashboard > div.blocks > div > div.info > .extraText {
+          color: #00BCD4;
+          font: 14px _Century_Gothic_;
+          display: block; }
+      div.dashboard > div.blocks > div:hover {
+        transition: 0.4s;
+        box-shadow: 0 0 10px rgba(120, 120, 120, 0.5);
+        transform: scale(1.05, 1.05); }
 
 div.cuenta {
   width: 100%;
@@ -710,7 +731,7 @@ div.categoria {
         height: 100%; }
         div.categoria > div.offers > div.slick-list > div.slick-track > div.offer {
           height: 100%;
-          background: radial-gradient(circle, #171e6e, #0c0f38);
+          background: radial-gradient(circle, #00BCD4, #0097A7);
           display: flex;
           justify-content: center;
           align-items: center;
