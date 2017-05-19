@@ -8,11 +8,6 @@
   <link rel="stylesheet" href="resources/libs/font-awesome/css/font-awesome.min.css">
   <link rel="stylesheet" href="resources/libs/slick-carousel/slick/slick.css">
 
-  <!-- Add IntroJs styles -->
-  <link rel="stylesheet" href="resources/libs/intro.js/introjs.css">
-  <!-- Add Nazanin template -->
-  <link rel="stylesheet" href="resources/libs/intro.js/themes/introjs-modern.css">
-
   <!-- Custom CSS -->
   <link rel="stylesheet" href="office/css/main.css">
   <link rel="icon" href="resources/img/isotipo_NerdStuff2_lq.png">
@@ -29,7 +24,6 @@
   <!-- Content Routes Pages -->
   <div ng-view></div>
 
-
   <!-- Libs JavaScript -->
   <script type="text/javascript" src="resources/libs/jquery/dist/jquery.min.js"></script>
   <script type="text/javascript" src="resources/libs/slick-carousel/slick/slick.min.js"></script>
@@ -39,67 +33,6 @@
   <script type="text/javascript" src="resources/libs/angular-route/angular-route.min.js"></script>
   <script type="text/javascript" src="resources/libs/ng-file-upload/ng-file-upload.min.js"></script>
   <script type="text/javascript" src="resources/libs/intro.js/intro.js"></script>
-  <script type="text/javascript">
-      function startIntro(){
-        var intro = introJs();
-          intro.setOptions({
-            steps: [
-              {
-                intro: "¡Te damos la bienvenida a NERD STUFF!"
-              },
-              {
-                intro: "Recorramos juntos tu oficina virtual."
-              },
-              {
-                element: document.querySelectorAll('.step1')[0],
-                intro: "Este es tu menú principal.",
-                position: 'auto'
-              },
-              {
-                element: document.querySelector('.step2'),
-                intro: "Aquí están las diferences secciones de la oficina virtual.",
-                position: 'auto'
-              },
-              {
-                element: '#step3',
-                intro: 'Esta es la página de inicio, donde te encuentras ahora.',
-                position: 'left'
-              },
-              {
-                element: '#step4',
-                intro: "Esta es la sección del carrito, donde puedes ver las cosas que has agregado a tu lista de compra.",
-                position: 'bottom'
-              },
-              {
-                element: '#step5',
-                intro: 'En la sección comprar puedes ver nuestro catálogo para que elijas lo que más te guste.'
-              },
-              {
-                element: '#step6',
-                intro: 'Mi cuenta es la sección en la que puedes ver y cambiar tu información personal.'
-              },
-              {
-                element: '#step7',
-                intro: 'En el historial puedes ver los reportes de las compras que has realizado.'
-              },
-              {
-                element: '#step8',
-                intro: 'Invitados es la sección donde puedes ver a las personas que se han incorporado al equipo de Nerd Stuff bajo tu cargo.'
-              },
-              {
-                element: '#step9',
-                intro: 'Si deseas salir de la oficina virtual, puedes hacerlo desde aquí.'
-              },
-              {
-                element: '#step10',
-                intro: 'Aquí puedes reducir o aumentar el tamaño del menú principal.'
-              }
-            ]
-          });
-
-          intro.start();
-      }
-    </script>
 
   <!-- Custom JavaScript -->
   <script type="text/javascript" src="office/js/main.js"></script>
