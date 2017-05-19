@@ -2,11 +2,13 @@
 <html>
   <head>
     <style type="text/css">
+    @import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro');
     #body{
       margin: 0;
       width: 100%;
       background-color: #ebebeb;
       text-align: center;
+      padding-bottom: 15px;
     }
     #body span.user{
       font-weight: bold;
@@ -14,6 +16,7 @@
     #body span.company{
       font-weight: bold;
       font: 23px "Impact";
+      text-transform: uppercase;
       letter-spacing: 1px;
     }
     #body>div.logo{
@@ -33,7 +36,6 @@
     #body>div.content{
       width: 100%;
       max-width: 450px;
-      min-height: 450px;
       border: 1px solid #cccccc;
       background-color: #fff;
       box-sizing: border-box;
@@ -46,7 +48,7 @@
       box-sizing: border-box;
       padding: 10px;
       color: #757575;
-      font: 20px "Century Gothic";
+      font: 20px 'Source Sans Pro', sans-serif;
       text-align: center;
       border-bottom: 1px solid #cccccc;
     }
@@ -55,36 +57,50 @@
       box-sizing: border-box;
       padding: 25px 10px 10px;
       color: #757575;
-      font: 20px "Century Gothic";
+      font: 20px 'Source Sans Pro', sans-serif;
       text-align: left;
     }
-    #body>div.content>button{
+    #body>div.content button{
       background-color: #00BCD4;
       border: none;
-      font: 20px "Century Gothic";
+      font: 20px 'Source Sans Pro', sans-serif;
       text-transform: uppercase;
       color: #fff;
       width: 185px;
       height: 50px;
       border-radius: 5px;
     }
+    @media (min-width: 300px) and (max-width: 617px){
+      #body>div.content{
+        max-width: 300px;
+        padding: 25px 20px;
+      }
+      #body span.company,#body>div.content>div.header,#body>div.content>div.body{
+        font-size: 15px;
+      }
+      #body>div.content>button{
+        font-size: 15px;
+        width: 160px;
+        height: 40px;
+      }
+    }
     </style>
   </head>
   <body id="body">
     <div class="logo">
-      <img src="cid:companyLogo " alt="">
+      <img src="cid:companyLogo" alt="">
     </div>
     <div class="content">
       <div class="header">
-        <span class="user">Usuario</span> te ha invitado a unirte a <br><span class="company">Nerd Stuff</span>
+        <span class="user">%nombreUsuario%</span> te ha invitado a unirte a <br><span class="company">Nerd Stuff</span>
       </div>
       <div class="body">
-        Hola, <span class="user">Usuario</span>
+        Hola, <span class="user">%nombre%</span>
         <p>
-          <span class="user">Usuario</span> te ha invitado a unirte a las filas de <span class="company">Nerd Stuff</span>
+          <span class="user">%nombreUsuario%</span> te ha invitado a unirte a las filas de <span class="company">Nerd Stuff</span>
         </p>
       </div>
-      <button type="button" name="join">unirse</button>
+      <a href="https://www.youtube.com/watch?v=JLouO5n7P8k"><button type="button" name="join">unirse</button></a>
     </div>
   </body>
 </html>
