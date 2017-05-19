@@ -18,7 +18,7 @@
     </div>
     <div class="bottomContainer">
         <ul class="sections" ng-click="menuOnClick($event)">
-            <a href="#main"><i class="fa fa-home"></i><li class="current">Inicio</li></a>
+            <a href="#main"><i class="fa fa-home"></i><li class="current" data-step="3" data-intro="Tooltip menú">Inicio</li></a>
             <a href="#carrito"><i class="fa fa-shopping-cart"></i><li>Carrito</li></a>
             <a href="#comprar"><i class="fa fa-star"></i><li>Comprar</li></a>
             <a href="#cuenta"><i class="fa fa-user"></i><li>Mi cuenta</li></a>
@@ -26,7 +26,7 @@
             <a href="#invitados"><i class="fa fa-users"></i><li>Invitados</li></a>
             <a href=""><i class="fa fa-sign-out"></i><li>Salir</li></a>
         </ul>
-        <a class="help" href="javascript:void(0);" onclick="startIntro();">
+        <a class="help" href="javascript:void(0);" onclick="javascript:introJs().start();">
             <div class="sphere">
                 <i class="fa fa-question" aria-hidden="true"></i>
             </div>
