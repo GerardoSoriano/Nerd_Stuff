@@ -86,21 +86,41 @@ angular.module('app')
 
     .controller("finalizarCompra", ['$scope', '$http', function ($scope, $http) {
         $scope.productos = [];
-        $scope.puntos = "";
-        $scope.iva = "";
-        $scope.total = "";
+        $scope.puntos = 0;
+        $scope.iva = 0;
+        $scope.total = 0;
 
         $scope.$watch('productos', function (newValue, oldValue) {
             console.log("update model");
         });
 
         $scope.init = function () {
-            $scope.productos = JSON.parse(localStorage.compra);
-            $scope.puntos = "340";
-            $scope.iva = "$169";
-            $scope.total = "$1227";
+            var productos = JSON.parse(localStorage.compra);
+            var puntos = 0;
+            var iva = 0;
+            var total = 0;
 
-            console.log($scope.productos);
+            for (let i = 0; i < productos.length; i++) {
+                productos[i].totalPuntuaje = productos[i].puntaje * productos[i].quantity;
+                productos[i].costoTotal = productos[i].costo * productos[i].quantity;
+                total += productos[i].costoTotal
+                puntos += productos[i].totalPuntuaje;
+            }
+
+            iva = total * 0.16;
+
+            $scope.productos = productos;
+            $scope.puntos = puntos;
+            $scope.iva = iva
+            $scope.total = total + iva;
+        };
+
+        $scope.finalizarCompra = function(){
+            //Logica para finalizar la compra, mandar a llamar el servicio
+
+            //Mostrarle algo al usuario que diga que ya se finalizó la compra
+
+            console.log("finalizar compra");
         };
     }])
 
@@ -231,7 +251,7 @@ angular.module('app')
 
             compra = $scope.productosCarrito;
 
-            for (var i = 0; i < compra.leght; i++) {
+            for (var i = 0; i < compra.length; i++) {
                 if (compra[i].quantity == undefined)
                     compra[i].quantity = 1;
             }
