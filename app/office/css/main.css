@@ -537,6 +537,92 @@ div.cuenta {
             display: none; }
           div.cuenta > div.section > div.card > form.updateForm > div.profilePicture > button {
             display: none; }
+      div.cuenta > div.section > div.card > div.creditCardDiv {
+        padding-left: 20px; }
+        div.cuenta > div.section > div.card > div.creditCardDiv > div {
+          margin: 10px 0; }
+          div.cuenta > div.section > div.card > div.creditCardDiv > div > i {
+            margin: 0 10px;
+            font-size: 25px;
+            color: #757575; }
+          div.cuenta > div.section > div.card > div.creditCardDiv > div > label {
+            color: #212121;
+            font-family: _Century_Gothic_;
+            font-size: 16px;
+            padding-bottom: 10px; }
+        div.cuenta > div.section > div.card > div.creditCardDiv > div.buttonAdd {
+          display: block;
+          justify-content: center; }
+          div.cuenta > div.section > div.card > div.creditCardDiv > div.buttonAdd > i {
+            color: #FFFFFF;
+            margin-right: -30px;
+            display: inline-block;
+            padding-left: 50px;
+            display: none; }
+          div.cuenta > div.section > div.card > div.creditCardDiv > div.buttonAdd > input {
+            width: 100%;
+            padding: 5px;
+            height: 35px;
+            background-color: #BDBDBD;
+            border: 0;
+            font-weight: bold;
+            font-size: 14px;
+            color: white;
+            cursor: pointer;
+            text-transform: uppercase;
+            display: inline-block; }
+        div.cuenta > div.section > div.card > div.creditCardDiv > form.addCreditCard {
+          height: auto;
+          border-top: 1px solid #BDBDBD;
+          padding: 20px 0 0 10px; }
+          div.cuenta > div.section > div.card > div.creditCardDiv > form.addCreditCard > label {
+            color: #212121;
+            font-family: _Century_Gothic_;
+            font-size: 16px;
+            padding-bottom: 10px;
+            font-weight: bold; }
+          div.cuenta > div.section > div.card > div.creditCardDiv > form.addCreditCard > select {
+            height: 30px;
+            padding: 5px;
+            margin-left: 20px;
+            margin-bottom: 30px; }
+          div.cuenta > div.section > div.card > div.creditCardDiv > form.addCreditCard > div {
+            margin-left: 15px; }
+            div.cuenta > div.section > div.card > div.creditCardDiv > form.addCreditCard > div > label {
+              color: #212121;
+              font-family: _Century_Gothic_;
+              font-size: 16px;
+              font-weight: bold;
+              margin-right: 150px;
+              display: block;
+              margin-left: 7px;
+              margin-top: 10px; }
+            div.cuenta > div.section > div.card > div.creditCardDiv > form.addCreditCard > div > input {
+              margin-top: 5px;
+              width: 250px;
+              padding: 6px;
+              box-sizing: border-box;
+              border: 1px solid #BDBDBD;
+              outline: 0;
+              color: #757575;
+              font-family: _Century_Gothic_;
+              font-size: 14px;
+              cursor: pointer; }
+          div.cuenta > div.section > div.card > div.creditCardDiv > form.addCreditCard > button {
+            width: 150px;
+            padding: 0 12px;
+            float: right;
+            height: 35px;
+            margin-top: 20px;
+            background-color: #00BCD4;
+            border: 1px solid #0097A7;
+            font-weight: bold;
+            font-size: 14px;
+            color: white;
+            border-radius: 3px;
+            cursor: pointer;
+            text-transform: uppercase;
+            margin-right: 50px; }
 
 div.categoria {
   width: 100%;
