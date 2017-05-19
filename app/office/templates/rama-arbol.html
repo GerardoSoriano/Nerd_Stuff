@@ -3,7 +3,7 @@
     <div ng-if="data.invitados.length > 1">
         <div class="hv-item-parent">
             <div class="person" ng-click="colapse($event)">
-                <img ng-src="https://randomuser.me/api/portraits/men/{{data.idUsuario}}.jpg" alt="Description" />
+                <img ng-src="resources/img/{{data.idUsuario}}.jpg" alt="Description" />
                 <p class="name">
                     {{data.nombre}} <br>{{data.nombreUsuario}} <br> {{data.fotoUrl}}
                 </p>
@@ -18,7 +18,7 @@
     <div ng-if="data.invitados.length == 1">
         <div class="hv-item-parent">
             <div class="person" ng-click="colapse($event)">
-                <img ng-src="https://randomuser.me/api/portraits/men/{{data.idUsuario}}.jpg" alt="Description" />
+                <img ng-src="resources/img/{{data.idUsuario}}.jpg" alt="Description" />
                 <p class="name">
                     {{data.nombre}} <br>{{data.nombreUsuario}} <br> {{data.fotoUrl}}
                 </p>
@@ -33,7 +33,7 @@
 
     <div ng-if="data.invitados.length == 0">
         <div class="person" ng-click="colapse($event)">
-            <img ng-src="https://randomuser.me/api/portraits/men/{{data.idUsuario}}.jpg" alt="Description" />
+            <img ng-src="resources/img/{{data.idUsuario}}.jpg" alt="Description" />
             <p class="name">
                 {{data.nombre}} <br>{{data.nombreUsuario}} <br> {{data.fotoUrl}}
             </p>
