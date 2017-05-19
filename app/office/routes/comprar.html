@@ -11,7 +11,7 @@
     </ul>
 
     <div class="category categoria" id="Ofertas">
-      
+
       <div class="productContainer">
         <div class="sectionTitle">
           <label>Ofertas</label>
@@ -19,6 +19,7 @@
         </div>
         <div class="products">
           <div class="infoCard" ng-repeat="producto in compras.ofertas" ng-click="productoClick(producto)">
+            <div class="hide">{{producto.idProducto}}</div>
             <div class="productImage">
               <img ng-src="resources/img/products/{{producto.direccionFoto}}" alt="Imagen del producto">
             </div>
@@ -37,6 +38,7 @@
         </div>
         <div class="products">
           <div class="infoCard" ng-repeat="producto in compras.ultimasCompras" ng-click="productoClick(producto)">
+            <div class="hide">{{producto.idProducto}}</div>
             <div class="productImage">
               <img ng-src="resources/img/products/{{producto.direccionFoto}}" alt="Imagen del producto">
             </div>
@@ -57,6 +59,7 @@
         </div>
         <div class="products">
           <div class="infoCard" ng-repeat="producto in category.productos" ng-click="productoClick(producto)">
+            <div class="hide">{{producto.idProducto}}</div>
             <div class="productImage">
               <img ng-src="resources/img/products/{{producto.direccionFoto}}" alt="Imagen del producto">
             </div>
