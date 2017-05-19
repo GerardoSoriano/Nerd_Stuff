@@ -1,9 +1,9 @@
 angular.module('app')
-    .controller('mainController', ['$scope', function ($scope) {
+    .controller('mainController', ['$scope', '$rootScope', function ($scope, $rootScope) {
 
         if (localStorage.getItem("usuario") != null) {
-            $scope.usuario = JSON.parse(localStorage.usuario);
-            console.log($scope.usuario);
+            $rootScope.usuario = JSON.parse(localStorage.usuario);
+            console.log($rootScope.usuario);
         } else {
             // window.location.href = "login.html";
             console.log("No tiene un usuario");
@@ -120,6 +120,8 @@ angular.module('app')
 
             //Mostrarle algo al usuario que diga que ya se finalizó la compra
             console.log("finalizar compra");
+
+            console.log($scope.productos);
         };
     }])
 
@@ -311,7 +313,7 @@ angular.module('app')
     }])
 
 
-    .controller("cuentaController", ['$scope', '$http', 'Upload', function ($scope, $http, Upload) {
+    .controller("cuentaController", ['$scope', '$http', '$rootScope', 'Upload', function ($scope, $http, $rootScope, Upload) {
 
         $scope.usuario = JSON.parse(localStorage.usuario);
 
@@ -378,6 +380,19 @@ angular.module('app')
                     }
                 }).then(function (resp) {
                     // file is uploaded successfully
+                    var usuario = JSON.parse(localStorage.usuario);
+                    var jsonUsuario = JSON.parse(json);
+                    usuario.primerNombre = jsonUsuario.primerNombre;
+                    usuario.segundoNombre = jsonUsuario.segundoNombre;
+                    usuario.apellidoPaterno = jsonUsuario.apellidoPaterno;
+                    usuario.apellidoMaterno = jsonUsuario.apellidoMaterno;
+                    usuario.email = jsonUsuario.email;
+
+                    localStorage.usuario = JSON.stringify(usuario);
+                    $rootScope.usuario = usuario;
+                    $scope.usuario = usuario;
+
+                    console.log($scope.usuario);
                     console.log(resp.data);
                 });
             }
