@@ -22,15 +22,15 @@
       <div class="section">
         <label>Ultimos comprados</label>
         <div class="productContainer" id="compras-favoritos">
-          <div id="compras-favoritos" class="product" ng-repeat="compra in compras.favoritos" verify-repeat-favoritos>
+          <div class="product" ng-repeat="favorito in compras.favoritos" verify-repeat-favoritos>
             <div class="infoCard">
               <div class="productImage">
-                <img ng-src="resources/img/products/{{compra.direccionFoto}}" alt="Imagen del producto">
+                <img ng-src="resources/img/products/{{favorito.direccionFoto}}" alt="Imagen del producto">
               </div>
-              <h1>{{compra.nombreProducto}}</h1>
-              <p>{{compra.descripcion}}</p>
-              <p><b>${{compra.costo}}</b></p>
-              <h5>{{compra.puntaje}}</h5>
+              <h1>{{favorito.nombreProducto}}</h1>
+              <p>{{favorito.descripcion}}</p>
+              <p><b>${{favorito.costo}}</b></p>
+              <h5>{{favorito.puntaje}}</h5>
             </div>
           </div>
         </div>
