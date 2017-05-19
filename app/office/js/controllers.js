@@ -19,6 +19,11 @@ angular.module('app')
             })
             $(element).parent().addClass("current");
         }
+
+        $scope.salirOnClick = function(){
+            localStorage.usuario = "";
+            window.location.href = "login.html";
+        };
     }])
 
     .controller('headerController', ['$scope', function ($scope) {
