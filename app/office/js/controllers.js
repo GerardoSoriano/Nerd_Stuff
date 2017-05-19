@@ -117,7 +117,7 @@ angular.module('app')
             $scope.productos = productos;
             $scope.puntos = puntos;
             $scope.iva = iva
-            $scope.total = total + iva;
+            $scope.total = total;
         };
 
         $scope.finalizarCompra = function () {
@@ -135,8 +135,8 @@ angular.module('app')
               url: "../server/php/controller/finalizarCompra.php",
               data: { "json": json }
             }).done(function (response) {
-              if (response == 'succes') {
-                window.location = '#comprar';
+              if (response == 'success') {
+                window.location.href = '#comprar';
               }
             });
             //Mostrarle algo al usuario que diga que ya se finalizó la compra

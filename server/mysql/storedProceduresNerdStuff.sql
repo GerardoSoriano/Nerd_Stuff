@@ -246,6 +246,7 @@ create procedure agregarCompra(in idU smallint unsigned)
 	begin
 		insert into compra(idUsuario, fechaCompra)
         values (idU, now());
+        select * from compra order by idCompra desc limit 1;
     end
 $$
 
