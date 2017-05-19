@@ -97,7 +97,20 @@ angular.module('app')
             method: "POST",
             data: { 'token': localStorage.getItem("token") }
         }).then(function (response) {
-            $scope.compras = response.data;
+            var todasCompras = response.data;
+            var compras = {};
+            var count = 1;
+
+            for(let i=0; i<todasCompras.length; i++){
+                var idCompra = todasCompras[i].idCompra;
+
+                if(compras[idCompra] == undefined)
+                    compras[idCompra] = [];
+
+                compras[idCompra].push(todasCompras[i]);
+            }
+
+            $scope.compras = compras;
             console.log($scope.compras);
         });
     }])

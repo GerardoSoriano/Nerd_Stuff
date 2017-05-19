@@ -4,7 +4,8 @@
       <h1>Proceso de filtrado de compra</h1>
     </div>
     <div class="receiptContainer">
-      <div class="receipt">
+
+      <div class="receipt" ng-repeat="compra in compras track by $index">
         <h1 class="date">Fecha: <span>22 de Abril del 2017</span></h1>
         <div>
           <table class="listOfProducts">
@@ -15,25 +16,9 @@
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <td>Producto 2</td>
-                <td>$100.00</td>
-              </tr>
-              <tr>
-                <td>Producto 3</td>
-                <td>$100.00</td>
-              </tr>
-              <tr>
-                <td>Producto 4</td>
-                <td>$100.00</td>
-              </tr>
-              <tr>
-                <td>Producto 5</td>
-                <td>$100.00</td>
-              </tr>
-              <tr>
-                <td>Producto 1</td>
-                <td>$100.00</td>
+              <tr ng-repeat="producto in compra">
+                <td>{{producto.nombreProducto}}</td>
+                <td>${{producto.costo}}</td>
               </tr>
             </tbody>
           </table>
@@ -48,50 +33,7 @@
           </h1>
         </div>
       </div>
-      <div class="receipt">
-        <h1 class="date">Fecha: <span>22 de Abril del 2017</span></h1>
-        <div>
-          <table class="listOfProducts">
-            <thead>
-              <tr>
-                <th>Producto</th>
-                <th>Precio</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>Producto 2</td>
-                <td>$100.00</td>
-              </tr>
-              <tr>
-                <td>Producto 3</td>
-                <td>$100.00</td>
-              </tr>
-              <tr>
-                <td>Producto 4</td>
-                <td>$100.00</td>
-              </tr>
-              <tr>
-                <td>Producto 5</td>
-                <td>$100.00</td>
-              </tr>
-              <tr>
-                <td>Producto 1</td>
-                <td>$100.00</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-        <div>
-          <h1 class="points">
-            Puntos obtenidos:<br>
-            <span>27pts</span>
-          </h1>
-          <h1 class="total">
-            Total de Compra: <span>$500.00</span>
-          </h1>
-        </div>
-      </div>
+
     </div>
   </div>
 </div>
