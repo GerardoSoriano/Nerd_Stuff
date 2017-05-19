@@ -566,8 +566,8 @@ div.categoria {
         cursor: pointer; }
         div.categoria > ul.navBar > li:hover > h1 {
           color: #212121; }
-        div.categoria > ul.navBar > li:hover.current {
-          border-bottom: 3px solid #FF5252; }
+      div.categoria > ul.navBar > li.current {
+        border-bottom: 3px solid #FF5252; }
       div.categoria > ul.navBar > li > h1 {
         font: bold 20px _Century_Gothic_;
         color: #757575; }

@@ -126,7 +126,9 @@ angular.module('app')
             categoryName = categoryName.trim();
 
             $(".category").addClass('hide');
-            $(".category#" + categoryName ).removeClass('hide');
+            $(".category#" + categoryName).removeClass('hide');
+            $(".navBar li").removeClass("current");
+            $(element).closest("li").addClass("current");
         };
 
         $scope.activarSlick = function (selector) {
@@ -161,6 +163,8 @@ angular.module('app')
                     $scope.firstSlick = false;
                 else {
                     $(".category").addClass('hide');
+                    $(".category.categoria").removeClass('hide');
+                    $(".navBar li").first().addClass("current");
                 }
 
             });

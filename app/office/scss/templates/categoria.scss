@@ -28,9 +28,9 @@ div.categoria{
         >h1{
           color: $primary-text-color;
         }
+      }      
       &.current{
         border-bottom: 3px solid $accent-color;
-      }
       }
       >h1{
         font: bold 20px _Century_Gothic_;
