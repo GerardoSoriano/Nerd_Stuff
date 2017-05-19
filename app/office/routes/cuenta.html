@@ -5,11 +5,6 @@
       <div class="card">
         <form class="updateForm">
           <div class="accountForm">
-            <label>Contraseña</label>
-            <div>
-              <input class="toJson" type="password" name="contrasena">
-              <i class="fa fa-pencil"></i>
-            </div>
             <label>Primer Nombre</label>
             <div>
               <input class="toJson" type="text" name="primerNombre" placeholder="Primer nombre *" value="{{usuario.primerNombre}}">
@@ -35,8 +30,12 @@
               <input class="toJson" type="email" name="email" placeholder="Correo *" value="{{usuario.email}}">
               <i class="fa fa-pencil"></i>
             </div>
-          <!--input type="submit" name="send" value="Guardar cambios"-->
-          <button ng-click="uploadPic(picFile)">Submit</button>
+            <label>Contraseña</label>
+            <div>
+              <input class="toJson" type="password" name="contrasena">
+              <i class="fa fa-pencil"></i>
+            </div>
+          <button ng-click="uploadPic(picFile)">Guardar cambios</button>
         </div>
           <div class="profilePicture">
             <label for="picFile">
@@ -50,10 +49,6 @@
               <label>Miembro desde:</label>
               <label>21-04-1997</label>
             </div>
-            <!-- ¿Se podrá hacer que esto funcione como botón y que esconda al input de abajo? -->
-            <!--<input type="file" name="fotoPerfil" id="fotoPerfil" accept="image/jpeg,image/jpg,image/gif,image/png">-->
-
-            <!-- input type="button" ngf-select="onFileSelect($file)" -->
 
             <input id="picFile" type="file" ngf-select ng-model="picFile" name="file" accept="image/*" ngf-max-size="2MB" title="Cambiar foto de perfil">
             <i ng-show="myForm.file.$error.maxSize">File too large {{errorFile.size / 1000000|number:1}}MB: max 2M</i>
