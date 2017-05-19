@@ -2,23 +2,25 @@
   <section class="management-hierarchy">
 
     <h1> Mi red </h1>
-    <div ng-controller="treeController" class="hv-container">
+    <div ng-controller="treeController" class="hv-container" style="width: 100%">
+
+      <div class="email">
+        <form class="emailForm">
+          <input class="toJson" type="text" name="nombre" placeholder="Juan">
+          <input class="toJson" type="email" name="email" placeholder="ejemplo@correo.com">
+          <input type="submit" name="send" value="Enviar">
+        </form>
+      </div>
+
       <div class="hv-wrapper">
         <div ng-repeat="data in usuarios.invitados" ng-include="'office/templates/rama-arbol.html'"></div>
       </div>
     </div>
-
-    <div class="email">
-      <form class="emailForm">
-        <input class="toJson" type="text" name="nombre" placeholder="Juan">
-        <input class="toJson" type="email" name="email" placeholder="ejemplo@correo.com">
-        <input type="submit" name="send" value="Enviar">
-      </form>
-    </div>
   </section>
 </div>
+
 <script type="text/javascript">
-  $(document).ready(function(){
+  $(document).ready(function () {
     $.validator.addMethod("regx", function (value, element, regexpr) {
       return regexpr.test(value);
     });
@@ -28,7 +30,7 @@
     $('form.emailForm').validate({
       debug: true,
       rules: {
-        nombre:{
+        nombre: {
           required: true,
           regx: /^[a-zA-Z\s]+$/
         },
@@ -74,4 +76,5 @@
       }
     });
   });
+
 </script>
