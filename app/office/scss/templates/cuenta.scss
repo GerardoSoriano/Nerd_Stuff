@@ -126,6 +126,12 @@ div.cuenta{
             padding: 0 0 0 30px;
             width: 100%;
             margin-left: 200px;
+            >label{
+              >img{
+                width: 200px;
+                height: 200px;
+              }
+            }
             >div.disabledInfo{
               margin-top: 5px;
               display: block;
@@ -200,6 +206,8 @@ div.cuenta{
           height: auto;
           border-top: 1px solid $divider-color;
           padding: 20px 0 0 10px;
+          margin-top: 20px;
+          display: none;
           >label{
             color: $primary-text-color;
             font-family: _Century_Gothic_;
@@ -226,6 +234,7 @@ div.cuenta{
               margin-top: 10px;
             }
             >input{
+              display: block;
               margin-top: 5px;
               width: 250px;
               padding: 6px;

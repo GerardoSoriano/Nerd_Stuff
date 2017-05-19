@@ -17,7 +17,7 @@ $bg-color: #0097A7;
       margin-bottom: $bottom-margin;
       position: relative;
       display: flex;
-      justify-content: center;      
+      justify-content: center;
       &:after{
         position: absolute;
         content: '';
@@ -35,30 +35,30 @@ $bg-color: #0097A7;
       .hv-item-child{
         padding: 0 15px;
         position: relative;
-        
+
         &:before, &:after{
           content: '';
           position: absolute;
           background-color: $line-color;
           left: 0;
         }
-        
+
         &:before{
           left: 50%;
           top: 0;
           transform: translateY(-100%);
           width: $line-width;
           height: $bottom-margin / 2;
-          
+
         }
-        
+
         &:after{
           top: -$bottom-margin / 2;
           transform: translateY(-100%);
           height: $line-width;
           width: 100%;
         }
-        
+
         &:first-child:after{
           left: 50%;
           width: 50%;
@@ -66,8 +66,8 @@ $bg-color: #0097A7;
 
         &:last-child:after{
           width: calc(50% + 1px);
-        }        
-        
+        }
+
       }
     }
   }
@@ -109,7 +109,7 @@ section{
 
 // BASIC STYLE
 .basic-style{
-  
+
     &>h1{
         color: #DE5454 - 50;
     }
@@ -137,9 +137,52 @@ p.simple-card{
 .management-hierarchy{
   background-color: rgba(#0097A7, 0.5);
   border-radius: 6px;
-  
+
     &>h1{
         color: #FFF;
+    }
+    >div{
+      text-align: center;
+      width: 500px;
+      >form{
+        text-align: center;
+        padding-left: 30px;
+      >input{
+        display: block;
+        margin-top: 15px;
+        width: 250px;
+        padding: 6px;
+        border: 1px solid $divider-color;
+        outline: 0;
+        color: $secondary-text-color;
+        font-family: _Century_Gothic_;
+        font-size: 14px;
+
+      }
+      >label{
+        text-align: left;
+        margin: 7px 10px;
+        display: block;
+        color: $accent-color;
+        font-weight: bold;
+        font-size: 14px;
+      }
+      >input[name="send"]{
+        width: 150px;
+        padding: 0 12px;
+        height: 35px;
+        margin-top: 20px;
+        background-color: #00BCD4;
+        border: 1px solid #0097A7;
+        font-weight: bold;
+        font-size: 14px;
+        color: white;
+        border-radius: 3px;
+        cursor: pointer;
+        text-transform: uppercase;
+        margin-right: 50px;
+      }
+    }
     }
     .person{
         text-align: center;
@@ -178,4 +221,3 @@ p.simple-card{
 .hv-wrapper .hv-item .hv-item-children .one-item-child.hv-item-child:after {
     background-color: rgba(#FFF, 0.0);
 }
-

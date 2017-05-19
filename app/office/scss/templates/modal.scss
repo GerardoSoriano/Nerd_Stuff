@@ -1,6 +1,6 @@
 div.modal-show{
   width: 100%;
-  height: 100vh;
+  height: 100%;
   position: absolute;
   z-index: 5;
   background: $modalShadow;
@@ -9,7 +9,7 @@ div.modal-show{
   align-items: center;
   opacity: 1;
   >div.box{
-    width: $medium;
+    width: 60%;
     min-width: $medium;
     height: 90%;
     max-height: 90%;
