@@ -1396,13 +1396,13 @@ section {
     overflow: auto;
     justify-content: center; }
 
-div {
+div.email {
   text-align: center;
   width: 500px; }
-  div > form {
+  div.email > form {
     text-align: center;
     padding-left: 30px; }
-    div > form > input {
+    div.email > form > input {
       display: block;
       margin-top: 15px;
       width: 250px;
@@ -1412,14 +1412,14 @@ div {
       color: #757575;
       font-family: _Century_Gothic_;
       font-size: 14px; }
-    div > form > label {
+    div.email > form > label {
       text-align: left;
       margin: 7px 10px;
       display: block;
       color: #FF5252;
       font-weight: bold;
       font-size: 14px; }
-    div > form > input[name="send"] {
+    div.email > form > input[name="send"] {
       width: 150px;
       padding: 0 12px;
       height: 35px;
