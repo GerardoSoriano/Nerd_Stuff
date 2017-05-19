@@ -64,6 +64,7 @@
         });
         jsonObj['token'] = token;
         let json = JSON.stringify(jsonObj);
+        $('.toJson').val('');
         $.ajax({
           method: "POST",
           url: "../server/php/controller/sendEmail.php",
@@ -71,7 +72,8 @@
         }).done(function (response) {
           var info = JSON.parse(response);
           console.log(info);
-        });
+        }
+      );
       }
     });
   });
