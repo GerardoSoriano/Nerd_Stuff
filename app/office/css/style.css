@@ -1,47 +1,14 @@
-/* -------------------------------- 
-
-Primary style
-
--------------------------------- */
-*, *::after, *::before {
+.cd-cart *, .cd-cart *::after, .cd-cart *::before {
   box-sizing: border-box;
 }
 
-html {
-  font-size: 62.5%;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-body {
-  font-size: 1.6rem;
-  font-family: "Source Sans Pro", sans-serif;
-  color: #2b3e51;
-  background-color: #ecf0f1;
-}
-
-a {
+.cd-cart a {
   color: #2c97de;
   text-decoration: none;
 }
 
-img {
+.cd-cart img {
   max-width: 100%;
-}
-
-main {
-  text-align: center;
-  padding: 2em 5%;
-}
-
-h1 {
-  font-size: 2rem;
-  padding: 3em 0 .8em;
-}
-@media only screen and (min-width: 768px) {
-  h1 {
-    font-size: 3.2rem;
-  }
 }
 
 .cd-add-to-cart {
