@@ -105,6 +105,49 @@ section{
         // align-items: center;
         justify-content: center;
     }
+    >div{
+  text-align: center;
+  width: 500px;
+  >form{
+    text-align: center;
+    padding-left: 30px;
+  >input{
+    display: block;
+    margin-top: 15px;
+    width: 250px;
+    padding: 6px;
+    border: 1px solid $divider-color;
+    outline: 0;
+    color: $secondary-text-color;
+    font-family: _Century_Gothic_;
+    font-size: 14px;
+
+  }
+  >label{
+    text-align: left;
+    margin: 7px 10px;
+    display: block;
+    color: $accent-color;
+    font-weight: bold;
+    font-size: 14px;
+  }
+  >input[name="send"]{
+    width: 150px;
+    padding: 0 12px;
+    height: 35px;
+    margin-top: 20px;
+    background-color: #00BCD4;
+    border: 1px solid #0097A7;
+    font-weight: bold;
+    font-size: 14px;
+    color: white;
+    border-radius: 3px;
+    cursor: pointer;
+    text-transform: uppercase;
+    margin-right: 50px;
+  }
+}
+}
 }
 
 // BASIC STYLE
@@ -140,49 +183,6 @@ p.simple-card{
 
     &>h1{
         color: #FFF;
-    }
-    >div{
-      text-align: center;
-      width: 500px;
-      >form{
-        text-align: center;
-        padding-left: 30px;
-      >input{
-        display: block;
-        margin-top: 15px;
-        width: 250px;
-        padding: 6px;
-        border: 1px solid $divider-color;
-        outline: 0;
-        color: $secondary-text-color;
-        font-family: _Century_Gothic_;
-        font-size: 14px;
-
-      }
-      >label{
-        text-align: left;
-        margin: 7px 10px;
-        display: block;
-        color: $accent-color;
-        font-weight: bold;
-        font-size: 14px;
-      }
-      >input[name="send"]{
-        width: 150px;
-        padding: 0 12px;
-        height: 35px;
-        margin-top: 20px;
-        background-color: #00BCD4;
-        border: 1px solid #0097A7;
-        font-weight: bold;
-        font-size: 14px;
-        color: white;
-        border-radius: 3px;
-        cursor: pointer;
-        text-transform: uppercase;
-        margin-right: 50px;
-      }
-    }
     }
     .person{
         text-align: center;
