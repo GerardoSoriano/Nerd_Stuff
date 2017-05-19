@@ -15,6 +15,13 @@ angular.module('app')
             controller: 'headerController'
         };
     })
+    .directive('verifyRepeat', function () {
+        return function (scope, element, attrs) {
+            if (scope.$last) {
+                scope.$emit('Last-Elem-Event');
+            }
+        };
+    })
     .directive('verifyRepeatFavoritos', function () {
         return function (scope, element, attrs) {
             if (scope.$last) {

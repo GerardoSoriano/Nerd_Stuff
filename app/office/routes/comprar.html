@@ -11,46 +11,45 @@
     </ul>
 
     <div class="category categoria" id="Ofertas">
-
-      <div class="section">
-        <label>Ultimos comprados</label>
-        <div class="productContainer" id="compras-favoritos">
-          <div class="product" ng-repeat="favorito in compras.ofertas track by $index" verify-repeat-favoritos ng-click="productoClick(favorito)"
-            data-price="{{favorito.costo}}.00">
-            <div class="infoCard">
-              <div class="productImage">
-                <img ng-src="resources/img/products/{{favorito.direccionFoto}}" alt="Imagen del producto">
-              </div>
-              <h1>{{favorito.nombreProducto}}</h1>
-              <p>{{favorito.descripcion}}</p>
-              <p><b>${{favorito.costo}}</b></p>
-              <h5>{{favorito.puntaje}}</h5>
+      
+      <div class="productContainer">
+        <div class="sectionTitle">
+          <label>Ofertas</label>
+          <hr>
+        </div>
+        <div class="products">
+          <div class="infoCard" ng-repeat="producto in compras.ofertas" ng-click="productoClick(producto)">
+            <div class="productImage">
+              <img ng-src="resources/img/products/{{producto.direccionFoto}}" alt="Imagen del producto">
             </div>
+            <h1>{{producto.nombreProducto}}</h1>
+            <p>{{producto.descripcion}}</p>
+            <p><b>${{producto.costo}}</b></p>
+            <h5>{{producto.puntaje}}</h5>
           </div>
         </div>
       </div>
 
-      <div class="section">
-        <label>Ultimas compras</label>
-        <div class="productContainer" id="compras-ultimasCompras">
-          <div class="product" ng-repeat="compra in compras.ultimasCompras track by $index" verify-repeat-ultimas ng-click="productoClick(compra)"
-            data-price="{{compra.costo}}.00">
-            <div class="infoCard">
-              <div class="productImage">
-                <img ng-src="resources/img/products/{{compra.direccionFoto}}" alt="Imagen del producto">
-              </div>
-              <h1>{{compra.nombreProducto}}</h1>
-              <p>{{compra.descripcion}}</p>
-              <p><b>${{compra.costo}}</b></p>
-              <h5>{{compra.puntaje}}</h5>
+      <div class="productContainer">
+        <div class="sectionTitle">
+          <label>Ultimas Compras</label>
+          <hr>
+        </div>
+        <div class="products">
+          <div class="infoCard" ng-repeat="producto in compras.ultimasCompras" ng-click="productoClick(producto)">
+            <div class="productImage">
+              <img ng-src="resources/img/products/{{producto.direccionFoto}}" alt="Imagen del producto">
             </div>
+            <h1>{{producto.nombreProducto}}</h1>
+            <p>{{producto.descripcion}}</p>
+            <p><b>${{producto.costo}}</b></p>
+            <h5>{{producto.puntaje}}</h5>
           </div>
         </div>
       </div>
-
     </div>
 
-    <div class="category" ng-repeat="category in categories track by $index" id="{{category.nombreCategoria}}">
+    <div class="category" ng-repeat="category in categories track by $index" id="{{category.nombreCategoria}}" verify-repeat>
       <div class="productContainer">
         <div class="sectionTitle">
           <label>{{category.nombreCategoria}}</label>

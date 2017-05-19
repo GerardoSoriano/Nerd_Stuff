@@ -115,11 +115,10 @@ angular.module('app')
             $scope.total = total + iva;
         };
 
-        $scope.finalizarCompra = function(){
+        $scope.finalizarCompra = function () {
             //Logica para finalizar la compra, mandar a llamar el servicio
 
             //Mostrarle algo al usuario que diga que ya se finalizó la compra
-
             console.log("finalizar compra");
         };
     }])
@@ -141,14 +140,6 @@ angular.module('app')
         var undo = cartWrapper.find('.undo');
         var undoTimeoutId;
 
-        $scope.$on('Last-Elem-Favoritos-Event', function (event) {
-            $scope.activarSlick("#compras-favoritos");
-        });
-
-        $scope.$on('Last-Elem-Ultimas-Event', function (event) {
-            $scope.activarSlick("#compras-ultimasCompras");
-        });
-
         $http({
             url: '../server/php/controller/comprar.php',
             method: "POST",
@@ -164,7 +155,13 @@ angular.module('app')
             }).then(function (response) {
                 $scope.categories = response.data;
                 console.log($scope.categories);
+                $(".category").addClass('hide');
             });
+        });
+
+        $scope.$on('Last-Elem-Event', function (event) {
+            $(".category").addClass('hide');
+            $(".category.categoria").removeClass('hide');
         });
 
         $scope.productoClick = function (elemento) {
@@ -206,45 +203,6 @@ angular.module('app')
             $(".navBar li").removeClass("current");
             $(element).closest("li").addClass("current");
         };
-
-        $scope.activarSlick = function (selector) {
-            $.when(
-                $(selector).slick({
-                    slidesToShow: 4,
-                    slidesToScroll: 1,
-                    autoplaySpeed: 2000,
-                    responsive: [
-                        {
-                            breakpoint: 1572,
-                            settings: {
-                                slidesToShow: 3
-                            }
-                        },
-                        {
-                            breakpoint: 1254,
-                            settings: {
-                                slidesToShow: 2
-                            }
-                        },
-                        {
-                            breakpoint: 936,
-                            settings: {
-                                slidesToShow: 1
-                            }
-                        }
-                    ]
-                })
-            ).then(function () {
-                if ($scope.firstSlick)
-                    $scope.firstSlick = false;
-                else {
-                    $(".category").addClass('hide');
-                    $(".category.categoria").removeClass('hide');
-                    $(".navBar li").first().addClass("current");
-                }
-
-            });
-        }
 
         $(".cd-cart footer").on("click", function () {
             console.log("footer click");
