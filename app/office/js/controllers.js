@@ -140,15 +140,21 @@ angular.module('app')
             toggleCart();
         }
 
-        $scope.deleteClick = function ($event) {
-            $event.preventDefault();
-            removeProduct($($event.target).closest('.product'));
+        $scope.deleteClick = function (product) {
+            var index = $scope.productosCarrito.indexOf(product);
+            if (index > -1) {
+                $scope.productosCarrito.splice(index, 1);
+                removeProduct(product, index);
+            }
         }
 
-        $scope.cartListChange = function (item) {
-            console.log("Change:");
-            console.log(item);
-			quickUpdateCart();
+        $scope.cartListChange = function (product, item) {
+            var index = $scope.productosCarrito.indexOf(product);
+            if (index > -1) {
+                $scope.productosCarrito[index].quantity = item;
+                console.log($scope.productosCarrito);
+                quickUpdateCart();
+            }
         }
 
         $scope.categoriaClick = function ($event) {
@@ -223,38 +229,10 @@ angular.module('app')
 
         function addToCart(trigger) {
             var cartIsEmpty = cartWrapper.hasClass('empty');
-            //update number of items 
+
             updateCartCount(cartIsEmpty);
-            //update total price
             updateCartTotal(trigger.costo, true);
-            //show cart
             cartWrapper.removeClass('empty');
-        }
-
-        function addProduct(element) {
-            //cartList.prepend(productAdded);
-        }
-
-        function removeProduct(product) {
-            clearInterval(undoTimeoutId);
-            cartList.find('.deleted').remove();
-
-            var topPosition = product.offset().top - cartBody.children('ul').offset().top,
-                productQuantity = Number(product.find('.quantity').find('select').val()),
-                productTotPrice = Number(product.find('.price').text().replace('$', '')) * productQuantity;
-
-            product.css('top', topPosition + 'px').addClass('deleted');
-
-            //update items count + total price
-            updateCartTotal(productTotPrice, false);
-            updateCartCount(true, -productQuantity);
-            undo.addClass('visible');
-
-            //wait 8sec before completely remove the item
-            undoTimeoutId = setTimeout(function () {
-                undo.removeClass('visible');
-                cartList.find('.deleted').remove();
-            }, 8000);
         }
 
         function quickUpdateCart() {
@@ -270,6 +248,18 @@ angular.module('app')
             cartTotal.text(price.toFixed(2));
             cartCount.find('li').eq(0).text(quantity);
             cartCount.find('li').eq(1).text(quantity + 1);
+        }
+
+        function removeProduct(product, index) {
+            var productQuantity = 1;
+
+            if (product.quantity != undefined)
+                productQuantity = product.quantity;
+
+            productTotPrice = product.costo * productQuantity;
+
+            updateCartTotal(productTotPrice, false);
+            updateCartCount(true, -productQuantity);
         }
 
         function updateCartCount(emptyCart, quantity) {

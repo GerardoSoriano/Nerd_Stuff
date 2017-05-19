@@ -106,11 +106,12 @@
               <div class="product-details">
                 <h3><a href="#0">{{producto.nombreProducto}}</a></h3>
                 <span class="price">${{producto.costo}}</span>
-                <div class="actions"><a class="delete-item">Eliminar</a>
+                <div class="actions">
+                  <a class="delete-item" ng-click="deleteClick(producto)">Eliminar</a>
                   <div class="quantity">
-                    <label  for="cd-product-{{producto.nombreProducto}}">Cantidad</label>
+                    <label for="cd-product-{{producto.nombreProducto}}">Cantidad</label>
                     <span class="select">
-                    <select id="cd-product-{{producto.nombreProducto}}"name="quantity" ng-model="item" ng-change="cartListChange(item)">
+                    <select id="cd-product-{{producto.nombreProducto}}" name="quantity" ng-model="item" ng-change="cartListChange(producto, item)">
                       <option value="1" selected="selected">1</option>
                       <option value="2">2</option>
                       <option value="3">3</option>

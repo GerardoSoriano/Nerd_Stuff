@@ -2820,3 +2820,6 @@ Main Components
     -webkit-transform: translateX(80px);
     transform: translateX(80px);
     opacity: 0; } }
+
+.cd-cart footer em {
+  font-size: 28px; }
