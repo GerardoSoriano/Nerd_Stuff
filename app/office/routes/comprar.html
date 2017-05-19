@@ -5,7 +5,7 @@
       <li class="offer" ng-click="categoriaClick($event)">
         <h1 class="titulo">Ofertas</h1>
       </li>
-      <li class="offer" ng-repeat="categoria in compras.categorias" ng-click="categoriaClick($event)">
+      <li class="offer" ng-repeat="categoria in compras.categorias track by $index" ng-click="categoriaClick($event)">
         <h1 class="titulo">{{categoria.nombreCategoria}}</h1>
       </li>
     </ul>
@@ -22,7 +22,7 @@
       <div class="section">
         <label>Ultimos comprados</label>
         <div class="productContainer" id="compras-favoritos">
-          <div class="product" ng-repeat="favorito in compras.favoritos" verify-repeat-favoritos>
+          <div class="product" ng-repeat="favorito in compras.favoritos track by $index" verify-repeat-favoritos>
             <div class="infoCard">
               <div class="productImage">
                 <img ng-src="resources/img/products/{{favorito.direccionFoto}}" alt="Imagen del producto">
@@ -39,7 +39,7 @@
       <div class="section">
         <label>Ultimas compras</label>
         <div class="productContainer" id="compras-ultimasCompras">
-          <div class="product" ng-repeat="compra in compras.ultimasCompras" verify-repeat-ultimas>
+          <div class="product" ng-repeat="compra in compras.ultimasCompras track by $index" verify-repeat-ultimas>
             <div class="infoCard">
               <div class="productImage">
                 <img ng-src="resources/img/products/{{compra.direccionFoto}}" alt="Imagen del producto">
@@ -55,7 +55,7 @@
 
     </div>
 
-    <div class="category" ng-repeat="category in categories" id="{{category.nombreCategoria}}">
+    <div class="category" ng-repeat="category in categories track by $index" id="{{category.nombreCategoria}}">
       <div class="productContainer">
         <div class="sectionTitle">
           <label>{{category.nombreCategoria}}</label>

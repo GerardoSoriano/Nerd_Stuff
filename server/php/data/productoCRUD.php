@@ -12,7 +12,8 @@ class ProductoMetodos
     $conn = $pdo->getConnection();
     try {
       $stm = $conn->prepare("call productosCategoria(?)");
-      $stm->bindParam(1,$producto->getIdCategoria());
+      $idCategoria = $producto->getIdCategoria();
+      $stm->bindParam(1,$idCategoria);
       $stm->execute();
       $result = $stm->fetchAll();
       return $result;
@@ -28,7 +29,8 @@ class ProductoMetodos
     $conn = $pdo->getConnection();
     try {
       $stm = $conn->prepare("call mostrarProducto(?)");
-      $stm->bindParam(1,$producto->getIdProducto());
+      $idCategoria = $producto->getIdCategoria();
+      $stm->bindParam(1,$idCategoria);
       $stm->execute();
       $result = $stm->fetchAll();
       return $result;
