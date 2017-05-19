@@ -47,8 +47,8 @@ insert into producto(nombreProducto, costo, puntaje, descripcion, idCategoria, d
             ('Libro Animales Fantásticos', 350, 17, 'Libro Animales fantásticos y dónde encontrarlos', 6, '44.jpg'),
             ('Libro Video Game', 300, 16, 'Libro de a brief story history of video games', 6, '45.jpg'),
             ('Libro Mass Effect', 400, 19, 'Libro de Mass Effect Universe', 6, '46.jpg'),
-			('Comic Infinity War', 300, 16, 'Comic Marvel y el Guantelete del infinito', 6, '47.jpg'),
-			('Comic Injustice', 200, 14, 'Comic DC Injustice', 6, '48.jpg'),
-			('Comic Civil War', 300, 16, 'Comic Marvel Civil War', 6, '49.jpg'),
-			('Comic Star Wars', 400, 18, 'Comic de Star Wars a new hope', 6, '50.jpg'),
-			('Comic Kick Ass', 200, 14, 'Comic Marvel y el Guantelete del infinito', 6, '51.jpg');
+			('Comic Infinity War', 300, 16, 'Comic Marvel y el Guantelete del infinito', 7, '47.jpg'),
+			('Comic Injustice', 200, 14, 'Comic DC Injustice', 7, '48.jpg'),
+			('Comic Civil War', 300, 16, 'Comic Marvel Civil War', 7, '49.jpg'),
+			('Comic Star Wars', 400, 18, 'Comic de Star Wars a new hope', 7, '50.jpg'),
+			('Comic Kick Ass', 200, 14, 'Comic Marvel y el Guantelete del infinito', 7, '51.jpg');
