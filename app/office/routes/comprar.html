@@ -22,7 +22,8 @@
       <div class="section">
         <label>Ultimos comprados</label>
         <div class="productContainer" id="compras-favoritos">
-          <div class="product" ng-repeat="favorito in compras.favoritos track by $index" verify-repeat-favoritos>
+          <div class="product" ng-repeat="favorito in compras.favoritos track by $index" verify-repeat-favoritos ng-click="productoClick(favorito)"
+            data-price="{{favorito.costo}}.00">
             <div class="infoCard">
               <div class="productImage">
                 <img ng-src="resources/img/products/{{favorito.direccionFoto}}" alt="Imagen del producto">
@@ -39,7 +40,8 @@
       <div class="section">
         <label>Ultimas compras</label>
         <div class="productContainer" id="compras-ultimasCompras">
-          <div class="product" ng-repeat="compra in compras.ultimasCompras track by $index" verify-repeat-ultimas>
+          <div class="product" ng-repeat="compra in compras.ultimasCompras track by $index" verify-repeat-ultimas ng-click="productoClick(compra)"
+            data-price="{{compra.costo}}.00">
             <div class="infoCard">
               <div class="productImage">
                 <img ng-src="resources/img/products/{{compra.direccionFoto}}" alt="Imagen del producto">
@@ -62,7 +64,7 @@
           <hr>
         </div>
         <div class="products">
-          <div class="infoCard" ng-repeat="producto in category.productos">
+          <div class="infoCard" ng-repeat="producto in category.productos" ng-click="productoClick(producto)">
             <div class="productImage">
               <img ng-src="resources/img/products/{{producto.direccionFoto}}" alt="Imagen del producto">
             </div>
@@ -76,7 +78,68 @@
     </div>
 
   </div>
+
+
+  <div class="cd-cart-container empty">
+    <a ng-click="cartTrigger()" class="cd-cart-trigger">
+
+      <ul class="count">
+        <!-- cart items count -->
+        <li>0</li>
+        <li>0</li>
+      </ul>
+      <!-- .count -->
+    </a>
+
+    <div class="cd-cart">
+      <div class="wrapper">
+        <header>
+          <h2>Carrito de compras</h2>
+          <span class="undo">Item removed. <a href="#0">Undo</a></span>
+        </header>
+
+        <div class="body">
+          <ul>
+
+            <li class="product" ng-repeat="producto in productosCarrito">
+              <div class="product-image"><a href="#0"><img ng-src="resources/img/products/{{producto.direccionFoto}}" alt="placeholder"></a></div>
+              <div class="product-details">
+                <h3><a href="#0">{{producto.nombreProducto}}</a></h3>
+                <span class="price">${{producto.costo}}</span>
+                <div class="actions"><a class="delete-item">Eliminar</a>
+                  <div class="quantity">
+                    <label  for="cd-product-{{producto.nombreProducto}}">Cantidad</label>
+                    <span class="select">
+                    <select id="cd-product-{{producto.nombreProducto}}"name="quantity" ng-model="item" ng-change="cartListChange(item)">
+                      <option value="1" selected="selected">1</option>
+                      <option value="2">2</option>
+                      <option value="3">3</option>
+                      <option value="4">4</option>
+                      <option value="5">5</option>
+                      <option value="6">6</option>
+                      <option value="7">7</option>
+                      <option value="8">8</option>
+                      <option value="9">9</option>
+                    </select>
+                  </span>
+                  </div>
+                </div>
+              </div>
+            </li>
+
+          </ul>
+        </div>
+
+        <footer>
+          <a href="#0" class="checkout btn"><em>Checkout - $<span>0</span></em></a>
+        </footer>
+      </div>
+    </div>
+    <!-- .cd-cart -->
+  </div>
+  <!-- cd-cart-container -->
 </div>
+
 
 <script type="text/javascript">
   $('div#carrito').ready(function () {

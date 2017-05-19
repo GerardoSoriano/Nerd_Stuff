@@ -72,7 +72,6 @@ angular.module('app')
             method: "POST",
             data: { 'token': localStorage.getItem("token") }
         }).then(function (response) {
-            console.log("Aqui entro una vez");
             $scope.usuarios = response.data;
             console.log(response.data);
         });
@@ -89,6 +88,19 @@ angular.module('app')
         $scope.compras = "";
         $scope.categories = "";
         $scope.firstSlick = true;
+        $scope.productosCarrito = [];
+        $scope.item = 1;
+
+        var cartWrapper = $('.cd-cart-container');
+        var productId = 0;
+        var cartBody = cartWrapper.find('.body')
+        var cartList = cartBody.find('ul').eq(0);
+        var cartTotal = cartWrapper.find('.checkout').find('span');
+        var cartTrigger = cartWrapper.children('.cd-cart-trigger');
+        var cartCount = cartTrigger.children('.count')
+        var addToCartBtn = $('.cd-add-to-cart');
+        var undo = cartWrapper.find('.undo');
+        var undoTimeoutId;
 
         $scope.$on('Last-Elem-Favoritos-Event', function (event) {
             $scope.activarSlick("#compras-favoritos");
@@ -116,9 +128,28 @@ angular.module('app')
             });
         });
 
-        $scope.$watch("compras", function (value) {
-            console.log("CAMBIO COMPRAS");
-        });
+        $scope.productoClick = function (elemento) {
+            //Actualizamos el modelo
+            $scope.productosCarrito.push(elemento);
+
+            //Actualizamos el carrito
+            addToCart(elemento);
+        }
+
+        $scope.cartTrigger = function () {
+            toggleCart();
+        }
+
+        $scope.deleteClick = function ($event) {
+            $event.preventDefault();
+            removeProduct($($event.target).closest('.product'));
+        }
+
+        $scope.cartListChange = function (item) {
+            console.log("Change:");
+            console.log(item);
+			quickUpdateCart();
+        }
 
         $scope.categoriaClick = function ($event) {
             var element = $event.target;
@@ -168,6 +199,113 @@ angular.module('app')
                 }
 
             });
+        }
+
+        function toggleCart(bool) {
+            var cartIsOpen = (typeof bool === 'undefined') ? cartWrapper.hasClass('cart-open') : bool;
+
+            if (cartIsOpen) {
+                cartWrapper.removeClass('cart-open');
+                //reset undo
+                clearInterval(undoTimeoutId);
+                undo.removeClass('visible');
+                cartList.find('.deleted').remove();
+
+                setTimeout(function () {
+                    cartBody.scrollTop(0);
+                    //check if cart empty to hide it
+                    if (Number(cartCount.find('li').eq(0).text()) == 0) cartWrapper.addClass('empty');
+                }, 500);
+            } else {
+                cartWrapper.addClass('cart-open');
+            }
+        }
+
+        function addToCart(trigger) {
+            var cartIsEmpty = cartWrapper.hasClass('empty');
+            //update number of items 
+            updateCartCount(cartIsEmpty);
+            //update total price
+            updateCartTotal(trigger.costo, true);
+            //show cart
+            cartWrapper.removeClass('empty');
+        }
+
+        function addProduct(element) {
+            //cartList.prepend(productAdded);
+        }
+
+        function removeProduct(product) {
+            clearInterval(undoTimeoutId);
+            cartList.find('.deleted').remove();
+
+            var topPosition = product.offset().top - cartBody.children('ul').offset().top,
+                productQuantity = Number(product.find('.quantity').find('select').val()),
+                productTotPrice = Number(product.find('.price').text().replace('$', '')) * productQuantity;
+
+            product.css('top', topPosition + 'px').addClass('deleted');
+
+            //update items count + total price
+            updateCartTotal(productTotPrice, false);
+            updateCartCount(true, -productQuantity);
+            undo.addClass('visible');
+
+            //wait 8sec before completely remove the item
+            undoTimeoutId = setTimeout(function () {
+                undo.removeClass('visible');
+                cartList.find('.deleted').remove();
+            }, 8000);
+        }
+
+        function quickUpdateCart() {
+            var quantity = 0;
+            var price = 0;
+
+            cartList.children('li:not(.deleted)').each(function () {
+                var singleQuantity = Number($(this).find('select').val());
+                quantity = quantity + singleQuantity;
+                price = price + singleQuantity * Number($(this).find('.price').text().replace('$', ''));
+            });
+
+            cartTotal.text(price.toFixed(2));
+            cartCount.find('li').eq(0).text(quantity);
+            cartCount.find('li').eq(1).text(quantity + 1);
+        }
+
+        function updateCartCount(emptyCart, quantity) {
+            if (typeof quantity === 'undefined') {
+                var actual = Number(cartCount.find('li').eq(0).text()) + 1;
+                var next = actual + 1;
+
+                if (emptyCart) {
+                    cartCount.find('li').eq(0).text(actual);
+                    cartCount.find('li').eq(1).text(next);
+                } else {
+                    cartCount.addClass('update-count');
+
+                    setTimeout(function () {
+                        cartCount.find('li').eq(0).text(actual);
+                    }, 150);
+
+                    setTimeout(function () {
+                        cartCount.removeClass('update-count');
+                    }, 200);
+
+                    setTimeout(function () {
+                        cartCount.find('li').eq(1).text(next);
+                    }, 230);
+                }
+            } else {
+                var actual = Number(cartCount.find('li').eq(0).text()) + quantity;
+                var next = actual + 1;
+
+                cartCount.find('li').eq(0).text(actual);
+                cartCount.find('li').eq(1).text(next);
+            }
+        }
+
+        function updateCartTotal(price, bool) {
+            bool ? cartTotal.text((Number(cartTotal.text()) + Number(price)).toFixed(2)) : cartTotal.text((Number(cartTotal.text()) - Number(price)).toFixed(2));
         }
     }])
 
