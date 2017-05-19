@@ -279,7 +279,7 @@ $$
 delimiter $$
 create procedure comprasPorUsuario(in idU smallint unsigned)
 	begin
-		select C.idCompra, C.fechaCompra, P.idProducto, P.nombreProducto, P.costo, P.puntaje, P.descripcion, P.direccionFoto, count(idProducto) as cantidad
+		select C.idCompra, C.fechaCompra, P.idProducto, P.nombreProducto, P.costo, P.puntaje, P.descripcion, P.direccionFoto, count(P.idProducto) as cantidad
         from compra C
         inner join productoCompra PC on C.idCompra = PC.idCompra
         inner join producto P on P.idProducto = PC.idProducto

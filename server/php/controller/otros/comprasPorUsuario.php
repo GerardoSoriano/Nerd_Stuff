@@ -1,14 +1,16 @@
 <?php
-include_once(dirname(__DIR__).'/model/usuario.php');
-include_once(dirname(__DIR__).'/data/productoCompraCRUD.php');
+include_once(dirname(__DIR__).'./../data/productoCompraCRUD.php');
+include_once(dirname(__DIR__).'./../data/categoriaCRUD.php');
+include_once(dirname(__DIR__).'./../data/jwt_helper.php');
 
-$json = $_POST['json'];
-$obj = json_decode($json);
+$postdata = file_get_contents("php://input");
+$token = json_decode($postdata);
+$token = JWT::decode($token->token,'9286');
 
-$usuario = new Usuario();
-$usuario->setIdUsuario($obj->idUsuario);
-
-$pcm = new ProductoCompraMetodos();
-$json = $pcm->ComprasPorUsuario($usuario);
-print_r($json);
- ?>
+if (array_key_exists("idUsuario", $token)){
+    $idUsuario = $token->idUsuario;    
+    $pcm = new ProductoCompraMetodos();
+    $json = $pcm->ComprasPorUsuario($idUsuario);
+    print_r(json_encode($json));
+}
+?>

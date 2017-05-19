@@ -27,12 +27,12 @@ class ProductoCompraMetodos
       $pdo->closeConnection();
     }
   }
-  function ComprasPorUsuario($usuario){
+  function ComprasPorUsuario($idUsuario){
     $pdo = new Connection();
     $conn = $pdo->getConnection();
     try {
       $stm = $conn->prepare("call comprasPorUsuario(?)");
-      $stm->bindParam(1,$usuario->getIdUsuario());
+      $stm->bindParam(1,$idUsuario);
       $stm->execute();
       $result = $stm->fetchAll();
       return $result;

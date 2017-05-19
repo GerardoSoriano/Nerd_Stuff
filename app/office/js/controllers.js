@@ -20,7 +20,7 @@ angular.module('app')
             $(element).parent().addClass("current");
         }
 
-        $scope.salirOnClick = function(){
+        $scope.salirOnClick = function () {
             localStorage.usuario = "";
             window.location.href = "login.html";
         };
@@ -89,6 +89,19 @@ angular.module('app')
         }
     }])
 
+    .controller("historialController", ['$scope', '$http', function ($scope, $http) {
+        $scope.compras = "";
+
+        $http({
+            url: '../server/php/controller/otros/comprasPorUsuario.php',
+            method: "POST",
+            data: { 'token': localStorage.getItem("token") }
+        }).then(function (response) {
+            $scope.compras = response.data;
+            console.log($scope.compras);
+        });
+    }])
+
     .controller("finalizarCompra", ['$scope', '$http', function ($scope, $http) {
         $scope.productos = [];
         $scope.puntos = 0;
@@ -131,13 +144,13 @@ angular.module('app')
 
             console.log(json);
             $.ajax({
-              method: "POST",
-              url: "../server/php/controller/finalizarCompra.php",
-              data: { "json": json }
+                method: "POST",
+                url: "../server/php/controller/finalizarCompra.php",
+                data: { "json": json }
             }).done(function (response) {
-              if (response == 'success') {
-                window.location.href = '#comprar';
-              }
+                if (response == 'success') {
+                    window.location.href = '#comprar';
+                }
             });
             //Mostrarle algo al usuario que diga que ya se finalizó la compra
             console.log("finalizar compra");
@@ -332,7 +345,6 @@ angular.module('app')
             bool ? cartTotal.text((Number(cartTotal.text()) + Number(price)).toFixed(2)) : cartTotal.text((Number(cartTotal.text()) - Number(price)).toFixed(2));
         }
     }])
-
 
     .controller("cuentaController", ['$scope', '$http', '$rootScope', 'Upload', function ($scope, $http, $rootScope, Upload) {
 
