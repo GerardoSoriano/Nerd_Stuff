@@ -195,7 +195,7 @@ $$
 
 /*SP para traer los productos que tienen descuento y su porcentaje de descuento*/
 delimiter $$
-create or replace procedure ofertas()
+create procedure ofertas()
 	begin
 		select P.idProducto, P.nombreProducto, P.costo, P.puntaje, P.direccionFoto, D.porcentajeDescuento
         from producto P
@@ -219,7 +219,7 @@ $$
 
 /*SP para traer los productos favoritos de un usuario*/
 delimiter $$
-create or replace procedure mostrarFavoritos(in idU smallint unsigned)
+create procedure mostrarFavoritos(in idU smallint unsigned)
 	begin
 		select P.idProducto, P.nombreProducto, P.costo, P.puntaje, P.descripcion, P.direccionFoto
         from favoritos F
