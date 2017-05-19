@@ -117,7 +117,23 @@ angular.module('app')
 
         $scope.finalizarCompra = function () {
             //Logica para finalizar la compra, mandar a llamar el servicio
+            let jsonObj = {}
 
+            jsonObj['productos'] = $scope.productos;
+            jsonObj['token'] = localStorage.getItem("token");;
+
+            let json = JSON.stringify(jsonObj);
+
+            console.log(json);
+            $.ajax({
+              method: "POST",
+              url: "../server/php/controller/finalizarCompra.php",
+              data: { "json": json }
+            }).done(function (response) {
+              if (response == 'succes') {
+                window.location = '#comprar';
+              }
+            });
             //Mostrarle algo al usuario que diga que ya se finalizó la compra
             console.log("finalizar compra");
 

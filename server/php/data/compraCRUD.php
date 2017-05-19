@@ -13,7 +13,8 @@ class CompraMetodos
     try {
       $stm = $conn->prepare('call agregarCompra(?)');
       $stm->bindParam(1,$compra->getIdUsuario());
-      $result = $stm->execute();
+      $stm->execute();
+      $result = $stm->fetchAll();
       return $result;
     } catch (PDOException $e) {
       die($e->getMessage());

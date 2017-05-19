@@ -1395,6 +1395,43 @@ section {
     flex-grow: 1;
     overflow: auto;
     justify-content: center; }
+  section > div {
+    text-align: center;
+    width: 500px; }
+    section > div > form {
+      text-align: center;
+      padding-left: 30px; }
+      section > div > form > input {
+        display: block;
+        margin-top: 15px;
+        width: 250px;
+        padding: 6px;
+        border: 1px solid #BDBDBD;
+        outline: 0;
+        color: #757575;
+        font-family: _Century_Gothic_;
+        font-size: 14px; }
+      section > div > form > label {
+        text-align: left;
+        margin: 7px 10px;
+        display: block;
+        color: #FF5252;
+        font-weight: bold;
+        font-size: 14px; }
+      section > div > form > input[name="send"] {
+        width: 150px;
+        padding: 0 12px;
+        height: 35px;
+        margin-top: 20px;
+        background-color: #00BCD4;
+        border: 1px solid #0097A7;
+        font-weight: bold;
+        font-size: 14px;
+        color: white;
+        border-radius: 3px;
+        cursor: pointer;
+        text-transform: uppercase;
+        margin-right: 50px; }
 
 .basic-style > h1 {
   color: #ac2222; }
@@ -1418,43 +1455,6 @@ p.simple-card {
   border-radius: 6px; }
   .management-hierarchy > h1 {
     color: #FFF; }
-  .management-hierarchy > div {
-    text-align: center;
-    width: 500px; }
-    .management-hierarchy > div > form {
-      text-align: center;
-      padding-left: 30px; }
-      .management-hierarchy > div > form > input {
-        display: block;
-        margin-top: 15px;
-        width: 250px;
-        padding: 6px;
-        border: 1px solid #BDBDBD;
-        outline: 0;
-        color: #757575;
-        font-family: _Century_Gothic_;
-        font-size: 14px; }
-      .management-hierarchy > div > form > label {
-        text-align: left;
-        margin: 7px 10px;
-        display: block;
-        color: #FF5252;
-        font-weight: bold;
-        font-size: 14px; }
-      .management-hierarchy > div > form > input[name="send"] {
-        width: 150px;
-        padding: 0 12px;
-        height: 35px;
-        margin-top: 20px;
-        background-color: #00BCD4;
-        border: 1px solid #0097A7;
-        font-weight: bold;
-        font-size: 14px;
-        color: white;
-        border-radius: 3px;
-        cursor: pointer;
-        text-transform: uppercase;
-        margin-right: 50px; }
   .management-hierarchy .person {
     text-align: center; }
     .management-hierarchy .person > img {
