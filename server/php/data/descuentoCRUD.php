@@ -14,7 +14,7 @@ class DescuentoMetodos
       $stm = $conn->prepare("call ofertas()");
       $stm->execute();
       $result = $stm->fetchAll();
-      return json_encode($result);
+      return $result;
     } catch (PDOException $e) {
       die($e->getMessage());
     } finally {

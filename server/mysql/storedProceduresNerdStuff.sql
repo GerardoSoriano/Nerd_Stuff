@@ -195,9 +195,9 @@ $$
 
 /*SP para traer los productos que tienen descuento y su porcentaje de descuento*/
 delimiter $$
-create procedure ofertas()
+create or replace procedure ofertas()
 	begin
-		select P.nombreProducto, P.costo, P.puntaje, P.direccionFoto, D.porcentajeDescuento
+		select P.idProducto, P.nombreProducto, P.costo, P.puntaje, P.direccionFoto, D.porcentajeDescuento
         from producto P
         inner join descuento D on P.idProducto = D.idProducto
         where fechaInicio < curdate() and fechaFinal > curdate();
@@ -219,9 +219,9 @@ $$
 
 /*SP para traer los productos favoritos de un usuario*/
 delimiter $$
-create procedure mostrarFavoritos(in idU smallint unsigned)
+create or replace procedure mostrarFavoritos(in idU smallint unsigned)
 	begin
-		select P.nombreProducto, P.costo, P.puntaje, P.descripcion, P.direccionFoto
+		select P.idProducto, P.nombreProducto, P.costo, P.puntaje, P.descripcion, P.direccionFoto
         from favoritos F
         inner join producto P on F.idProducto = P.idProducto
         where F.idUsuario = idU;
