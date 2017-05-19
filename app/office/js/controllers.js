@@ -99,15 +99,34 @@ angular.module('app')
         }).then(function (response) {
             var todasCompras = response.data;
             var compras = {};
-            var count = 1;
+            var total = 0;
 
-            for(let i=0; i<todasCompras.length; i++){
+            console.log(todasCompras);
+
+            for (let i = 0; i < todasCompras.length; i++) {
                 var idCompra = todasCompras[i].idCompra;
 
-                if(compras[idCompra] == undefined)
+                if (compras[idCompra] == undefined)
                     compras[idCompra] = [];
 
                 compras[idCompra].push(todasCompras[i]);
+            }
+
+            for (var index in compras) {
+                let totalCompra = 0;
+                let totalPuntos = 0;
+                var compra = compras[index];
+
+                if (compras[index].totalCompra == undefined)
+                    compras[index].totalCompra = 0;
+
+                if (compras[index].totalPuntos == undefined)
+                    compras[index].totalPuntos = 0;
+
+                for (let i = 0; i < compra.length; i++) {
+                    compras[index].totalCompra += compra[i].costo * compra[i].cantidad;
+                    compras[index].totalPuntos += compra[i].puntaje * compra[i].cantidad;
+                }
             }
 
             $scope.compras = compras;
