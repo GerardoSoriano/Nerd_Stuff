@@ -459,6 +459,7 @@ angular.module('app')
 
                     console.log($scope.usuario);
                     console.log(resp.data);
+                    location.reload();
                 });
             }
 

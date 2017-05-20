@@ -24,7 +24,7 @@ if (array_key_exists("idUsuario",$token)){
   $mail->Password = "SuperQualifiedLemons";
   $mail->setFrom('nerdstuffmx@gmail.com', 'Nerd Stuff');
   $mail->addAddress($data->email, $data->nombre);
-  $mail->Subject = '¡Haz sido invitado a formar parte de nuestras filas!';
+  $mail->Subject = 'Haz sido invitado a formar parte de nuestras filas!';
   $mail->msgHTML($message, dirname(__FILE__));
   $mail->AddEmbeddedImage('../../../app/resources/img/imagotipoHorizontal_NerdStuff2_lq.png', 'companyLogo');
   $mail->IsHTML(true);
