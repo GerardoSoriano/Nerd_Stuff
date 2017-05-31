@@ -48,11 +48,6 @@ $(document).ready(function () {
           console.log("Credenciales incorrectas");
         }
       }
-      .fail(function(xhr, status, error){
-        console.log(xhr);
-        console.log(status);
-        console.log(error);
-      })
     );
     }
   });
