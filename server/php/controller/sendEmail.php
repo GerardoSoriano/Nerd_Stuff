@@ -14,7 +14,7 @@ if (array_key_exists("idUsuario",$token)){
   $fromname = 'Nerd Stuff S.A. de C.V.';
   $subject = 'Has sido invitado a formar parte de nuestras filas!';
 
-  $messagebody = file_get_contents('../../../app/emails/template.html');
+  $messagebody = file_get_contents('../../../emails/template.html');
   $messagebody = str_replace('%nombre%', $data->nombre, $messagebody);
   $messagebody = str_replace('%nombreUsuario%', $token->nombreUsuario, $messagebody);
   $headers =
