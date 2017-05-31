@@ -47,7 +47,13 @@ $(document).ready(function () {
         } else {
           console.log("Credenciales incorrectas");
         }
-      });
+      }
+      .fail(function(xhr, status, error){
+        console.log(xhr);
+        console.log(status);
+        console.log(error);
+      })
+    );
     }
   });
 
