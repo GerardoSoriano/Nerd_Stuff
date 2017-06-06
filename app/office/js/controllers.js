@@ -1,6 +1,12 @@
 angular.module('app')
     .controller('mainController', ['$scope', '$rootScope', function ($scope, $rootScope) {
 
+        var tourObj = {};
+
+        $scope.startOnboarding = function() {
+            hopscotch.startTour(tourObj);
+        }
+
         if (localStorage.getItem("usuario") != null) {
             $rootScope.usuario = JSON.parse(localStorage.usuario);
             console.log($rootScope.usuario);
@@ -8,6 +14,77 @@ angular.module('app')
             // window.location.href = "login.html";
             console.log("No tiene un usuario");
         }
+
+        $(document).ready(function () {
+
+            // Define the tour!
+            var tour = {
+                id: "hello-hopscotch",
+                steps: [
+                    {
+                        title: "Bienvenido",
+                        content: "Hola, estás en tu cuenta de Nerd Stuff, éste es el menú, yo seré tu acompañante en ésta guia.",
+                        target: document.querySelector("#menu-tooltip"),
+                        placement: "right"
+                    },
+                    {
+                        title: "Inicio",
+                        content: "En ésta sección podrás ver informacion de tu cuenta, como invitados, puntos acumulados y fechas limite",
+                        target: document.querySelector("#dashboard-tooltip"),
+                        placement: "bottom"
+                    },
+                    {
+                        title: "Sección para comprar",
+                        content: "En ésta sección podrás comprar todos los productos que quieras organizados en cada categoria",
+                        target: document.querySelector("#comprar-tooltip"),
+                        placement: "right"
+                    },
+                    {
+                        title: "Mi cuenta",
+                        content: "En tu cuenta podrás ver y editar tu información personal.",
+                        target: document.querySelector("#cuenta-tooltip"),
+                        placement: "right"
+                    },
+                    {
+                        title: "Historial de compras",
+                        content: "En historial tienes un registro de tus ultimas compras, organizadas por fecha y con información detallada del producto y su precio individual y total, así como sus untos acumulados.",
+                        target: document.querySelector("#historial-tooltip"),
+                        placement: "right"
+                    },
+                    {
+                        title: "Mis invitados",
+                        content: 'En la sección invitados, tienes la libertad de invitar a nuevos miembros de la comunidad de Nerd Stuff, para aumentar el tamaño del grupo. Dichos miembros invitados se añadirán como tus "Hijos", y "Nietos" en caso de que ellos también inviten.',
+                        target: document.querySelector("#invitados-tooltip"),
+                        placement: "right"
+                    },
+                    {
+                        title: "Salir",
+                        content: 'Si estás satisfecho con el servicio, y/o deseas cerrar sesión, éste botón te será de ayuda.',
+                        target: document.querySelector("#salir-tooltip"),
+                        placement: "right"
+                    },
+                    {
+                        title: "Ayuda",
+                        content: 'En caso de volver a necesitar ayuda, puedes llamarme para volver a darte una guia rápida.',
+                        target: document.querySelector("#help-tooltip"),
+                        placement: "top"
+                    }
+                ],
+                showPrevButton: true,
+                scrollTopMargin: 100,
+                i18n: {
+                    nextBtn: "siguiente",
+                    prevBtn: "anterior",
+                    doneBtn: "finalizar"
+                }
+            };
+            tourObj = tour;
+
+            if(localStorage.Onboarding == "true")
+                hopscotch.startTour(tour);
+                
+        });
+
     }])
 
     .controller('menuController', ['$scope', function ($scope) {

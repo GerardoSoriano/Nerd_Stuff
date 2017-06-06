@@ -14,18 +14,25 @@ $um = new UsuarioMetodos();
 $json = $um->LoginUsuario($usuario);
 
 $json = json_decode($json);
-
-$token = array();
-$token['idUsuario'] =  $json[0]->idUsuario;
-$token['nombreUsuario'] = $json[0]->nombreUsuario;
-$token = JWT::encode($token, '9286');
-
-unset($json[0]->idUsuario);
-unset($json[0]->contrasena);
-
 $return = array();
-$return['msg'] = "success";
-$return['usuario'] = $json[0];
-$return['token'] = $token;
+
+if (empty($json)) {
+    $return['msg'] = "Usuario vacio";
+    $return['usuario'] = null;
+    $return['token'] = null;
+} else {        
+    $token = array();
+    $token['idUsuario'] =  $json[0]->idUsuario;
+    $token['nombreUsuario'] = $json[0]->nombreUsuario;
+    $token = JWT::encode($token, '9286');
+
+    unset($json[0]->idUsuario);
+    unset($json[0]->contrasena);
+
+    $return['msg'] = "success";
+    $return['usuario'] = $json[0];
+    $return['token'] = $token;
+}
 print_r(json_encode($return));
- ?>
+
+?>
