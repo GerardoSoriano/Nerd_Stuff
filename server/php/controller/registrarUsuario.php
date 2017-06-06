@@ -11,7 +11,7 @@ $usuario->setNombreUsuario($obj->nombreUsuario);
 $usuario->setPrimerNombre($obj->primerNombre);
 $usuario->setApellidoPaterno($obj->apellidoPaterno);
 $usuario->setEmail($obj->email);
-$usuario->setContrasena(md5($obj->contrasena));
+$usuario->setContrasena($obj->contrasena);
 
 $um = new UsuarioMetodos();
 $result = $um->AgregarUsuario($usuario);
