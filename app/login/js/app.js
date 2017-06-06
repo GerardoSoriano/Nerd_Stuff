@@ -17,7 +17,7 @@ $(document).ready(function () {
     },
     messages: {
       email: "Por favor ingresa un correo valido",
-      contrasena: "Tu contraseña debe de tener una mayucula, una minuscula y por lo menos un número"
+      contrasena: "Por favor ingresa tu contraseña"
     },
     invalidHandler: function (event, validator) {
       var errors = validator.numberOfInvalids();
@@ -81,7 +81,7 @@ $(document).ready(function () {
       primerNombre: "Por favor, escribe tu nombre, recuerda que no se aceptan números",
       apellidoPaterno: "Por favor, escribe tus apellidos, recuerda que no se aceptan números",
       email: "Por favor ingresa un correo valido",
-      contrasena: "Tu contraseña debe de tener una mayucula, una minuscula y por lo menos un número",
+      contrasena: "Tu contraseña debe de tener una mayúscula, una minúscula y por lo menos un número",
       rePassword: "Las contraseñas no coinciden"
     },
     invalidHandler: function (event, validator) {
