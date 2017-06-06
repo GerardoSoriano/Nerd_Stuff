@@ -40,15 +40,17 @@ $(document).ready(function () {
         data: { "json": json }
       }).done(function (response) {
         var info = JSON.parse(response);
-        if(info.msg = "success"){
+        if (info.msg == "success") {
           localStorage.usuario = JSON.stringify(info.usuario);
           localStorage.token = info.token;
+          localStorage.Onboarding = "true";
           window.location = 'office.html';
         } else {
           console.log("Credenciales incorrectas");
+          alert("Credenciales incorrectas");
         }
       }
-    );
+        );
     }
   });
 
@@ -107,10 +109,13 @@ $(document).ready(function () {
         var info = JSON.parse(response);
 
         if (info.msg == "success") {
-          Console.log("Success");
+          localStorage.usuario = JSON.stringify(info.usuario);
+          localStorage.token = info.token;
+          localStorage.Onboarding = "false";
+          window.location = 'office.html';
         }
         else {
-          Console.log("No success");
+          alert("No se pudo registar el usuario");
         }
       });
     }

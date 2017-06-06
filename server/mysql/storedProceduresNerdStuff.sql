@@ -8,9 +8,8 @@ create procedure agregarUsuario(in nombreU nvarchar(50), in primerNom nvarchar (
 	in apellidoMat nvarchar (50), in correo nvarchar(50), in contra nvarchar(20),
     in metodoPago enum('DepositoBancario', 'Tarjeta'), in idPat smallint unsigned)
     begin 
-		insert into usuario(nombreUsuario, primerNombre, segundoNombre, apellidoPaterno, apellidoMaterno, email, contrasena,
-		fotoUrl, formaPago, fechaRegistro, idPatrocinador) 
-		values (nombreU, primerNom, segundoNom, apellidoPat, apellidoMat, correo, contra, urlFoto, metodoPago, curdate(), idPat);
+		insert into usuario(nombreUsuario, primerNombre, segundoNombre, apellidoPaterno, apellidoMaterno, email, contrasena, fotoUrl, formaPago, fechaRegistro, idPatrocinador) 
+		values (nombreU, primerNom, segundoNom, apellidoPat, apellidoMat, correo, contra, 'profile.jpg', 'DepositoBancario', curdate(), '23');
 	end
 $$
 
