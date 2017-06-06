@@ -5,7 +5,7 @@ use nerdstuff;
 /*SP para agregar Usuarios*/
 delimiter $$
 create procedure agregarUsuario(in nombreU nvarchar(50), in primerNom nvarchar (50), in segundoNom nvarchar(50), in apellidoPat nvarchar (50),
-	in apellidoMat nvarchar (50), in correo nvarchar(50), in contra nvarchar(20), in urlFoto nvarchar(50),
+	in apellidoMat nvarchar (50), in correo nvarchar(50), in contra nvarchar(20),
     in metodoPago enum('DepositoBancario', 'Tarjeta'), in idPat smallint unsigned)
     begin 
 		insert into usuario(nombreUsuario, primerNombre, segundoNombre, apellidoPaterno, apellidoMaterno, email, contrasena,

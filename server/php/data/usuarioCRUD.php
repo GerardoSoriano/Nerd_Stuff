@@ -30,7 +30,7 @@ class UsuarioMetodos
     $pdo = new Connection();
     $conn = $pdo->getConnection();
     try {
-      $stm = $conn->prepare("call agregarUsuario(?,?,?,?,?,?,?,?,?,?,?)");
+      $stm = $conn->prepare("call agregarUsuario(?,?,?,?,?,?,?,?,?)");
       $stm->bindParam(1,$usuario->getNombreUsuario());
       $stm->bindParam(2,$usuario->getPrimerNombre());
       $stm->bindParam(3,$usuario->getSegundoNombre());
@@ -38,10 +38,8 @@ class UsuarioMetodos
       $stm->bindParam(5,$usuario->getApellidoMaterno());
       $stm->bindParam(6,$usuario->getEmail());
       $stm->bindParam(7,$usuario->getContrasena());
-      $stm->bindParam(8,$usuario->getFechaNacimiento());
-      $stm->bindParam(9,$usuario->getGenero());
-      $stm->bindParam(10,$usuario->getFormaPago());
-      $stm->bindParam(11,$usuario->getIdPatrocinador());
+      $stm->bindParam(8,$usuario->getFormaPago());
+      $stm->bindParam(9,$usuario->getIdPatrocinador());
       $result = $stm->execute();
       return $result;
     } catch (PDOException $e) {
