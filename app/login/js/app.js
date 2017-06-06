@@ -43,7 +43,7 @@ $(document).ready(function () {
         if (info.msg == "success") {
           localStorage.usuario = JSON.stringify(info.usuario);
           localStorage.token = info.token;
-          localStorage.Onboarding = "true";
+          localStorage.Onboarding = "false";
           window.location = 'office.html';
         } else {
           console.log("Credenciales incorrectas");
@@ -111,7 +111,7 @@ $(document).ready(function () {
         if (info.msg == "success") {
           localStorage.usuario = JSON.stringify(info.usuario);
           localStorage.token = info.token;
-          localStorage.Onboarding = "false";
+          localStorage.Onboarding = "true";
           window.location = 'office.html';
         }
         else {
